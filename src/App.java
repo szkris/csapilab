@@ -10,7 +10,9 @@ public class App {
      * Default constructor
      */
     public App() {
+    	//Létrehoz egy Game példányt majd meghívja annak run() metódusát
     	Game g = new Game();
+    	g.run();
     }
 
 
@@ -41,6 +43,8 @@ public static void main(String[] s) {
 			case "1":
 				//TODO init megfelelo szekvencia
 				System.out.println("1");
+				//Létrehozunk egy App példányt, amely elindítja az Init folyamatot
+				App a = new App();
 				break;
 			case "2":
 				//TODO Start Train szekvencia

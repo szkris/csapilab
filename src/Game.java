@@ -15,6 +15,7 @@ public class Game {
      */
     public Game() {
     	System.out.println("Constructor Game");
+    	// Inicializálja a Table és a Timer változókat
     	tbl = new Table();
     	tmr = new Timer();
     }
@@ -49,6 +50,9 @@ public class Game {
         // TODO implement here
     	System.out.println("Run");
     	tbl.loadMap();
+    	moreMap(true);
+    	tmr.start();
+    	tmr.stop();
     }
 
     /**
