@@ -26,8 +26,9 @@ public static void main(String[] s) {
 		System.out.println("3. Move");
 		System.out.println("4. Click on TunnelEntrance");
 		
-		String choice = null;
-		String innerChoice = null;
+		String choice;
+		String innerChoice;
+		String innerChoice2;
 		Scanner scan = new Scanner(System.in);
 	
 		do {
@@ -38,29 +39,8 @@ public static void main(String[] s) {
 				System.out.println("1");
 				break;
 			case "2":
-				/*System.out.println("Choose one number from below to proceed!");
-				System.out.println("1. Appropriate direction");
-				System.out.println("2. Wrong direction");
-				
-				do {
-					innerChoice = scan.nextLine();
-					
-					switch(innerChoice) {
-					case "1":
-						//TODO Appropriate direction megfelelo szekvencia
-						System.out.println("1");
-						break;
-					case "2":
-						//TODO Wrong direction megfelelo szekvencia
-						System.out.println("2");
-						break;
-					}
-					
-				} while (!innerChoice.equals("q"));	*/
-				
-				
-				break;
-				
+				System.out.println("2");
+				break;		
 			case "3":
 				System.out.println("Choose one number from below to proceed!");
 				System.out.println("1. NextElement Rail or Station");
@@ -73,6 +53,39 @@ public static void main(String[] s) {
 				System.out.println("8. StepOff TunnelEntrance");
 				System.out.println("9. StepOn Station");
 				System.out.println("'q' to go back to previous menu!");
+				
+				do {
+					innerChoice = scan.nextLine();
+					
+					switch(innerChoice) {
+					case "1":
+						//TODO NextElement Rail or Station szekvencia
+						System.out.println("1");
+						break;
+					case "2":
+						System.out.println("Choose one number from below to proceed!");
+						System.out.println("1. Appropriate direction");
+						System.out.println("2. Wrong direction");
+						System.out.println("'q' to go back to previous menu!");
+						do {
+							innerChoice2 = scan.nextLine();
+							switch(innerChoice2) {
+							case "1":
+								//TODO Appropriate direction szekvencia
+								System.out.println("1");
+								break;
+							case "2":
+								//TODO Wrong Direction szekvencia
+								System.out.println("2");
+								break;
+							}
+						} while (!innerChoice2.equals("q"));
+						
+						break;
+					}
+					
+				} while (!innerChoice.equals("q"));
+				
 				break;
 			default:
 				break;
