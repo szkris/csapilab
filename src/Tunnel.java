@@ -10,6 +10,7 @@ public class Tunnel extends Rail {
      * Default constructor
      */
     public Tunnel() {
+    	System.out.println("Constructor Tunnel");
     }
 
 
@@ -31,6 +32,7 @@ public class Tunnel extends Rail {
      */
     public boolean leadsTo(TunnelEntrance te) {
         // TODO implement here
+    	System.out.println("Tunnel.leadsTo");
         return false;
     }
 

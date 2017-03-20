@@ -10,6 +10,7 @@ public abstract class TrainElement {
      * Default constructor
      */
     public TrainElement() {
+    	System.out.println("Constructor TrainElement");
     }
 
     /**

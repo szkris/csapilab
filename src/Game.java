@@ -1,4 +1,5 @@
 
+import java.io.Console;
 import java.util.*;
 
 /**
@@ -32,6 +33,7 @@ public class Game {
      */
     public void startTrain(Train t, TableElement te) {
         // TODO implement here
+    	System.out.println("Start train");
     }
 
     /**
@@ -39,7 +41,7 @@ public class Game {
      */
     public void run() {
         // TODO implement here
-    	
+    	System.out.println("Run");
     }
 
     /**
@@ -47,6 +49,7 @@ public class Game {
      */
     public static void gameOver() {
         // TODO implement here
+    	System.out.println("Game over");
     }
 
     /**
@@ -54,6 +57,7 @@ public class Game {
      */
     public static void victory() {
         // TODO implement here
+    	System.out.println("Victory");
     }
 
     /**
@@ -61,6 +65,7 @@ public class Game {
      */
     public void move() {
         // TODO implement here
+    	System.out.println("Move");
     }
 
     /**
@@ -69,6 +74,7 @@ public class Game {
      */
     public void moreMap(boolean hasMoreMap) {
         // TODO implement here
+    	System.out.println("More map");
     }
 
     /**
@@ -76,6 +82,7 @@ public class Game {
      */
     public static void mapCompleted() {
         // TODO implement here
+    	System.out.println("Map completed");
     }
 
 }

@@ -10,6 +10,7 @@ public class Station extends Rail {
      * Default constructor
      */
     public Station() {
+    	System.out.println("Constructor Station");
     }
 
     /**

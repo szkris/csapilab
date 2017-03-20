@@ -10,6 +10,7 @@ public class TableElement implements ITableElement {
      * Default constructor
      */
     public TableElement() {
+    	System.out.println("Constructor TableElement");
     }
 
     /**
@@ -30,6 +31,7 @@ public class TableElement implements ITableElement {
      */
     public void setOccupied(boolean occupied) {
         // TODO implement here
+    	System.out.println("TableElement.setOccupied");
     }
 
     /**
@@ -37,6 +39,7 @@ public class TableElement implements ITableElement {
      */
     public void stepOff() {
         // TODO implement here
+    	System.out.println("TableElement.stepOff");
     }
 
     /**
@@ -44,6 +47,7 @@ public class TableElement implements ITableElement {
      */
     public void click() {
         // TODO implement here
+    	System.out.println("TableElement.click");
     }
 
     /**
@@ -52,6 +56,7 @@ public class TableElement implements ITableElement {
      */
     public void nextElement(TrainElement te) {
         // TODO implement here
+    	System.out.println("TableElement.nextElement");
     }
 
     /**
@@ -60,6 +65,7 @@ public class TableElement implements ITableElement {
      */
     public void stepOn(TrainElement te) {
         // TODO implement here
+    	System.out.println("TableElement.steOn");
     }
 
 }
