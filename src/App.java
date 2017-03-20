@@ -34,21 +34,24 @@ public static void main(String[] s) {
 			choice = scan.nextLine();
 			switch(choice) {
 			case "1":
-				//Init szekvencia
-				System.out.println("initgame");
+				//TODO init megfelelo szekvencia
+				System.out.println("1");
 				break;
 			case "2":
 				System.out.println("Choose one number from below to proceed!");
 				System.out.println("1. Appropriate direction");
 				System.out.println("2. Wrong direction");
+				System.out.println("'q' to go back to previous menu!");
 				do {
 					innerChoice = scan.nextLine();
 					
 					switch(innerChoice) {
 					case "1":
+						//TODO Appropriate direction megfelelo szekvencia
 						System.out.println("1");
 						break;
 					case "2":
+						//TODO Wrong direction megfelelo szekvencia
 						System.out.println("2");
 						break;
 					}
