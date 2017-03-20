@@ -10,7 +10,7 @@ public class App {
      * Default constructor
      */
     public App() {
-    	
+    	Game g = new Game();
     }
 
 

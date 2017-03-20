@@ -37,6 +37,7 @@ public class Table {
      */
     public void loadMap() {
         // TODO implement here
+    	System.out.println("Table.loadMap");
     }
 
     /**
@@ -44,6 +45,7 @@ public class Table {
      */
     public TableElement getEntryPoint() {
         // TODO implement here
+    	System.out.println("Table.getEntryPoint");
         return null;
     }
 
@@ -52,6 +54,7 @@ public class Table {
      */
     public Train getNextTrain() {
         // TODO implement here
+    	System.out.println("Table.getNextTrain");
         return null;
     }
 
@@ -61,6 +64,7 @@ public class Table {
      */
     public boolean trainReady(int tick) {
         // TODO implement here
+    	System.out.println("Table.trainReady");
         return false;
     }
 
@@ -70,6 +74,7 @@ public class Table {
      */
     public boolean openTunnel(TunnelEntrance tunEn) {
         // TODO implement here
+    	System.out.println("Table.openTunnel");
         return false;
     }
 

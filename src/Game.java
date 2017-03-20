@@ -7,10 +7,16 @@ import java.util.*;
  */
 public class Game {
 
+	Table tbl;
+	Timer tmr;
+	
     /**
      * Default constructor
      */
     public Game() {
+    	System.out.println("Constructor Game");
+    	tbl = new Table();
+    	tmr = new Timer();
     }
 
     /**
@@ -42,6 +48,7 @@ public class Game {
     public void run() {
         // TODO implement here
     	System.out.println("Run");
+    	tbl.loadMap();
     }
 
     /**
