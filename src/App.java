@@ -20,23 +20,42 @@ public class App {
      */
 public static void main(String[] s) {
 	
-		//TODO Menü
-		System.out.println("Kérek egy bemenetet:");
+		System.out.println("Choose one number from below to proceed!");
+		System.out.println("1. Init game");
+		System.out.println("2. Start train");
+		System.out.println("3. Move");
+		System.out.println("4. Click on TunnelEntrance");
 		
 		String choice = null;
+		String innerChoice = null;
 		Scanner scan = new Scanner(System.in);
 	
-		
 		do {
 			choice = scan.nextLine();
 			switch(choice) {
-			case "a":
-				System.out.println("a");
+			case "1":
+				//Init szekvencia
+				System.out.println("initgame");
 				break;
-			case "b":
-				System.out.println("b");
+			case "2":
+				System.out.println("Choose one number from below to proceed!");
+				System.out.println("1. Appropriate direction");
+				System.out.println("2. Wrong direction");
+				do {
+					innerChoice = scan.nextLine();
+					
+					switch(innerChoice) {
+					case "1":
+						System.out.println("1");
+						break;
+					case "2":
+						System.out.println("2");
+						break;
+					}
+					
+				} while (!innerChoice.equals("q"));	
+			default:
 				break;
-				
 			}
 		} while (!choice.equals("q"));
 
