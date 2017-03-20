@@ -38,10 +38,10 @@ public static void main(String[] s) {
 				System.out.println("1");
 				break;
 			case "2":
-				System.out.println("Choose one number from below to proceed!");
+				/*System.out.println("Choose one number from below to proceed!");
 				System.out.println("1. Appropriate direction");
 				System.out.println("2. Wrong direction");
-				System.out.println("'q' to go back to previous menu!");
+				
 				do {
 					innerChoice = scan.nextLine();
 					
@@ -56,7 +56,24 @@ public static void main(String[] s) {
 						break;
 					}
 					
-				} while (!innerChoice.equals("q"));	
+				} while (!innerChoice.equals("q"));	*/
+				
+				
+				break;
+				
+			case "3":
+				System.out.println("Choose one number from below to proceed!");
+				System.out.println("1. NextElement Rail or Station");
+				System.out.println("2. NextElement Switch");
+				System.out.println("3. NextElement TunnelEntrance");
+				System.out.println("4. NextElement Tunnel");
+				System.out.println("5. StepOn");
+				System.out.println("6. StepOn TunnelEntrance");
+				System.out.println("7. StepOff");
+				System.out.println("8. StepOff TunnelEntrance");
+				System.out.println("9. StepOn Station");
+				System.out.println("'q' to go back to previous menu!");
+				break;
 			default:
 				break;
 			}
