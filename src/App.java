@@ -29,6 +29,7 @@ public static void main(String[] s) {
 		System.out.println("2. Start train");
 		System.out.println("3. Move");
 		System.out.println("4. Click on TunnelEntrance");
+		System.out.println("'q' to exit!");
 		
 		String choice;
 		String innerChoice;
@@ -39,8 +40,9 @@ public static void main(String[] s) {
 			choice = scan.nextLine();
 			switch(choice) {
 			case "1":
-				//TODO init megfelelo szekvencia
-				System.out.println("1");
+				//TODO init megfelelo szekvencia ... folytatni a megkezdett módon
+				Game g = new Game();
+				g.run();
 				break;
 			case "2":
 				//TODO Start Train szekvencia

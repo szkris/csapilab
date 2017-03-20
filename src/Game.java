@@ -11,6 +11,7 @@ public class Game {
      * Default constructor
      */
     public Game() {
+    	System.out.println("Game objektum letrejott!");
     }
 
     /**
