@@ -39,6 +39,7 @@ public static void main(String[] s) {
 				System.out.println("1");
 				break;
 			case "2":
+				//TODO Start Train szekvencia
 				System.out.println("2");
 				break;		
 			case "3":
@@ -63,6 +64,7 @@ public static void main(String[] s) {
 						System.out.println("1");
 						break;
 					case "2":
+						//TODO NextElement Switch
 						System.out.println("Choose one number from below to proceed!");
 						System.out.println("1. Appropriate direction");
 						System.out.println("2. Wrong direction");
@@ -80,20 +82,119 @@ public static void main(String[] s) {
 								break;
 							}
 						} while (!innerChoice2.equals("q"));
-						
+						break;
+					case "3":
+						//TODO NextElement TunnelEntrance szekvencia
+						System.out.println("Choose one number from below to proceed!");
+						System.out.println("1. Open");
+						System.out.println("2. Closed");
+						System.out.println("'q' to go back to previous menu!");
+						do {
+							innerChoice2 = scan.nextLine();
+							switch(innerChoice2) {
+							case "1":
+								//TODO Open szekvencia
+								System.out.println("1");
+								break;
+							case "2":
+								//TODO Closed szekvencia
+								System.out.println("2");
+								break;
+							}
+						} while (!innerChoice2.equals("q"));
+						break;
+					case "4":
+						//TODO NextElementTunnel szekvencia
+						System.out.println("4");
+						break;
+					case "5":
+						//TODO StepOn szekvencia
+						System.out.println("Choose one number from below to proceed!");
+						System.out.println("1. Occupied");
+						System.out.println("2. Free");
+						System.out.println("'q' to go back to previous menu!");
+						do {
+							innerChoice2 = scan.nextLine();
+							switch(innerChoice2) {
+							case "1":
+								//TODO Occupied szekvenciája
+								System.out.println("1");
+								break;
+							case "2":
+								//TODO Free szekvencia
+								System.out.println("2");
+								break;
+							}
+						} while (!innerChoice2.equals("q"));
+						break;
+					case "6":
+						//TODO StepOn TunnelEntrance szekvencia
+						System.out.println("Choose one number from below to proceed!");
+						System.out.println("1. Occupied");
+						System.out.println("2. Free");
+						System.out.println("'q' to go back to previous menu!");
+						do {
+							innerChoice2 = scan.nextLine();
+							switch(innerChoice2) {
+							case "1":
+								//TODO Occupied szekvencia
+								System.out.println("1");
+								break;
+							case "2":
+								//TODO Free szekvencia
+								System.out.println("2");
+								break;
+							}
+						} while (!innerChoice2.equals("q"));
+						break;
+					case "7":
+						//TODO StepOff szekvencia
+						break;
+					case "8":
+						//TODO StepOff TunnelEntrance szekvencia
+						break;
+					case "9":
+						System.out.println("Choose one number from below to proceed!");
+						System.out.println("1. HopOff Train");
+						System.out.println("2. HopOff Locomotive");
+						System.out.println("3. HopOff Car");
+						System.out.println("'q' to go back to previous menu!");
+						do {
+							innerChoice2 = scan.nextLine();
+							switch(innerChoice2) {
+							case "1":
+								//TODO HopOff Train szekvencia
+								System.out.println("1");
+								break;
+							case "2":
+								//TODO HopOff Locomotive szekvencia
+								System.out.println("2");
+								break;
+							case "3":
+								//TODO HopOff Car
+								System.out.print("3");
+								break;
+							}
+						} while (!innerChoice2.equals("q"));
+						//TODO StepOnStation szekvencia
 						break;
 					}
 					
 				} while (!innerChoice.equals("q"));
-				
+				break;
+			case "4":
+				//TODO Click on TunnelEntrance
+				System.out.println("Choose one number from below to proceed!");
+				System.out.println("1. Open");
+				System.out.println("2. Close");
+				System.out.println("3. Close");
+				System.out.println("'q' to go back to previous menu!");
 				break;
 			default:
 				break;
 			}
 		} while (!choice.equals("q"));
-
 	}
-       
 }
 
 /**
