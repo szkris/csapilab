@@ -20,6 +20,10 @@ public class App {
      */
 public static void main(String[] s) {
 	
+		///////////////////////////////////////////////////////
+		///TODO - SZEKVENCIA DIAGRAMOK SZERINTI FÜGGVÉNYHÍVÁSOK
+		///////////////////////////////////////////////////////
+	
 		System.out.println("Choose one number from below to proceed!");
 		System.out.println("1. Init game");
 		System.out.println("2. Start train");
@@ -179,7 +183,6 @@ public static void main(String[] s) {
 						//TODO StepOnStation szekvencia
 						break;
 					}
-					
 				} while (!innerChoice.equals("q"));
 				break;
 			case "4":
@@ -189,6 +192,25 @@ public static void main(String[] s) {
 				System.out.println("2. Close");
 				System.out.println("3. Close");
 				System.out.println("'q' to go back to previous menu!");
+				
+				do {
+					innerChoice = scan.nextLine();
+					
+					switch(innerChoice) {
+					case "1":
+						//TODO Open szekvenciája
+						System.out.println("1");
+						break;
+					case "2":
+						//TODO Close szekvenciája
+						System.out.println("2");
+						break;
+					case "3":
+						//TODO Click on Switch szekvenciája
+						System.out.println("3");
+						break;
+					} 
+				} while (!innerChoice.equals("q"));
 				break;
 			default:
 				break;
@@ -196,8 +218,3 @@ public static void main(String[] s) {
 		} while (!choice.equals("q"));
 	}
 }
-
-/**
- * SourceTree teszt Bence
- * SourceTree teszt masikgepKris
-*/
