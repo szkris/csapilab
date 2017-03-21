@@ -17,7 +17,6 @@ public class TunnelEntrance extends Rail {
      * 
      */
     private boolean open;
-
     /**
      * 
      */
