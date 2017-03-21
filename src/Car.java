@@ -9,7 +9,7 @@ public class Car extends Train {
      * Default constructor
      */
     public Car() {
-    	System.out.println("	Constructor Car");
+    	System.out.println("Constructor Car");
     }
 
     /**
@@ -37,7 +37,7 @@ public class Car extends Train {
      */
     public boolean isEmpty() {
         // TODO implement here
-    	System.out.println("	Car.isEmpty");
+    	System.out.println("Car.isEmpty");
         return false;
     }
 
@@ -46,7 +46,7 @@ public class Car extends Train {
      */
     public Color getColor() {
         // TODO implement here
-    	System.out.println("	Car.getColor");
+    	System.out.println("Car.getColor");
         return null;
     }
 
@@ -55,7 +55,7 @@ public class Car extends Train {
      */
     public void setEmpty() {
         // TODO implement here
-    	System.out.println("	Car.setEmpty");
+    	System.out.println("Car.setEmpty");
     }
 
 }

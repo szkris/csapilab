@@ -10,7 +10,7 @@ public class TunnelEntrance extends Rail {
      * Default constructor
      */
     public TunnelEntrance() {
-    	System.out.println("	Constructor TunnelEntrance");
+    	System.out.println("Constructor TunnelEntrance");
     }
 
     /**
@@ -28,7 +28,7 @@ public class TunnelEntrance extends Rail {
      */
     public boolean isOpen() {
         // TODO implement here
-    	System.out.println("	TunnelEntrance.isOpen");
+    	System.out.println("TunnelEntrance.isOpen");
         return false;
     }
 
@@ -37,7 +37,7 @@ public class TunnelEntrance extends Rail {
      */
     public void changeStatus() {
         // TODO implement here
-    	System.out.println("	TunnelEntrance.changeStatus");
+    	System.out.println("TunnelEntrance.changeStatus");
     }
 
 }
