@@ -19,34 +19,37 @@ public class App {
     public static void initGame(){
     	App a;
 		System.out.println("1");
-		
 		//Létrehozunk egy App példányt
 		a = new App();
 		//Meghívjuk a Game Run() metódusát
 		a.g.run();
     }
-    public static void nextElementRailOrStation(){
-    	//TODO NextElement Rail or Station szekvencia
-    	
-    }
-    public static void Move(){
-    	Game g = new Game();
-    	
-    }
     
-//<<<<<<< HEAD
-	static void startTrain(){
+    static void startTrain(){
 		Game game = new Game();
 		game.move();
 	}
 	
-	static void hopOffLocomotive(){
-		Station s = new Station();
-		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
-		s.stepOn(loco);
-	}
-	
+    public static void Move(){
+    	Game g = new Game(); 	
+    }
+    
+    public static void nextElementRailOrStation(){
+    	//TODO NextElement Rail or Station szekvencia
+    }
+    
+    public static void nextElementSwitch(){
+    	//TODO
+    }
+    
+    public static void nextElementTunnelEntrance(){
+    	//TODO
+    }
+    
+    public static void nextElementTunnel(){
+    	//TODO
+    }
+    
 	static void stepOnTunnelEntranceOpen(){
 		Train t = new Train();
 		Locomotive loco = new Locomotive(t);
@@ -74,7 +77,7 @@ public class App {
 		s.stepOn(loco);
 	}
 	
-	static void StepOnFree(){
+	static void stepOnFree(){
 		Train t = new Train();
 		Locomotive loco = new Locomotive(t);
 		TableElement te = new TableElement();
@@ -82,12 +85,16 @@ public class App {
 		te.stepOn(loco);
 	}
 	
-	static void StepOnOccupied(){
+	static void stepOnOccupied(){
 		Train t = new Train();
 		Locomotive loco = new Locomotive(t);
 		TableElement te = new TableElement();
 		if(te.occupied == false) te.setOccupied(true);
 		te.stepOn(loco);
+	}
+	
+	static void stepOff(){
+		//TODO
 	}
 	
 	//TODO
@@ -96,8 +103,14 @@ public class App {
 		Locomotive loco = new Locomotive(t);
 		TunnelEntrance te = new TunnelEntrance();
 	}
-	
-//=======
+
+	static void hopOffLocomotive(){
+		Station s = new Station();
+		Train t = new Train();
+		Locomotive loco = new Locomotive(t);
+		s.stepOn(loco);
+	}
+		
     public static void clickOnTunnelEntrance(){
     	Table t = new Table();
     	TunnelEntrance ent = new TunnelEntrance();
@@ -111,15 +124,13 @@ public class App {
     }
     
     public static void closeTunnelEntrance() {
-    	
+    	//TODO
     }
     
     public static void clickOnSwitch() {
-    	
-
+    	//TODO
     }
     
-//>>>>>>> origin/master
     /**
      * @param String 
      * @return
@@ -167,9 +178,9 @@ public static void main(String[] s) {
 				System.out.println("4. NextElement Tunnel");
 				System.out.println("5. StepOn");
 				System.out.println("6. StepOn TunnelEntrance");
-				System.out.println("7. StepOff");
-				System.out.println("8. StepOff TunnelEntrance");
-				System.out.println("9. StepOn Station");
+				System.out.println("7. StepOn Station");
+				System.out.println("8. StepOff");
+				System.out.println("9. StepOff TunnelEntrance");
 				System.out.println("'q' to go back to previous menu!");
 				
 				do {
@@ -233,10 +244,10 @@ public static void main(String[] s) {
 							innerChoice2 = scan.nextLine();
 							switch(innerChoice2) {
 							case "1":
-								StepOnOccupied();
+								stepOnOccupied();
 								break;
 							case "2":
-								StepOnFree();
+								stepOnFree();
 								break;
 							}
 						} while (!innerChoice2.equals("q"));
@@ -260,12 +271,6 @@ public static void main(String[] s) {
 						} while (!innerChoice2.equals("q"));
 						break;
 					case "7":
-						//TODO StepOff szekvencia
-						break;
-					case "8":
-						//TODO StepOff TunnelEntrance szekvencia
-						break;
-					case "9":
 						stepOnStation();
 						System.out.println("Choose one number from below to proceed!");
 						System.out.println("1. HopOff Train");
@@ -291,6 +296,12 @@ public static void main(String[] s) {
 						} while (!innerChoice2.equals("q"));
 						//TODO StepOnStation szekvencia
 						break;
+					case "8":
+						//TODO StepOff szekvencia
+						break;
+					case "9":
+						//TODO StepOff TunnelEntrance szekvencia
+						break;
 					}
 				} while (!innerChoice.equals("q"));
 				break;
@@ -313,6 +324,7 @@ public static void main(String[] s) {
 						openTunnelEntrance();
 						break;
 					case "2":
+						//TODO closeTunnelEntrance();
 						//TODO Close szekvenciája
 						System.out.println("2");
 						break;
