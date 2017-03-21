@@ -52,9 +52,8 @@ public class App {
 		TunnelEntrance te = new TunnelEntrance();
 		TableElement tEl = new TableElement();
 		if (te.isOpen() == false) te.changeStatus();
-		te.setOccupied(true);
-		loco.setTunnelEntrance(te);
-		loco.setTableElement(tEl);
+		te.stepOn(loco);
+
 	}
 	
 	static void stepOnTunnelEntranceClosed(){
@@ -64,7 +63,14 @@ public class App {
 		TunnelEntrance te = new TunnelEntrance();
 		TableElement tEl = new TableElement();
 		if (te.isOpen()) te.changeStatus();
-		g.gameOver();
+		te.stepOn(loco);
+	}
+	
+	static void stepOnStation(){
+		Train t = new Train();
+		Locomotive loco = new Locomotive(t);
+		Station s = new Station();
+		s.stepOn(loco);
 	}
 	
     /**

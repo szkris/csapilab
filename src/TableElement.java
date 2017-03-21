@@ -16,7 +16,7 @@ public class TableElement implements ITableElement {
     /**
      * látható-e a mezõ
      */
-    private boolean occupied;
+    protected boolean occupied;
 
     /**
      * A mezõn lévõ vonat elem
@@ -64,6 +64,8 @@ public class TableElement implements ITableElement {
     public void stepOn(TrainElement te) {
         // TODO implement here
     	System.out.println("TableElement.steOn");
+    	if(occupied) Game.gameOver();
+    	setOccupied(true);
     }
 
 }

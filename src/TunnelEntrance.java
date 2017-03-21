@@ -42,4 +42,12 @@ public class TunnelEntrance extends Rail {
     	if (open == false) open = true;
     }
 
+    public void stepOn(TrainElement te) {
+        // TODO implement here
+    	System.out.println("TunnelEntrance.steOn");
+    	if(occupied) Game.gameOver();
+    	setOccupied(true);
+    	te.setTunnelEntrance(this);
+    	te.setTableElement(this);
+    }
 }
