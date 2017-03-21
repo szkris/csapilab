@@ -34,7 +34,7 @@ public class App {
     	
     }
     
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	static void startTrain(){
 		Game game = new Game();
 		game.move();
@@ -97,19 +97,19 @@ public class App {
 		TunnelEntrance te = new TunnelEntrance();
 	}
 	
-=======
+//=======
     public static void clickOnTunnelEntrance(){
     	Table t = new Table();
-    	TunnelEntrance ent = new TunnelEntrance(t);
+    	TunnelEntrance ent = new TunnelEntrance();
     }
     
     public static void openTunnelEntrance(){
     	Table t = new Table();
-    	TunnelEntrance ent = new TunnelEntrance(t);
+    	TunnelEntrance ent = new TunnelEntrance();
     	ent.click();
     	
     }
->>>>>>> origin/master
+//>>>>>>> origin/master
     /**
      * @param String 
      * @return

@@ -9,9 +9,8 @@ public class TunnelEntrance extends Rail {
     /**
      * Default constructor
      */
-    public TunnelEntrance(Table t) {
+    public TunnelEntrance() {
     	System.out.println("Constructor TunnelEntrance");
-    	table = t;
     }
 
     /**
