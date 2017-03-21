@@ -35,15 +35,47 @@ public class App {
     }
     
     public static void nextElementRailOrStation(){
-    	//TODO NextElement Rail or Station szekvencia
+    	Train t = new Train();
+    	Car c = new Car(t);
+    	Rail r = new Rail();
+    	r.stepOn(c);
+    	c.getPreviousElement();
     }
     
     public static void nextElementSwitch(){
     	//TODO
+    	Train t = new Train();
+    	Car c = new Car(t);
+    	Switch sw = new Switch();
+    	sw.nextElement(c);
+    	c.getPreviousElement();
     }
     
     public static void nextElementTunnelEntrance(){
-    	//TODO
+    	Train t = new Train();
+    	Car c = new Car(t);
+    	TunnelEntrance tunEn = new TunnelEntrance();
+    	
+    	System.out.println("Choose one number from below to proceed!");
+		System.out.println("1. Open");
+		System.out.println("2. Closed");
+		System.out.println("'q' to go back to previous menu!");
+		
+		String innerChoice2 = new String();
+		Scanner scan = new Scanner(System.in);
+		
+		do {
+			innerChoice2 = scan.nextLine();
+			switch(innerChoice2) {
+			case "1":
+				c.getPreviousElement();
+				break;
+			case "2":
+				Game.gameOver();
+				break;
+			}
+		} while (!innerChoice2.equals("q"));
+		
     }
     
     public static void nextElementTunnel(){
@@ -222,7 +254,8 @@ public static void main(String[] s) {
 						nextElementRailOrStation();
 						break;
 					case "2":
-						//TODO NextElement Switch
+						nextElementSwitch();
+
 						System.out.println("Choose one number from below to proceed!");
 						System.out.println("1. Appropriate direction");
 						System.out.println("2. Wrong direction");
@@ -230,40 +263,19 @@ public static void main(String[] s) {
 						do {
 							innerChoice2 = scan.nextLine();
 							switch(innerChoice2) {
-							case "1":
-								//TODO Appropriate direction szekvencia
-								System.out.println("1");
+							case "1":								
 								break;
 							case "2":
-								//TODO Wrong Direction szekvencia
-								System.out.println("2");
+								Game.gameOver();
 								break;
 							}
 						} while (!innerChoice2.equals("q"));
 						break;
 					case "3":
-						//TODO NextElement TunnelEntrance szekvencia
-						System.out.println("Choose one number from below to proceed!");
-						System.out.println("1. Open");
-						System.out.println("2. Closed");
-						System.out.println("'q' to go back to previous menu!");
-						do {
-							innerChoice2 = scan.nextLine();
-							switch(innerChoice2) {
-							case "1":
-								//TODO Open szekvencia
-								System.out.println("1");
-								break;
-							case "2":
-								//TODO Closed szekvencia
-								System.out.println("2");
-								break;
-							}
-						} while (!innerChoice2.equals("q"));
+						nextElementTunnelEntrance();
 						break;
 					case "4":
-						//TODO NextElementTunnel szekvencia
-						System.out.println("4");
+						nextElementTunnel();
 						break;
 					case "5":
 						System.out.println("Choose one number from below to proceed!");
