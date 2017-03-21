@@ -125,8 +125,10 @@ public class App {
     		switch (choice) {
     		case "1":
     			System.out.println("Not settable!");
+    			break;
     		case "2":
     			System.out.println("inactive = active, active = inactive");
+    			break;
     		}
     	} while(!choice.equals("q"));
     }
