@@ -50,4 +50,10 @@ public class TunnelEntrance extends Rail {
     	te.setTunnelEntrance(this);
     	te.setTableElement(this);
     }
+    
+    public void stepOff() {
+        // TODO implement here
+    	System.out.println("TunnelEntrance.stepOff");
+    	setOccupied(false);
+    }
 }

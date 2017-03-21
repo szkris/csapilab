@@ -38,6 +38,7 @@ public class TableElement implements ITableElement {
     public void stepOff() {
         // TODO implement here
     	System.out.println("TableElement.stepOff");
+    	setOccupied(false);
     }
 
     /**

@@ -89,7 +89,12 @@ public class App {
 		te.stepOn(loco);
 	}
 	
-	static void 
+	//TODO
+	static void stepOffTunnelEntrance(){ 
+		Train t = new Train();
+		Locomotive loco = new Locomotive(t);
+		TunnelEntrance te = new TunnelEntrance();
+	}
 	
     /**
      * @param String 
