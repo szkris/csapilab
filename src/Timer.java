@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * Idõegységenként jelez a Game-nek hogy mozgathassa a pályán lévõ vonatokat
  */
 public class Timer {
 
@@ -20,6 +20,7 @@ public class Timer {
     }
 
     /**
+     * Elindítja az idõzítõt ami idõközönként meghívja a Game move() függvényét
      * @return
      */
     public void start() {
@@ -28,6 +29,7 @@ public class Timer {
     }
 
     /**
+     * Leállítja a belsõ órájá
      * @return
      */
     public void stop() {

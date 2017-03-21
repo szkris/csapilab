@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * A Table osztály tárolja a pálya elemeit
  */
 public class Table {
 
@@ -34,6 +34,7 @@ public class Table {
     }
 
     /**
+     * betölti a következ pályát
      * @return
      */
     public void loadMap() {
@@ -41,6 +42,7 @@ public class Table {
     }
 
     /**
+     * véletlenszerûen választ egy belépési pontot a vonatnak
      * @return
      */
     public TableElement getEntryPoint() {
@@ -49,6 +51,7 @@ public class Table {
     }
 
     /**
+     * visszaadja a soron következõ vonatot a trains listából
      * @return
      */
     public Train getNextTrain() {
@@ -57,8 +60,9 @@ public class Table {
     }
 
     /**
-     * @param tick 
-     * @return
+     * megmmondja hogy a paraméterként kapott idõpillanatban kell e indítani vonatot
+     * @param tick idõpillanat (idõegység)
+     * @return boolean kell e indítani vonatot
      */
     public boolean trainReady(int tick) {
     	System.out.println("Table.trainReady()");
@@ -74,8 +78,9 @@ public class Table {
     }
 
     /**
-     * @param TunnelEntrance 
-     * @return
+     * a TunnelEntrance hívja meg, a table tudja, hogy hány alagútbejárat van nyitva, ettõl függ hogy kattintásra nyit e új bejáratot
+     * @param TunnelEntrance alagút bejárat
+     * @return sikerült e az alagút nyitás
      */
     public boolean openTunnel(TunnelEntrance tunEn) {
     	System.out.println("Table.openTunnel");

@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * A vasútállomás megvalósításáért felelõs objektum
  */
 public class Station extends Rail {
 
@@ -13,6 +13,9 @@ public class Station extends Rail {
     	System.out.println("Constructor Station");
     }
     
+    /**
+     * Akkor hívjuk, amikor egy vonat elem az állomásra lép
+     */
     public void stepOn(TrainElement te) {
     	System.out.println("Rail.stepOn");
     	if(occupied) Game.gameOver();
@@ -21,9 +24,4 @@ public class Station extends Rail {
     	te.setTableElement(this);
     	te.hopOff(Color.red);
     }
-
-    /**
-     * 
-     */
-
 }

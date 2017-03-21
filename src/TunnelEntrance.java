@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * Alagút bejáratot megvalósító osztály
  */
 public class TunnelEntrance extends Rail {
 
@@ -14,16 +14,18 @@ public class TunnelEntrance extends Rail {
     }
 
     /**
-     * 
+     * tárolja, hogy a bejárat aktív-e
      */
     private boolean open;
+    
     /**
-     * 
+     * mutató a pályára
      */
     private Table table = new Table();
 
     /**
-     * @return
+     * visszaadja, hogy a bejárat aktív-e
+     * @return boolean aktív-e
      */
     public boolean isOpen() {
         // TODO implement here
@@ -32,6 +34,7 @@ public class TunnelEntrance extends Rail {
     }
 
     /**
+     * megváltoztatja a bejárat állapotát, nyitva illetve zárva között
      * @return
      */
     public void changeStatus() {
@@ -40,11 +43,17 @@ public class TunnelEntrance extends Rail {
     	if (open == false) open = true;
     }
     
+    /**
+     * megvalósítja, hogy mi történjen amikor egy alagút bejáratra kattintunk
+     */
     public void click(){
     	System.out.println("TunnelEntrance.click");
     	table.openTunnel(this);
     }
 
+    /**
+     * megvalósítja, mi történjen, amikor egy TrainElement a mezõre lép
+     */
     public void stepOn(TrainElement te) {
     	System.out.println("TunnelEntrance.steOn");
     	if(occupied) Game.gameOver();
@@ -53,6 +62,9 @@ public class TunnelEntrance extends Rail {
     	te.setTableElement(this);
     }
     
+    /**
+     * megvalósítja, mi történjen, amikor egy TrainElement elhagyja a mezõt
+     */
     public void stepOff() {
     	System.out.println("TunnelEntrance.stepOff");
     	setOccupied(false);

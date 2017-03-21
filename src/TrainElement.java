@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * Absztrakt osztály, amely a vonat elemeinek (mozdony és kocsik) viselkedését valósítja meg
  */
 public abstract class TrainElement {
 
@@ -14,26 +14,27 @@ public abstract class TrainElement {
     }
 
     /**
-     * 
+     * tárolja, hogy az adott objektum látható-e a grafikus felületen
      */
     private boolean visible;
 
     /**
-     * 
+     * az elõzõ elem amin a vonat állt
      */
     private TableElement prevTableElement;
 
     /**
-     * 
+     * a jelenlegi elem amin a vonat áll
      */
     private TableElement currentTableElement;
 
     /**
-     * 
+     * az az alagút, amiben a vonat halad
      */
     private TableElement enteredTunnel;
 
     /**
+     * megváltoztatja az objektum (grafikai) láthatóságát
      * @return
      */
     public void changeVisibility() {
@@ -41,7 +42,8 @@ public abstract class TrainElement {
     }
 
     /**
-     * @param TableElement 
+     * beállítja paraméterként kapott TableElement-et arra, amin a vonat áll
+     * @param TableElement itt áll a vonat
      * @return
      */
     public void setTableElement(TableElement te) {
@@ -49,7 +51,8 @@ public abstract class TrainElement {
     }
 
     /**
-     * @return
+     * visszaadja azt a mezõt, amin a vonat áll
+     * @return TableElement amin a vonat áll
      */
     public TableElement getPreviousElement() {
         System.out.println("TrainElement.getPreviousElement");
@@ -57,6 +60,7 @@ public abstract class TrainElement {
     }
 
     /**
+     * meghívja minden vonatelem nextElement() függvényét, ezzel léptetve a vonatot
      * @return
      */
     public void move() {
@@ -64,7 +68,8 @@ public abstract class TrainElement {
     }
 
     /**
-     * @param Color 
+     * leszállítja az utasokat, ha az objektum színe megegyezik az átvett színnel
+     * @param Color a kapott szín
      * @return
      */
     public void hopOff(Color color) {
@@ -72,6 +77,7 @@ public abstract class TrainElement {
     }
 
     /**
+     * beállítja az enteredTunnel-t arra az alagútra, amiben a vonat halad
      * @param TableElement 
      * @return
      */

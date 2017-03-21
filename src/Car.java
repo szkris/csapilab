@@ -29,6 +29,7 @@ public class Car extends TrainElement {
     }
 
     /**
+     * visszaadja az empty változó értékét
      * @return
      */
     public boolean isEmpty() {
@@ -37,6 +38,7 @@ public class Car extends TrainElement {
     }
 
     /**
+     * visszaadja a kocsi színét
      * @return
      */
     public Color getColor() {
@@ -45,6 +47,7 @@ public class Car extends TrainElement {
     }
 
     /**
+     * kiüríti a kocsit (igazzá teszi az empty változót)
      * @return
      */
     public void setEmpty() {

@@ -7,7 +7,14 @@ import java.util.*;
  */
 public class Game {
 
+	/*
+	 * mutató a táblára
+	 */
 	Table tbl;
+	
+	/*
+	 * mutató a timer-re
+	 */
 	Timer tmr;
 	
 	/**
@@ -36,8 +43,9 @@ public class Game {
     }
 
     /**
-     * @param Train 
-     * @param TableElement 
+     * Elindítja a paraméterként kapott vonatot a paraméteerként kapott helyrõl.
+     * @param Train mutató a vonatra
+     * @param TableElement a pálya azon pontja ahonnan a vonat indul
      * @return
      */
     public void startTrain(Train t, TableElement te) {
@@ -45,6 +53,7 @@ public class Game {
     }
 
     /**
+     * elindítja a játékot, meghívja a Table loadMap() függvényét
      * @return
      */
     public void run() {
@@ -67,6 +76,7 @@ public class Game {
     }
 
     /**
+     * globális függvény, melyet akkor hívunk meg, ha a játék véget ér (sikertelenül)
      * @return
      */
     public static void gameOver() {
@@ -74,6 +84,7 @@ public class Game {
     }
 
     /**
+     * globális függvény, melyet akkor hívunk meg, ha a játékos gyõz (sikeresen teljesít minden pályát)
      * @return
      */
     public static void victory() {
@@ -81,6 +92,7 @@ public class Game {
     }
 
     /**
+     * meghívja a vonatok move() függvényét, minden ciklusban
      * @return
      */
     public void move() {
@@ -91,7 +103,8 @@ public class Game {
     }
 
     /**
-     * @param boolean 
+     * visszaadja, hogy van e még betöltendõ pálya
+     * @param boolean van e még pálya
      * @return
      */
     public void moreMap(boolean hasMoreMap) {
@@ -99,6 +112,7 @@ public class Game {
     }
 
     /**
+     * globális függvény, melyet akkor hívnak meg, ha a sikerült a pályát teljesíteni
      * @return
      */
     public static void mapCompleted() {

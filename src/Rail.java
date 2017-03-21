@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * A vasútelemeket reprezentáló osztály
  */
 public class Rail extends TableElement {
 
@@ -14,12 +14,12 @@ public class Rail extends TableElement {
     }
 
     /**
-     * 
+     * a sín elõtt lévõ TableElement
      */
     private TableElement elem1;
 
     /**
-     * 
+     * a sín után lévõ TableElement
      */
     private TableElement elem2;
 

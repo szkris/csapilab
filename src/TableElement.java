@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * A TableElement egy absztrakt osztály, mely a pálya elemeinek õse
  */
 public class TableElement implements ITableElement {
 
@@ -24,7 +24,8 @@ public class TableElement implements ITableElement {
     private TrainElement trainelement;
 
     /**
-     * @param boolean 
+     * beállítja az objektum (grafikai) láthatóságát a kapott értékre
+     * @param boolean láthatóság
      * @return
      */
     public void setOccupied(boolean bool) {
@@ -32,6 +33,7 @@ public class TableElement implements ITableElement {
     }
 
     /**
+     * megvalósítja, mi történjen, amikor egy TrainElement elhagyja a mezõt
      * @return
      */
     public void stepOff() {
@@ -40,6 +42,7 @@ public class TableElement implements ITableElement {
     }
 
     /**
+     * megvalósítja, mi történjen, ha a pályán egy mezõre kattintunk
      * @return
      */
     public void click() {
@@ -47,6 +50,7 @@ public class TableElement implements ITableElement {
     }
 
     /**
+     * 
      * @param TrainElement 
      * @return
      */
@@ -55,7 +59,8 @@ public class TableElement implements ITableElement {
     }
 
     /**
-     * @param TrainElement 
+     * megvalósítja, mi történjen, amikor egy TrainElement a mezõre lép
+     * @param TrainElement vonatelem
      * @return
      */
     public void stepOn(TrainElement te) {

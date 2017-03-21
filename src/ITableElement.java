@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * A pálya objektumainak viselkedését leíró interfész
  */
 public interface ITableElement {
 
@@ -12,6 +12,7 @@ public interface ITableElement {
     public void stepOff();
 
     /**
+     * megvalósítja, mi történjen, ha a pályán egy objektumra kattintunk
      * @return
      */
     public void click();

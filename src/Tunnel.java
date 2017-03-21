@@ -1,6 +1,6 @@
 
 /**
- * 
+ * Az alagutat megvalósító osztály
  */
 public class Tunnel extends Rail {
 
@@ -11,20 +11,19 @@ public class Tunnel extends Rail {
     	System.out.println("Constructor Tunnel");
     }
 
-
-
     /**
-     * 
+     * mutató a pályára
      */
     private Table table;
 
     /**
-     * 
+     * tárolja hogy hova vezet az alagút
      */
     private TableElement leadsto;
 
 
     /**
+     * megmondja hogy az adott alagútrész vezet e a kapott kijárathoz
      * @param TunnelEntrance 
      * @return
      */
