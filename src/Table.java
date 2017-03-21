@@ -14,20 +14,17 @@ public class Table {
     }
 
     /**
-     * 
+     * Szintek száma
      */
     private int numberOfLevels;
 
     /**
-     * 
+     * Aktuális szint
      */
     private int currentLevel;
-
-
-
-
+    
     /**
-     * 
+     * A nyitott alagútbejáratok
      */
     private TunnelEntrance openTunnelEntrances;
 

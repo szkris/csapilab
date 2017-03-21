@@ -10,6 +10,16 @@ public class Game {
 	Table tbl;
 	Timer tmr;
 	
+	/**
+     * Tárolja, hogy van-e még betöltendõ pálya
+     */
+    private boolean hasMoreMap;
+    
+    /**
+     * Az eltelt lépések szám (körök)
+     */
+    private int tick;
+    
     /**
      * Default constructor
      */
@@ -19,23 +29,13 @@ public class Game {
     	// Inicializálja a Table és a Timer változókat
     	tbl = new Table();
     	tmr = new Timer(this);
+    	
+    	//Beállítjuk a változókat
+    	hasMoreMap = true;
+    	tick = 0;
 
     	//System.out.println("Game objektum létrejott!");
-
     }
-
-    /**
-     * 
-     */
-    private boolean hasMoreMap;
-
-    /**
-     * 
-     */
-    private int tick;
-
-
-
 
     /**
      * @param Train 
@@ -52,8 +52,7 @@ public class Game {
      */
     public void run() {
         // TODO implement here
-    	
-    	
+
     	System.out.println("Game.Run()");
     	System.out.println("HasMoreMap: 1-True, 2-False");
     	String _hasmoremap = new Scanner(System.in).nextLine();

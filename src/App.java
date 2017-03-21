@@ -6,13 +6,14 @@ import java.util.*;
  */
 public class App {
 
+	private Game g;
+	
     /**
      * Default constructor
      */
     public App() {
     	//Létrehoz egy Game példányt majd meghívja annak run() metódusát
-    	Game g = new Game();
-    	g.run();
+    	g = new Game();
     }
 
 
@@ -45,8 +46,10 @@ public static void main(String[] s) {
 
 				//TODO init megfelelo szekvencia
 				System.out.println("1");
-				//Létrehozunk egy App példányt, amely elindítja az Init folyamatot
+				//Létrehozunk egy App példányt
 				App a = new App();
+				//Meghívjuk a Game Run() metódusát
+				a.g.run();
 
 				//TODO init megfelelo szekvencia ... folytatni a megkezdett módon
 				//Game g = new Game();
@@ -56,6 +59,7 @@ public static void main(String[] s) {
 			case "2":
 				//TODO Start Train szekvencia
 				System.out.println("2");
+				
 				break;		
 			case "3":
 				System.out.println("Choose one number from below to proceed!");

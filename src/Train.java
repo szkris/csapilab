@@ -4,7 +4,7 @@ import java.util.*;
 /**
  * 
  */
-public abstract class Train {
+public class Train {
 
     /**
      * Default constructor
