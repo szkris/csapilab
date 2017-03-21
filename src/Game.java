@@ -14,10 +14,14 @@ public class Game {
      * Default constructor
      */
     public Game() {
+
     	System.out.println("Constructor Game");
     	// Inicializálja a Table és a Timer változókat
     	tbl = new Table();
     	tmr = new Timer();
+
+    	System.out.println("Game objektum létrejott!");
+
     }
 
     /**
@@ -40,7 +44,7 @@ public class Game {
      */
     public void startTrain(Train t, TableElement te) {
         // TODO implement here
-    	System.out.println("Start train");
+    	System.out.println("startTrain(Train t, TableElement te)");
     }
 
     /**
@@ -48,11 +52,23 @@ public class Game {
      */
     public void run() {
         // TODO implement here
-    	System.out.println("Run");
-    	tbl.loadMap();
-    	moreMap(true);
-    	tmr.start();
-    	tmr.stop();
+    	String _hasmoremap = new Scanner(System.in).nextLine();
+    	
+    	System.out.println("Run()");
+    	System.out.println("HasMoreMap: 1-True, 2-False");
+    	
+    	switch(_hasmoremap){
+    	case "1":
+    		tbl.loadMap();
+    		moreMap(true);
+    		tmr.start();
+    		tmr.stop();
+    		break;
+    	case "2":
+    		break;
+    	}
+    	
+
     }
 
     /**
@@ -60,7 +76,7 @@ public class Game {
      */
     public static void gameOver() {
         // TODO implement here
-    	System.out.println("Game over");
+    	System.out.println("gameOver()");
     }
 
     /**
@@ -68,7 +84,7 @@ public class Game {
      */
     public static void victory() {
         // TODO implement here
-    	System.out.println("Victory");
+    	System.out.println("victory()");
     }
 
     /**
@@ -76,7 +92,7 @@ public class Game {
      */
     public void move() {
         // TODO implement here
-    	System.out.println("Move");
+    	System.out.println("move()");
     }
 
     /**
@@ -85,7 +101,7 @@ public class Game {
      */
     public void moreMap(boolean hasMoreMap) {
         // TODO implement here
-    	System.out.println("More map");
+    	System.out.println("moreMap(boolean hasMoreMap)");
     }
 
     /**
@@ -93,7 +109,7 @@ public class Game {
      */
     public static void mapCompleted() {
         // TODO implement here
-    	System.out.println("Map completed");
+    	System.out.println("mapCompleted()");
     }
 
 }
