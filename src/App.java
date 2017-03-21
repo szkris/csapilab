@@ -89,6 +89,8 @@ public class App {
 		te.stepOn(loco);
 	}
 	
+	static void 
+	
     /**
      * @param String 
      * @return
@@ -205,11 +207,11 @@ public static void main(String[] s) {
 							switch(innerChoice2) {
 							case "1":
 								//TODO Occupied szekvenciája
-								System.out.println("1");
+								StepOnOccupied();
 								break;
 							case "2":
 								//TODO Free szekvencia
-								System.out.println("2");
+								StepOnFree();
 								break;
 							}
 						} while (!innerChoice2.equals("q"));
