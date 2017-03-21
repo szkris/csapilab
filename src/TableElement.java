@@ -66,6 +66,7 @@ public class TableElement implements ITableElement {
     	System.out.println("TableElement.steOn");
     	if(occupied) Game.gameOver();
     	setOccupied(true);
+    	te.setTableElement(this);
     }
 
 }

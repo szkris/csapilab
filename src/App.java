@@ -73,6 +73,22 @@ public class App {
 		s.stepOn(loco);
 	}
 	
+	static void StepOnFree(){
+		Train t = new Train();
+		Locomotive loco = new Locomotive(t);
+		TableElement te = new TableElement();
+		if(te.occupied) te.setOccupied(false);
+		te.stepOn(loco);
+	}
+	
+	static void StepOnOccupied(){
+		Train t = new Train();
+		Locomotive loco = new Locomotive(t);
+		TableElement te = new TableElement();
+		if(te.occupied == false) te.setOccupied(true);
+		te.stepOn(loco);
+	}
+	
     /**
      * @param String 
      * @return
