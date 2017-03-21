@@ -83,6 +83,8 @@ public class Table {
     public boolean openTunnel(TunnelEntrance tunEn) {
         // TODO implement here
     	System.out.println("Table.openTunnel");
+    	openTunnelEntrances = tunEn;
+    	openTunnelEntrances.changeStatus();
         return false;
     }
 
