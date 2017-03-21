@@ -128,9 +128,7 @@ public class App {
     }
     
     public static void clickOnSwitch() {
-<<<<<<< HEAD
     	//TODO
-=======
     	String choice;
     	Switch s = new Switch();
     	s.click();
@@ -147,7 +145,6 @@ public class App {
     			break;
     		}
     	} while(!choice.equals("q"));
->>>>>>> 0de1e95778b97d800dbb62abd7dde67baec12f71
     }
     
     /**
@@ -343,13 +340,10 @@ public static void main(String[] s) {
 						openTunnelEntrance();
 						break;
 					case "2":
-<<<<<<< HEAD
 						//TODO closeTunnelEntrance();
 						//TODO Close szekvenciája
 						System.out.println("2");
-=======
 						closeTunnelEntrance();
->>>>>>> 0de1e95778b97d800dbb62abd7dde67baec12f71
 						break;
 					case "3":
 						clickOnSwitch();
