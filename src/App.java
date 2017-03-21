@@ -115,8 +115,8 @@ public class App {
     }
     
     public static void clickOnSwitch() {
-    	
-
+    	Switch s = new Switch();
+    	s.click();
     }
     
 //>>>>>>> origin/master
@@ -313,12 +313,10 @@ public static void main(String[] s) {
 						openTunnelEntrance();
 						break;
 					case "2":
-						//TODO Close szekvenciája
-						System.out.println("2");
+						closeTunnelEntrance();
 						break;
 					case "3":
-						//TODO Click on Switch szekvenciája
-						System.out.println("3");
+						clickOnSwitch();
 						break;
 					} 
 				} while (!innerChoice.equals("q"));
