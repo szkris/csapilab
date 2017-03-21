@@ -71,9 +71,10 @@ public class Table {
         if (ready.equals("1")){
         	return true;
         }
-        if (ready.equals("2"))
+        if (ready.equals("2")){
         	return false;
-        else return false;
+        }
+        return false;
     }
 
     /**
