@@ -29,7 +29,9 @@ public class App {
     	//TODO NextElement Rail or Station szekvencia
     	
     }
-    
+    public static void Move(){
+    	
+    }
     /**
      * @param String 
      * @return
@@ -64,10 +66,13 @@ public static void main(String[] s) {
 			case "2":
 				//TODO Start Train szekvencia
 				System.out.println("2");
-				Game g = new Game();
-				g.move();
+				//Game g = new Game();
+				//g.move();
 				break;		
 			case "3":
+				Game g = new Game();
+				
+				
 				System.out.println("Choose one number from below to proceed!");
 				System.out.println("1. NextElement Rail or Station");
 				System.out.println("2. NextElement Switch");
