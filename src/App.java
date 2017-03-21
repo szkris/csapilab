@@ -78,7 +78,20 @@ public class App {
     }
     
     public static void nextElementTunnel(){
+    	Train t = new Train();
+    	Car c = new Car(t);
+    	TunnelEntrance tunEn1 = new TunnelEntrance();
+    	TunnelEntrance tunEn2 = new TunnelEntrance();
+    	Tunnel tun = new Tunnel();
     	
+    	tun.nextElement(c);
+    	tunEn1.isOpen();
+    	tunEn2.isOpen();
+    	
+    	c.getPreviousElement();
+    	
+    	tun.leadsTo(tunEn2);
+    	tun.leadsTo(tunEn1);
     }
     
 	static void stepOnTunnelEntranceOpen(){
@@ -130,7 +143,6 @@ public class App {
 		te.setOccupied(false);
 	}
 	
-	
 	static void stepOffTunnelEntrance(){ 
 		Train t = new Train();
 		Locomotive loco = new Locomotive(t);
@@ -166,8 +178,7 @@ public class App {
 			}
 		}
 	}
-	
-	
+		
 	static void hopOffLocomotive(){
 		Station s = new Station();
 		Train t = new Train();
@@ -288,7 +299,6 @@ public static void main(String[] s) {
 				break;		
 			case "3":
 				Move();
-				
 				
 				do {
 				System.out.println("Choose one number from below to proceed!");
