@@ -109,6 +109,11 @@ public class App {
     	ent.click();
     	
     }
+    
+    public static void CloseTunnelEntrance() {
+    	
+    }
+    
 //>>>>>>> origin/master
     /**
      * @param String 
@@ -149,6 +154,7 @@ public static void main(String[] s) {
 			case "3":
 				Move();
 				
+				
 				System.out.println("Choose one number from below to proceed!");
 				System.out.println("1. NextElement Rail or Station");
 				System.out.println("2. NextElement Switch");
@@ -166,8 +172,6 @@ public static void main(String[] s) {
 					
 					switch(innerChoice) {
 					case "1":
-						//nextElementRailOrStation szekvencia
-						System.out.println("1");
 						nextElementRailOrStation();
 						break;
 					case "2":
