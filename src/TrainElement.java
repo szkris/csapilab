@@ -33,16 +33,12 @@ public abstract class TrainElement {
      */
     private TableElement enteredTunnel;
 
-
-
-
-
     /**
      * @return
      */
     public void changeVisibility() {
         // TODO implement here
-    	
+    	System.out.println("TrainElement.changeVisibility()");
     }
 
     /**
@@ -51,6 +47,7 @@ public abstract class TrainElement {
      */
     public void setTableElement(TableElement te) {
         // TODO implement here
+    	System.out.println("TrainElement.setTableElement()");
     }
 
     /**
@@ -58,6 +55,7 @@ public abstract class TrainElement {
      */
     public TableElement getPreviousElement() {
         // TODO implement here
+    	System.out.println("TrainElement.getPreviousElement()");
         return null;
     }
 
@@ -66,6 +64,7 @@ public abstract class TrainElement {
      */
     public void move() {
         // TODO implement here
+    	System.out.println("TrainElement.move()");
     }
 
     /**
@@ -74,6 +73,7 @@ public abstract class TrainElement {
      */
     public void hopOff(Color color) {
         // TODO implement here
+    	System.out.println("TrainElement.hopOff()");
     }
 
     /**
@@ -82,5 +82,6 @@ public abstract class TrainElement {
      */
     public void setTunnelEntrance(TableElement te) {
         // TODO implement here
+    	System.out.println("TrainElement.setTunnelEntrance()");
     }
 }

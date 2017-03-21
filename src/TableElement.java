@@ -14,14 +14,12 @@ public class TableElement implements ITableElement {
     }
 
     /**
-     * 
+     * látható-e a mezõ
      */
     private boolean occupied;
 
-
-
     /**
-     * 
+     * A mezõn lévõ vonat elem
      */
     private TrainElement trainelement;
 

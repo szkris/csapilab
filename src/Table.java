@@ -6,14 +6,7 @@ import java.util.*;
  */
 public class Table {
 
-    /**
-     * Default constructor
-     */
-    public Table() {
-    	System.out.println("Constructor Table");
-    }
-
-    /**
+	/**
      * Szintek száma
      */
     private int numberOfLevels;
@@ -27,7 +20,18 @@ public class Table {
      * A nyitott alagútbejáratok
      */
     private TunnelEntrance openTunnelEntrances;
-
+    
+    /**
+     * A vonatokat tároló lista
+     */
+    private ArrayList<Train> trains;
+	
+    /**
+     * Default constructor
+     */
+    public Table() {
+    	System.out.println("Constructor Table");
+    }
 
     /**
      * @return

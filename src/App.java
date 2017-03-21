@@ -30,6 +30,7 @@ public class App {
     	
     }
     public static void Move(){
+    	Game g = new Game();
     	
     }
     /**
@@ -70,7 +71,7 @@ public static void main(String[] s) {
 				//g.move();
 				break;		
 			case "3":
-				Game g = new Game();
+				Move();
 				
 				
 				System.out.println("Choose one number from below to proceed!");
