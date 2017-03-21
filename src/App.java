@@ -225,11 +225,9 @@ public static void main(String[] s) {
 							innerChoice2 = scan.nextLine();
 							switch(innerChoice2) {
 							case "1":
-								//TODO Occupied szekvenciája
 								StepOnOccupied();
 								break;
 							case "2":
-								//TODO Free szekvencia
 								StepOnFree();
 								break;
 							}
@@ -245,11 +243,9 @@ public static void main(String[] s) {
 							innerChoice2 = scan.nextLine();
 							switch(innerChoice2) {
 							case "1":
-								//TODO Occupied szekvencia
 								stepOnTunnelEntranceClosed();
 								break;
 							case "2":
-								//TODO Free szekvencia
 								stepOnTunnelEntranceOpen();
 								break;
 							}
