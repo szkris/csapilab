@@ -54,14 +54,19 @@ public class Game {
     	System.out.println("Game.Run()");
     	System.out.println("HasMoreMap: 1-True, 2-False");
     	String _hasmoremap = new Scanner(System.in).nextLine();
-    	if(_hasmoremap.equals("1")){
+    	
+    	switch(_hasmoremap){
+    	case "1":
     		tbl.loadMap();
     		moreMap(true);
     		tmr.start();
     		tmr.stop();
+    		break;
+    	case "2": 
+    		victory();
+    		break;
     	}
-    	if(_hasmoremap.equals("2"))
-    		return;
+    		
     }
 
     /**

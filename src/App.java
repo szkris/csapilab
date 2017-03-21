@@ -149,7 +149,6 @@ public static void main(String[] s) {
 			case "3":
 				Move();
 				
-				
 				System.out.println("Choose one number from below to proceed!");
 				System.out.println("1. NextElement Rail or Station");
 				System.out.println("2. NextElement Switch");
