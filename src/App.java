@@ -225,6 +225,7 @@ public static void main(String[] s) {
 						//TODO StepOff TunnelEntrance szekvencia
 						break;
 					case "9":
+						stepOnStation();
 						System.out.println("Choose one number from below to proceed!");
 						System.out.println("1. HopOff Train");
 						System.out.println("2. HopOff Locomotive");
