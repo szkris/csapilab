@@ -69,6 +69,7 @@ public class Table {
         }
         if (ready.equals("2"))
         	return false;
+        else return false;
     }
 
     /**
