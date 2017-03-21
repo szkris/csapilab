@@ -10,7 +10,7 @@ public class Timer {
      * Default constructor
      */
     public Timer() {
-    	System.out.println("Constructor Timer");
+    	System.out.println("	Constructor Timer");
     }
 
     /**
@@ -23,7 +23,8 @@ public class Timer {
      */
     public void start() {
         // TODO implement here
-    	System.out.println("Timer.start");
+    	System.out.println("	Timer.start");
+    	
     }
 
     /**
@@ -31,7 +32,7 @@ public class Timer {
      */
     public void stop() {
         // TODO implement here
-    	System.out.println("Timer.stop");
+    	System.out.println("	Timer.stop");
     }
 
 }
