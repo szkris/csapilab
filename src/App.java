@@ -111,7 +111,11 @@ public class App {
     }
     
     public static void CloseTunnelEntrance() {
-    	
+    	//TODO
+    }
+    
+    public static void nextElementSwitch(){
+    	//TODO
     }
     
 //>>>>>>> origin/master
