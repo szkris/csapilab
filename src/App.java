@@ -128,7 +128,26 @@ public class App {
     }
     
     public static void clickOnSwitch() {
+<<<<<<< HEAD
     	//TODO
+=======
+    	String choice;
+    	Switch s = new Switch();
+    	s.click();
+    	System.out.println("1 - occupied, 2 - not occupied");
+    	Scanner scan = new Scanner(System.in);
+    	do {
+    		choice = scan.nextLine();
+    		switch (choice) {
+    		case "1":
+    			System.out.println("Not settable!");
+    			break;
+    		case "2":
+    			System.out.println("inactive = active, active = inactive");
+    			break;
+    		}
+    	} while(!choice.equals("q"));
+>>>>>>> 0de1e95778b97d800dbb62abd7dde67baec12f71
     }
     
     /**
@@ -324,13 +343,16 @@ public static void main(String[] s) {
 						openTunnelEntrance();
 						break;
 					case "2":
+<<<<<<< HEAD
 						//TODO closeTunnelEntrance();
 						//TODO Close szekvenciája
 						System.out.println("2");
+=======
+						closeTunnelEntrance();
+>>>>>>> 0de1e95778b97d800dbb62abd7dde67baec12f71
 						break;
 					case "3":
-						//TODO Click on Switch szekvenciája
-						System.out.println("3");
+						clickOnSwitch();
 						break;
 					} 
 				} while (!innerChoice.equals("q"));
