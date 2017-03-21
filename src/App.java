@@ -34,6 +34,7 @@ public class App {
     	
     }
     
+<<<<<<< HEAD
 	static void startTrain(){
 		Game game = new Game();
 		game.move();
@@ -96,6 +97,19 @@ public class App {
 		TunnelEntrance te = new TunnelEntrance();
 	}
 	
+=======
+    public static void clickOnTunnelEntrance(){
+    	Table t = new Table();
+    	TunnelEntrance ent = new TunnelEntrance(t);
+    }
+    
+    public static void openTunnelEntrance(){
+    	Table t = new Table();
+    	TunnelEntrance ent = new TunnelEntrance(t);
+    	ent.click();
+    	
+    }
+>>>>>>> origin/master
     /**
      * @param String 
      * @return
@@ -278,10 +292,12 @@ public static void main(String[] s) {
 				break;
 			case "4":
 				//TODO Click on TunnelEntrance
+				clickOnTunnelEntrance();
+				
 				System.out.println("Choose one number from below to proceed!");
 				System.out.println("1. Open");
 				System.out.println("2. Close");
-				System.out.println("3. Close");
+				System.out.println("3. Click on switch");
 				System.out.println("'q' to go back to previous menu!");
 				
 				do {
@@ -289,8 +305,8 @@ public static void main(String[] s) {
 					
 					switch(innerChoice) {
 					case "1":
-						//TODO Open szekvenciája
 						System.out.println("1");
+						openTunnelEntrance();
 						break;
 					case "2":
 						//TODO Close szekvenciája

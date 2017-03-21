@@ -9,8 +9,9 @@ public class TunnelEntrance extends Rail {
     /**
      * Default constructor
      */
-    public TunnelEntrance() {
+    public TunnelEntrance(Table t) {
     	System.out.println("Constructor TunnelEntrance");
+    	table = t;
     }
 
     /**
@@ -40,6 +41,11 @@ public class TunnelEntrance extends Rail {
     	System.out.println("TunnelEntrance.changeStatus");
     	if (open == true) open = false;
     	if (open == false) open = true;
+    }
+    
+    public void click(){
+    	System.out.println("TunnelEntrance.click()");
+    	table.openTunnel(this);
     }
 
     public void stepOn(TrainElement te) {
