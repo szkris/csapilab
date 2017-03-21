@@ -95,7 +95,7 @@ public class Game {
      */
     public void moreMap(boolean hasMoreMap) {
         // TODO implement here
-    	System.out.println("moreMap(boolean hasMoreMap)");
+    	System.out.println("Game.moreMap(boolean hasMoreMap)");
     }
 
     /**
@@ -103,7 +103,7 @@ public class Game {
      */
     public static void mapCompleted() {
         // TODO implement here
-    	System.out.println("mapCompleted()");
+    	System.out.println("Game.mapCompleted()");
     }
 
 }

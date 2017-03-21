@@ -73,6 +73,7 @@ public abstract class TrainElement {
      * @return
      */
     public void hopOff(Color color) {
+    	System.out.println("TrainElement.hopOff");
         // TODO implement here
     }
 

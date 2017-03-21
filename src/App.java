@@ -5,11 +5,6 @@ import java.util.*;
  * 
  */
 public class App {
-	
-	static void startTrain(){
-		Game game = new Game();
-		game.move();
-	}
 
 	private Game g;
 	
@@ -34,7 +29,21 @@ public class App {
     	//TODO NextElement Rail or Station szekvencia
     	
     }
+    public static void Move(){
+    	
+    }
     
+	static void startTrain(){
+		Game game = new Game();
+		game.move();
+	}
+	
+	static void hopOffLocomotive(){
+		Station s = new Station();
+		Train t = new Train();
+		Locomotive loco = new Locomotive(t);
+		s.stepOn(loco);
+	}
     /**
      * @param String 
      * @return
@@ -72,6 +81,9 @@ public static void main(String[] s) {
 				startTrain();
 				break;		
 			case "3":
+				Game g = new Game();
+				
+				
 				System.out.println("Choose one number from below to proceed!");
 				System.out.println("1. NextElement Rail or Station");
 				System.out.println("2. NextElement Switch");
@@ -198,7 +210,7 @@ public static void main(String[] s) {
 								break;
 							case "2":
 								//TODO HopOff Locomotive szekvencia
-								System.out.println("2");
+								hopOffLocomotive();
 								break;
 							case "3":
 								//TODO HopOff Car

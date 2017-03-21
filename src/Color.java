@@ -3,4 +3,6 @@
  * 
  */
 public enum Color {
+	red
+	
 }
