@@ -34,6 +34,8 @@ public static void main(String[] s) {
 		System.out.println("4. Click on TunnelEntrance");
 		System.out.println("'q' to exit!");
 		
+		App a;
+		
 		String choice;
 		String innerChoice;
 		String innerChoice2;
@@ -47,7 +49,7 @@ public static void main(String[] s) {
 				//TODO init megfelelo szekvencia
 				System.out.println("1");
 				//Létrehozunk egy App példányt
-				App a = new App();
+				a = new App();
 				//Meghívjuk a Game Run() metódusát
 				a.g.run();
 
@@ -59,7 +61,8 @@ public static void main(String[] s) {
 			case "2":
 				//TODO Start Train szekvencia
 				System.out.println("2");
-				
+				Game g = new Game();
+				g.move();
 				break;		
 			case "3":
 				System.out.println("Choose one number from below to proceed!");

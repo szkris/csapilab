@@ -61,8 +61,14 @@ public class Table {
      */
     public boolean trainReady(int tick) {
         // TODO implement here
-    	System.out.println("Table.trainReady");
-        return false;
+    	System.out.println("Table.trainReady()");
+        System.out.println("1-ready, 2-not ready");
+        String ready = new Scanner(System.in).nextLine();
+        if (ready.equals("1")){
+        	return true;
+        }
+        if (ready.equals("2"))
+        	return false;
     }
 
     /**

@@ -88,6 +88,8 @@ public class Game {
     public void move() {
         // TODO implement here
     	System.out.println("Game.move()");
+    	tbl.trainReady(1);
+    	
     }
 
     /**
