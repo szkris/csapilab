@@ -28,7 +28,6 @@ public class TableElement implements ITableElement {
      * @return
      */
     public void setOccupied(boolean bool) {
-        // TODO implement here
     	System.out.println("TableElement.setOccupied");
     }
 
@@ -36,7 +35,6 @@ public class TableElement implements ITableElement {
      * @return
      */
     public void stepOff() {
-        // TODO implement here
     	System.out.println("TableElement.stepOff");
     	setOccupied(false);
     }
@@ -45,7 +43,6 @@ public class TableElement implements ITableElement {
      * @return
      */
     public void click() {
-        // TODO implement here
     	System.out.println("TableElement.click");
     }
 
@@ -54,7 +51,6 @@ public class TableElement implements ITableElement {
      * @return
      */
     public void nextElement(TrainElement te) {
-        // TODO implement here
     	System.out.println("TableElement.nextElement");
     }
 
@@ -63,7 +59,6 @@ public class TableElement implements ITableElement {
      * @return
      */
     public void stepOn(TrainElement te) {
-        // TODO implement here
     	System.out.println("TableElement.stepOn");
     	if(occupied) Game.gameOver();
     	setOccupied(true);

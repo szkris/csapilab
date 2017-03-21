@@ -35,19 +35,17 @@ public class TunnelEntrance extends Rail {
      * @return
      */
     public void changeStatus() {
-        // TODO implement here
     	System.out.println("TunnelEntrance.changeStatus");
     	if (open == true) open = false;
     	if (open == false) open = true;
     }
     
     public void click(){
-    	System.out.println("TunnelEntrance.click()");
+    	System.out.println("TunnelEntrance.click");
     	table.openTunnel(this);
     }
 
     public void stepOn(TrainElement te) {
-        // TODO implement here
     	System.out.println("TunnelEntrance.steOn");
     	if(occupied) Game.gameOver();
     	setOccupied(true);
@@ -56,7 +54,6 @@ public class TunnelEntrance extends Rail {
     }
     
     public void stepOff() {
-        // TODO implement here
     	System.out.println("TunnelEntrance.stepOff");
     	setOccupied(false);
     }

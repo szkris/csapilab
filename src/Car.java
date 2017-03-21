@@ -32,7 +32,6 @@ public class Car extends TrainElement {
      * @return
      */
     public boolean isEmpty() {
-        // TODO implement here
     	System.out.println("Car.isEmpty");
         return false;
     }
@@ -41,7 +40,6 @@ public class Car extends TrainElement {
      * @return
      */
     public Color getColor() {
-        // TODO implement here
     	System.out.println("Car.getColor");
         return null;
     }
@@ -50,7 +48,6 @@ public class Car extends TrainElement {
      * @return
      */
     public void setEmpty() {
-        // TODO implement here
     	System.out.println("Car.setEmpty");
     }
 

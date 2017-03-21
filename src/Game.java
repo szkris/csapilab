@@ -33,8 +33,6 @@ public class Game {
     	//Beállítjuk a változókat
     	hasMoreMap = true;
     	tick = 0;
-
-    	//System.out.println("Game objektum létrejott!");
     }
 
     /**
@@ -43,8 +41,7 @@ public class Game {
      * @return
      */
     public void startTrain(Train t, TableElement te) {
-        // TODO implement here
-    	System.out.println("Game.startTrain(Train t, TableElement te)");
+    	System.out.println("Game.startTrain");
     }
 
     /**
@@ -73,25 +70,22 @@ public class Game {
      * @return
      */
     public static void gameOver() {
-        // TODO implement here
-    	System.out.println("Game.gameOver()");
+    	System.out.println("Game.gameOver");
     }
 
     /**
      * @return
      */
     public static void victory() {
-        // TODO implement here
-    	System.out.println("Game.victory()");
+    	System.out.println("Game.victory");
     }
 
     /**
      * @return
      */
     public void move() {
-    	System.out.println("Game.move()");
+    	System.out.println("Game.move");
     	while(tbl.trainReady(1)){
-    		//do nothing
     	}
     	
     }
@@ -101,16 +95,14 @@ public class Game {
      * @return
      */
     public void moreMap(boolean hasMoreMap) {
-        // TODO implement here
-    	System.out.println("Game.moreMap(boolean hasMoreMap)");
+    	System.out.println("Game.moreMap");
     }
 
     /**
      * @return
      */
     public static void mapCompleted() {
-        // TODO implement here
-    	System.out.println("Game.mapCompleted()");
+    	System.out.println("Game.mapCompleted");
     }
 
 }

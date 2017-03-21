@@ -14,7 +14,6 @@ public class Station extends Rail {
     }
     
     public void stepOn(TrainElement te) {
-        // TODO implement here
     	System.out.println("Rail.stepOn");
     	if(occupied) Game.gameOver();
     	setOccupied(true);

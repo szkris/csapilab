@@ -23,7 +23,6 @@ public class Timer {
      * @return
      */
     public void start() {
-        // TODO implement here
     	System.out.println("Timer.start");
     	game.move();
     }
@@ -32,7 +31,6 @@ public class Timer {
      * @return
      */
     public void stop() {
-        // TODO implement here
     	System.out.println("Timer.stop");
     }
 
