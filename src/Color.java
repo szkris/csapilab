@@ -4,5 +4,4 @@
  */
 public enum Color {
 	red
-	
 }
