@@ -115,8 +115,20 @@ public class App {
     }
     
     public static void clickOnSwitch() {
+    	String choice;
     	Switch s = new Switch();
     	s.click();
+    	System.out.println("1 - occupied, 2 - not occupied");
+    	Scanner scan = new Scanner(System.in);
+    	do {
+    		choice = scan.nextLine();
+    		switch (choice) {
+    		case "1":
+    			System.out.println("Not settable!");
+    		case "2":
+    			System.out.println("inactive = active, active = inactive");
+    		}
+    	} while(!choice.equals("q"));
     }
     
 //>>>>>>> origin/master
