@@ -55,15 +55,15 @@ public class App {
     	Car c = new Car(t);
     	TunnelEntrance tunEn = new TunnelEntrance();
     	
-    	System.out.println("Choose one number from below to proceed!");
-		System.out.println("1. Open");
-		System.out.println("2. Closed");
-		System.out.println("'q' to go back to previous menu!");
-		
-		String innerChoice2 = new String();
+    	String innerChoice2 = new String();
 		Scanner scan = new Scanner(System.in);
-		
+    	
 		do {
+			System.out.println("Choose one number from below to proceed!");
+			System.out.println("1. Open");
+			System.out.println("2. Closed");
+			System.out.println("'q' to go back to previous menu!");
+			
 			innerChoice2 = scan.nextLine();
 			switch(innerChoice2) {
 			case "1":
