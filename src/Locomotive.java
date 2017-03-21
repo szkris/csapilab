@@ -9,11 +9,10 @@ public class Locomotive extends TrainElement {
     /**
      * Default constructor
      */
-	private Train train;
+	private Train train = new Train();
 	
-    public Locomotive(Train t) {
+    public Locomotive() {
     	System.out.println("Constructor Locomotive");
-    	train = t;
     }
     
 }

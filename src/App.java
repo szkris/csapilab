@@ -52,7 +52,7 @@ public class App {
     
 	static void stepOnTunnelEntranceOpen(){
 		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
+		Locomotive loco = new Locomotive();
 		TunnelEntrance te = new TunnelEntrance();
 		TableElement tEl = new TableElement();
 		if (te.isOpen() == false) te.changeStatus();
@@ -63,7 +63,7 @@ public class App {
 	static void stepOnTunnelEntranceClosed(){
 		Game g = new Game();
 		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
+		Locomotive loco = new Locomotive();
 		TunnelEntrance te = new TunnelEntrance();
 		TableElement tEl = new TableElement();
 		if (te.isOpen()) te.changeStatus();
@@ -72,14 +72,14 @@ public class App {
 	
 	static void stepOnStation(){
 		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
+		Locomotive loco = new Locomotive();
 		Station s = new Station();
 		s.stepOn(loco);
 	}
 	
 	static void stepOnFree(){
 		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
+		Locomotive loco = new Locomotive();
 		TableElement te = new TableElement();
 		if(te.occupied) te.setOccupied(false);
 		te.stepOn(loco);
@@ -87,27 +87,28 @@ public class App {
 	
 	static void stepOnOccupied(){
 		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
+		Locomotive loco = new Locomotive();
 		TableElement te = new TableElement();
 		if(te.occupied == false) te.setOccupied(true);
 		te.stepOn(loco);
 	}
 	
 	static void stepOff(){
-		//TODO
+		Car c = new Car();
+		TableElement te = new TableElement();
 	}
 	
 	//TODO
 	static void stepOffTunnelEntrance(){ 
 		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
+		Locomotive loco = new Locomotive();
 		TunnelEntrance te = new TunnelEntrance();
 	}
 
 	static void hopOffLocomotive(){
 		Station s = new Station();
 		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
+		Locomotive loco = new Locomotive();
 		s.stepOn(loco);
 	}
 		
@@ -178,7 +179,6 @@ public static void main(String[] s) {
 		System.out.println("3. Move");
 		System.out.println("4. Click on TunnelEntrance");
 		System.out.println("'q' to exit!");
-		
 		
 		
 		String choice;
@@ -282,8 +282,7 @@ public static void main(String[] s) {
 							}
 						} while (!innerChoice2.equals("q"));
 						break;
-					case "6":
-						//StepOn TunnelEntrance szekvencia
+					case "6":		
 						System.out.println("Choose one number from below to proceed!");
 						System.out.println("1. Occupied");
 						System.out.println("2. Free");

@@ -18,14 +18,13 @@ public class Car extends TrainElement {
     /**
      * Mutató a kocsit tartalmazó Train-re
      */
-    private Train train;
+    private Train train = new Train();
 	
     /**
      * Default constructor
      */
-    public Car(Train t) {
+    public Car() {
     	System.out.println("Constructor Car");
-    	train = t;
     }
 
     /**
