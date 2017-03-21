@@ -43,7 +43,6 @@ public class App {
     }
     
     public static void nextElementSwitch(){
-    	//TODO
     	Train t = new Train();
     	Car c = new Car(t);
     	Switch sw = new Switch();
@@ -79,7 +78,7 @@ public class App {
     }
     
     public static void nextElementTunnel(){
-    	//TODO
+    	
     }
     
 	static void stepOnTunnelEntranceOpen(){
@@ -265,6 +264,9 @@ public static void main(String[] s) {
 		///TODO - SZEKVENCIA DIAGRAMOK SZERINTI FÜGGVÉNYHÍVÁSOK
 		///////////////////////////////////////////////////////
 	
+	String choice;
+
+	do {
 		System.out.println("Choose one number from below to proceed!");
 		System.out.println("1. Init game");
 		System.out.println("2. Start train");
@@ -272,28 +274,23 @@ public static void main(String[] s) {
 		System.out.println("4. Click on TunnelEntrance");
 		System.out.println("'q' to exit!");
 		
-		
-		String choice;
 		String innerChoice;
 		String innerChoice2;
 		Scanner scan = new Scanner(System.in);
 	
-		do {
 			choice = scan.nextLine();
 			switch(choice) {
 			case "1":
-				//InitGame szekvencia
 				initGame();
 				break;
 			case "2":
-				// Start Train szekvencia
-				System.out.println("2");
 				startTrain();
 				break;		
 			case "3":
 				Move();
 				
 				
+				do {
 				System.out.println("Choose one number from below to proceed!");
 				System.out.println("1. NextElement Rail or Station");
 				System.out.println("2. NextElement Switch");
@@ -306,7 +303,6 @@ public static void main(String[] s) {
 				System.out.println("9. StepOff TunnelEntrance");
 				System.out.println("'q' to go back to previous menu!");
 				
-				do {
 					innerChoice = scan.nextLine();
 					
 					switch(innerChoice) {
@@ -316,11 +312,11 @@ public static void main(String[] s) {
 					case "2":
 						nextElementSwitch();
 
+						do {
 						System.out.println("Choose one number from below to proceed!");
 						System.out.println("1. Appropriate direction");
 						System.out.println("2. Wrong direction");
 						System.out.println("'q' to go back to previous menu!");
-						do {
 							innerChoice2 = scan.nextLine();
 							switch(innerChoice2) {
 							case "1":								
@@ -338,11 +334,11 @@ public static void main(String[] s) {
 						nextElementTunnel();
 						break;
 					case "5":
+						do {
 						System.out.println("Choose one number from below to proceed!");
 						System.out.println("1. Occupied");
 						System.out.println("2. Free");
 						System.out.println("'q' to go back to previous menu!");
-						do {
 							innerChoice2 = scan.nextLine();
 							switch(innerChoice2) {
 							case "1":
@@ -355,11 +351,11 @@ public static void main(String[] s) {
 						} while (!innerChoice2.equals("q"));
 						break;
 					case "6":		
+						do {
 						System.out.println("Choose one number from below to proceed!");
 						System.out.println("1. Occupied");
 						System.out.println("2. Free");
 						System.out.println("'q' to go back to previous menu!");
-						do {
 							innerChoice2 = scan.nextLine();
 							switch(innerChoice2) {
 							case "1":
@@ -373,12 +369,12 @@ public static void main(String[] s) {
 						break;
 					case "7":
 						stepOnStation();
+						do {
 						System.out.println("Choose one number from below to proceed!");
 						System.out.println("1. HopOff Train");
 						System.out.println("2. HopOff Locomotive");
 						System.out.println("3. HopOff Car");
 						System.out.println("'q' to go back to previous menu!");
-						do {
 							innerChoice2 = scan.nextLine();
 							switch(innerChoice2) {
 							case "1":
@@ -406,13 +402,13 @@ public static void main(String[] s) {
 				
 				clickOnTunnelEntrance();
 				
+				do {				
 				System.out.println("Choose one number from below to proceed!");
 				System.out.println("1. Open");
 				System.out.println("2. Close");
 				System.out.println("3. Click on switch");
 				System.out.println("'q' to go back to previous menu!");
 				
-				do {
 					innerChoice = scan.nextLine();
 					
 					switch(innerChoice) {
