@@ -27,7 +27,7 @@ public class TableElement implements ITableElement {
      * @param boolean 
      * @return
      */
-    public void setOccupied(boolean occupied) {
+    public void setOccupied(boolean bool) {
         // TODO implement here
     	System.out.println("TableElement.setOccupied");
     }

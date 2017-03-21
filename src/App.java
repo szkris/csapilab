@@ -45,6 +45,28 @@ public class App {
 		Locomotive loco = new Locomotive(t);
 		s.stepOn(loco);
 	}
+	
+	static void stepOnTunnelEntranceOpen(){
+		Train t = new Train();
+		Locomotive loco = new Locomotive(t);
+		TunnelEntrance te = new TunnelEntrance();
+		TableElement tEl = new TableElement();
+		if (te.isOpen() == false) te.changeStatus();
+		te.setOccupied(true);
+		loco.setTunnelEntrance(te);
+		loco.setTableElement(tEl);
+	}
+	
+	static void stepOnTunnelEntranceClosed(){
+		Game g = new Game();
+		Train t = new Train();
+		Locomotive loco = new Locomotive(t);
+		TunnelEntrance te = new TunnelEntrance();
+		TableElement tEl = new TableElement();
+		if (te.isOpen()) te.changeStatus();
+		g.gameOver();
+	}
+	
     /**
      * @param String 
      * @return
@@ -171,7 +193,7 @@ public static void main(String[] s) {
 						} while (!innerChoice2.equals("q"));
 						break;
 					case "6":
-						//TODO StepOn TunnelEntrance szekvencia
+						//StepOn TunnelEntrance szekvencia
 						System.out.println("Choose one number from below to proceed!");
 						System.out.println("1. Occupied");
 						System.out.println("2. Free");
@@ -181,11 +203,11 @@ public static void main(String[] s) {
 							switch(innerChoice2) {
 							case "1":
 								//TODO Occupied szekvencia
-								System.out.println("1");
+								stepOnTunnelEntranceClosed();
 								break;
 							case "2":
 								//TODO Free szekvencia
-								System.out.println("2");
+								stepOnTunnelEntranceOpen();
 								break;
 							}
 						} while (!innerChoice2.equals("q"));
@@ -210,7 +232,7 @@ public static void main(String[] s) {
 								System.out.println("1");
 								break;
 							case "2":
-								//TODO HopOff Locomotive szekvencia
+								//HopOff Locomotive szekvencia
 								hopOffLocomotive();
 								break;
 							case "3":

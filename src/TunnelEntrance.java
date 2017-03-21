@@ -29,7 +29,7 @@ public class TunnelEntrance extends Rail {
     public boolean isOpen() {
         // TODO implement here
     	System.out.println("TunnelEntrance.isOpen");
-        return false;
+        return open;
     }
 
     /**
@@ -38,6 +38,8 @@ public class TunnelEntrance extends Rail {
     public void changeStatus() {
         // TODO implement here
     	System.out.println("TunnelEntrance.changeStatus");
+    	if (open == true) open = false;
+    	if (open == false) open = true;
     }
 
 }

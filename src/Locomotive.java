@@ -15,4 +15,5 @@ public class Locomotive extends TrainElement {
     	System.out.println("Constructor Locomotive");
     	train = t;
     }
+    
 }

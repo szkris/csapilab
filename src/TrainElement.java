@@ -74,7 +74,6 @@ public abstract class TrainElement {
     public void hopOff(Color color) {
     	System.out.println("TrainElement.hopOff");
         // TODO implement here
-    	System.out.println("TrainElement.hopOff()");
     }
 
     /**
