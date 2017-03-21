@@ -49,8 +49,8 @@ public static void main(String[] s) {
 				App a = new App();
 
 				//TODO init megfelelo szekvencia ... folytatni a megkezdett módon
-				Game g = new Game();
-				g.run();
+				//Game g = new Game();
+				//g.run();
 
 				break;
 			case "2":

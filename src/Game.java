@@ -18,9 +18,9 @@ public class Game {
     	System.out.println("Constructor Game");
     	// Inicializálja a Table és a Timer változókat
     	tbl = new Table();
-    	tmr = new Timer();
+    	tmr = new Timer(this);
 
-    	System.out.println("Game objektum létrejott!");
+    	//System.out.println("Game objektum létrejott!");
 
     }
 
@@ -44,7 +44,7 @@ public class Game {
      */
     public void startTrain(Train t, TableElement te) {
         // TODO implement here
-    	System.out.println("startTrain(Train t, TableElement te)");
+    	System.out.println("Game.startTrain(Train t, TableElement te)");
     }
 
     /**
@@ -52,23 +52,19 @@ public class Game {
      */
     public void run() {
         // TODO implement here
-    	String _hasmoremap = new Scanner(System.in).nextLine();
     	
-    	System.out.println("Run()");
+    	
+    	System.out.println("Game.Run()");
     	System.out.println("HasMoreMap: 1-True, 2-False");
-    	
-    	switch(_hasmoremap){
-    	case "1":
+    	String _hasmoremap = new Scanner(System.in).nextLine();
+    	if(_hasmoremap.equals("1")){
     		tbl.loadMap();
     		moreMap(true);
     		tmr.start();
     		tmr.stop();
-    		break;
-    	case "2":
-    		break;
     	}
-    	
-
+    	if(_hasmoremap.equals("2"))
+    		return;
     }
 
     /**
@@ -76,7 +72,7 @@ public class Game {
      */
     public static void gameOver() {
         // TODO implement here
-    	System.out.println("gameOver()");
+    	System.out.println("Game.gameOver()");
     }
 
     /**
@@ -84,7 +80,7 @@ public class Game {
      */
     public static void victory() {
         // TODO implement here
-    	System.out.println("victory()");
+    	System.out.println("Game.victory()");
     }
 
     /**
@@ -92,7 +88,7 @@ public class Game {
      */
     public void move() {
         // TODO implement here
-    	System.out.println("move()");
+    	System.out.println("Game.move()");
     }
 
     /**

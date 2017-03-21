@@ -9,8 +9,9 @@ public class Timer {
     /**
      * Default constructor
      */
-    public Timer() {
+    public Timer(Game g) {
     	System.out.println("Constructor Timer");
+    	timer = g;
     }
 
     /**
@@ -24,7 +25,7 @@ public class Timer {
     public void start() {
         // TODO implement here
     	System.out.println("Timer.start");
-    	
+    	timer.move();
     }
 
     /**
