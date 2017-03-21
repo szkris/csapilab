@@ -110,21 +110,13 @@ public class App {
     	
     }
     
-<<<<<<< HEAD
-    public static void CloseTunnelEntrance() {
-    	//TODO
-    }
-    
-    public static void nextElementSwitch(){
-    	//TODO
-=======
     public static void closeTunnelEntrance() {
     	
     }
     
     public static void clickOnSwitch() {
     	
->>>>>>> 3dd986a02982b1a939a40a99c5e1b412ac4fd05a
+
     }
     
 //>>>>>>> origin/master
