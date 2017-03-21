@@ -124,9 +124,6 @@ public class App {
     }
     
     public static void closeTunnelEntrance() {
-<<<<<<< HEAD
-    	//TODO
-=======
     	String choice;
     	Table t = new Table();
     	TunnelEntrance ent = new TunnelEntrance();
@@ -144,11 +141,9 @@ public class App {
     			break;
     		}
     	} while(!choice.equals("q"));
->>>>>>> 08e7f2e49d3de8109b7208722ba6d0bcbeb561e6
     }
     
     public static void clickOnSwitch() {
-    	//TODO
     	String choice;
     	Switch s = new Switch();
     	s.click();
@@ -271,7 +266,6 @@ public static void main(String[] s) {
 						System.out.println("4");
 						break;
 					case "5":
-						//TODO StepOn szekvencia
 						System.out.println("Choose one number from below to proceed!");
 						System.out.println("1. Occupied");
 						System.out.println("2. Free");
@@ -330,7 +324,6 @@ public static void main(String[] s) {
 								break;
 							}
 						} while (!innerChoice2.equals("q"));
-						//TODO StepOnStation szekvencia
 						break;
 					case "8":
 						//TODO StepOff szekvencia
@@ -342,7 +335,7 @@ public static void main(String[] s) {
 				} while (!innerChoice.equals("q"));
 				break;
 			case "4":
-				//TODO Click on TunnelEntrance
+				
 				clickOnTunnelEntrance();
 				
 				System.out.println("Choose one number from below to proceed!");
@@ -360,12 +353,11 @@ public static void main(String[] s) {
 						openTunnelEntrance();
 						break;
 					case "2":
-						//TODO closeTunnelEntrance();
-						//TODO Close szekvenciája
 						System.out.println("2");
 						closeTunnelEntrance();
 						break;
 					case "3":
+						System.out.println("3");
 						clickOnSwitch();
 						break;
 					} 
