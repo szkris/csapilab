@@ -21,7 +21,20 @@ public class App {
     	g = new Game();
     }
 
-
+    public static void initGame(){
+    	App a;
+		System.out.println("1");
+		
+		//Létrehozunk egy App példányt
+		a = new App();
+		//Meghívjuk a Game Run() metódusát
+		a.g.run();
+    }
+    public static void nextElementRailOrStation(){
+    	//TODO NextElement Rail or Station szekvencia
+    	
+    }
+    
     /**
      * @param String 
      * @return
@@ -39,7 +52,7 @@ public static void main(String[] s) {
 		System.out.println("4. Click on TunnelEntrance");
 		System.out.println("'q' to exit!");
 		
-		App a;
+		
 		
 		String choice;
 		String innerChoice;
@@ -50,18 +63,8 @@ public static void main(String[] s) {
 			choice = scan.nextLine();
 			switch(choice) {
 			case "1":
-
-				//TODO init megfelelo szekvencia
-				System.out.println("1");
-				//Létrehozunk egy App példányt
-				a = new App();
-				//Meghívjuk a Game Run() metódusát
-				a.g.run();
-
-				//TODO init megfelelo szekvencia ... folytatni a megkezdett módon
-				//Game g = new Game();
-				//g.run();
-
+				//InitGame szekvencia
+				initGame();
 				break;
 			case "2":
 				// Start Train szekvencia
@@ -86,8 +89,9 @@ public static void main(String[] s) {
 					
 					switch(innerChoice) {
 					case "1":
-						//TODO NextElement Rail or Station szekvencia
+						//nextElementRailOrStation szekvencia
 						System.out.println("1");
+						nextElementRailOrStation();
 						break;
 					case "2":
 						//TODO NextElement Switch

@@ -51,8 +51,6 @@ public class Game {
      * @return
      */
     public void run() {
-        // TODO implement here
-
     	System.out.println("Game.Run()");
     	System.out.println("HasMoreMap: 1-True, 2-False");
     	String _hasmoremap = new Scanner(System.in).nextLine();
@@ -86,7 +84,6 @@ public class Game {
      * @return
      */
     public void move() {
-        // TODO implement here
     	System.out.println("Game.move()");
     	tbl.trainReady(1);
     	
