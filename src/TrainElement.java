@@ -42,6 +42,7 @@ public abstract class TrainElement {
      */
     public void changeVisibility() {
         // TODO implement here
+    	
     }
 
     /**

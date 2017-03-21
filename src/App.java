@@ -25,7 +25,11 @@ public class App {
 		//Meghívjuk a Game Run() metódusát
 		a.g.run();
     }
-
+    public static void nextElementRailOrStation(){
+    	//TODO NextElement Rail or Station szekvencia
+    	
+    }
+    
     /**
      * @param String 
      * @return
@@ -81,8 +85,9 @@ public static void main(String[] s) {
 					
 					switch(innerChoice) {
 					case "1":
-						//TODO NextElement Rail or Station szekvencia
+						//nextElementRailOrStation szekvencia
 						System.out.println("1");
+						nextElementRailOrStation();
 						break;
 					case "2":
 						//TODO NextElement Switch
