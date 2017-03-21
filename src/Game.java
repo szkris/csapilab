@@ -90,7 +90,9 @@ public class Game {
      */
     public void move() {
     	System.out.println("Game.move()");
-    	tbl.trainReady(1);
+    	while(tbl.trainReady(1)){
+    		//do nothing
+    	}
     	
     }
 
