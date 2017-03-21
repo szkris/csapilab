@@ -5,6 +5,11 @@ import java.util.*;
  * 
  */
 public class App {
+	
+	static void startTrain(){
+		Game game = new Game();
+		game.move();
+	}
 
 	private Game g;
 	
@@ -59,10 +64,9 @@ public static void main(String[] s) {
 
 				break;
 			case "2":
-				//TODO Start Train szekvencia
+				// Start Train szekvencia
 				System.out.println("2");
-				Game g = new Game();
-				g.move();
+				startTrain();
 				break;		
 			case "3":
 				System.out.println("Choose one number from below to proceed!");
