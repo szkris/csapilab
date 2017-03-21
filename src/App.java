@@ -124,7 +124,27 @@ public class App {
     }
     
     public static void closeTunnelEntrance() {
+<<<<<<< HEAD
     	//TODO
+=======
+    	String choice;
+    	Table t = new Table();
+    	TunnelEntrance ent = new TunnelEntrance();
+    	ent.click();
+    	System.out.println("1 - occupied, 2 - not occupied");
+    	Scanner scan = new Scanner(System.in);
+    	do {
+    		choice = scan.nextLine();
+    		switch (choice) {
+    		case "1":
+    			System.out.println("Can't close tunnel, it's occupied!");
+    			break;
+    		case "2":
+    			System.out.println("Tunnel closed!");
+    			break;
+    		}
+    	} while(!choice.equals("q"));
+>>>>>>> 08e7f2e49d3de8109b7208722ba6d0bcbeb561e6
     }
     
     public static void clickOnSwitch() {
