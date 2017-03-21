@@ -110,7 +110,11 @@ public class App {
     	
     }
     
-    public static void CloseTunnelEntrance() {
+    public static void closeTunnelEntrance() {
+    	
+    }
+    
+    public static void clickOnSwitch() {
     	
     }
     
