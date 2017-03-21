@@ -21,7 +21,7 @@ public class TunnelEntrance extends Rail {
     /**
      * 
      */
-    private Table table;
+    private Table table = new Table();
 
     /**
      * @return

@@ -64,7 +64,7 @@ public class TableElement implements ITableElement {
      */
     public void stepOn(TrainElement te) {
         // TODO implement here
-    	System.out.println("TableElement.steOn");
+    	System.out.println("TableElement.stepOn");
     	if(occupied) Game.gameOver();
     	setOccupied(true);
     	te.setTableElement(this);
