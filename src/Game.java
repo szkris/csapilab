@@ -7,25 +7,35 @@ import java.util.*;
  */
 public class Game {
 
+	Table tbl;
+	Timer tmr;
+	
+	/**
+     * Tárolja, hogy van-e még betöltendõ pálya
+     */
+    private boolean hasMoreMap;
+    
+    /**
+     * Az eltelt lépések szám (körök)
+     */
+    private int tick;
+    
     /**
      * Default constructor
      */
     public Game() {
-    	System.out.println("Game objektum letrejott!");
+
+    	System.out.println("Constructor Game");
+    	// Inicializálja a Table és a Timer változókat
+    	tbl = new Table();
+    	tmr = new Timer(this);
+    	
+    	//Beállítjuk a változókat
+    	hasMoreMap = true;
+    	tick = 0;
+
+    	//System.out.println("Game objektum létrejott!");
     }
-
-    /**
-     * 
-     */
-    private boolean hasMoreMap;
-
-    /**
-     * 
-     */
-    private int tick;
-
-
-
 
     /**
      * @param Train 
@@ -34,7 +44,7 @@ public class Game {
      */
     public void startTrain(Train t, TableElement te) {
         // TODO implement here
-    	System.out.println("Start train");
+    	System.out.println("Game.startTrain(Train t, TableElement te)");
     }
 
     /**
@@ -42,7 +52,18 @@ public class Game {
      */
     public void run() {
         // TODO implement here
-    	System.out.println("Run");
+
+    	System.out.println("Game.Run()");
+    	System.out.println("HasMoreMap: 1-True, 2-False");
+    	String _hasmoremap = new Scanner(System.in).nextLine();
+    	if(_hasmoremap.equals("1")){
+    		tbl.loadMap();
+    		moreMap(true);
+    		tmr.start();
+    		tmr.stop();
+    	}
+    	if(_hasmoremap.equals("2"))
+    		return;
     }
 
     /**
@@ -50,7 +71,7 @@ public class Game {
      */
     public static void gameOver() {
         // TODO implement here
-    	System.out.println("Game over");
+    	System.out.println("Game.gameOver()");
     }
 
     /**
@@ -58,7 +79,7 @@ public class Game {
      */
     public static void victory() {
         // TODO implement here
-    	System.out.println("Victory");
+    	System.out.println("Game.victory()");
     }
 
     /**
@@ -66,7 +87,9 @@ public class Game {
      */
     public void move() {
         // TODO implement here
-    	System.out.println("Move");
+    	System.out.println("Game.move()");
+    	tbl.trainReady(1);
+    	
     }
 
     /**
@@ -75,7 +98,7 @@ public class Game {
      */
     public void moreMap(boolean hasMoreMap) {
         // TODO implement here
-    	System.out.println("More map");
+    	System.out.println("moreMap(boolean hasMoreMap)");
     }
 
     /**
@@ -83,7 +106,7 @@ public class Game {
      */
     public static void mapCompleted() {
         // TODO implement here
-    	System.out.println("Map completed");
+    	System.out.println("mapCompleted()");
     }
 
 }

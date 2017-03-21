@@ -6,17 +6,18 @@ import java.util.*;
  */
 public class Timer {
 
+	/**
+     * Mutató a Game objektumra
+     */
+    private Game game;
+	
     /**
      * Default constructor
      */
-    public Timer() {
+    public Timer(Game g) {
     	System.out.println("Constructor Timer");
+    	game = g;
     }
-
-    /**
-     * 
-     */
-    private Game timer;
 
     /**
      * @return
@@ -24,6 +25,7 @@ public class Timer {
     public void start() {
         // TODO implement here
     	System.out.println("Timer.start");
+    	game.move();
     }
 
     /**

@@ -14,20 +14,17 @@ public class Table {
     }
 
     /**
-     * 
+     * Szintek száma
      */
     private int numberOfLevels;
 
     /**
-     * 
+     * Aktuális szint
      */
     private int currentLevel;
-
-
-
-
+    
     /**
-     * 
+     * A nyitott alagútbejáratok
      */
     private TunnelEntrance openTunnelEntrances;
 
@@ -37,6 +34,7 @@ public class Table {
      */
     public void loadMap() {
         // TODO implement here
+    	System.out.println("Table.loadMap");
     }
 
     /**
@@ -44,6 +42,7 @@ public class Table {
      */
     public TableElement getEntryPoint() {
         // TODO implement here
+    	System.out.println("Table.getEntryPoint");
         return null;
     }
 
@@ -52,6 +51,7 @@ public class Table {
      */
     public Train getNextTrain() {
         // TODO implement here
+    	System.out.println("Table.getNextTrain");
         return null;
     }
 
@@ -61,7 +61,15 @@ public class Table {
      */
     public boolean trainReady(int tick) {
         // TODO implement here
-        return false;
+    	System.out.println("Table.trainReady()");
+        System.out.println("1-ready, 2-not ready");
+        String ready = new Scanner(System.in).nextLine();
+        if (ready.equals("1")){
+        	return true;
+        }
+        if (ready.equals("2"))
+        	return false;
+        else return false;
     }
 
     /**
@@ -70,6 +78,7 @@ public class Table {
      */
     public boolean openTunnel(TunnelEntrance tunEn) {
         // TODO implement here
+    	System.out.println("Table.openTunnel");
         return false;
     }
 

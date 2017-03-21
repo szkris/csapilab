@@ -1,36 +1,32 @@
 import java.util.*;
 
 /**
- * 
+ * Car osztály (kocsi), mely a TrainElement leszármazottja
  */
-public class Car extends Train {
+public class Car extends TrainElement {
 
-    /**
-     * Default constructor
-     */
-    public Car() {
-    	System.out.println("Constructor Car");
-    }
-
-    /**
-     * 
+	/**
+     * Kocsi színe
      */
     private Color color;
 
     /**
-     * 
+     * A kocsin vannak-e utasok
      */
     private boolean empty;
-
-
-
-
+    
     /**
-     * 
+     * Mutató a kocsit tartalmazó Train-re
      */
     private Train train;
-
-
+	
+    /**
+     * Default constructor
+     */
+    public Car(Train t) {
+    	System.out.println("Constructor Car");
+    	train = t;
+    }
 
     /**
      * @return
