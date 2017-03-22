@@ -9,8 +9,8 @@ public class Switch extends TableElement {
     /**
      * Default constructor
      */
-    public Switch() {
-    	System.out.println("Constructor Switch");
+    public Switch(String tab) {
+    	System.out.println(tab + "Constructor Switch");
     }
 
     /**

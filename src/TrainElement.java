@@ -9,8 +9,10 @@ public abstract class TrainElement {
     /**
      * Default constructor
      */
-    public TrainElement() {
-    	System.out.println("Constructor TrainElement");
+	public TrainElement(){}
+	
+    public TrainElement(String tab) {
+    	System.out.println(tab + "Constructor TrainElement");
     }
 
     /**
@@ -37,8 +39,8 @@ public abstract class TrainElement {
      * megváltoztatja az objektum (grafikai) láthatóságát
      * @return
      */
-    public void changeVisibility() {
-    	System.out.println("TrainElement.changeVisibility");
+    public void changeVisibility(String tab) {
+    	System.out.println(tab + "TrainElement.changeVisibility");
     }
 
     /**
@@ -46,16 +48,16 @@ public abstract class TrainElement {
      * @param TableElement itt áll a vonat
      * @return
      */
-    public void setTableElement(TableElement te) {
-        System.out.println("TrainElement.setTableElement");
+    public void setTableElement(TableElement te, String tab) {
+        System.out.println(tab + "TrainElement.setTableElement");
     }
 
     /**
      * visszaadja azt a mezõt, amin a vonat áll
      * @return TableElement amin a vonat áll
      */
-    public TableElement getPreviousElement() {
-        System.out.println("TrainElement.getPreviousElement");
+    public TableElement getPreviousElement(String tab) {
+        System.out.println(tab + "TrainElement.getPreviousElement");
         return null;
     }
 
@@ -63,8 +65,8 @@ public abstract class TrainElement {
      * meghívja minden vonatelem nextElement() függvényét, ezzel léptetve a vonatot
      * @return
      */
-    public void move() {
-        System.out.println("TrainElement.move");
+    public void move(String tab) {
+        System.out.println(tab + "TrainElement.move");
     }
 
     /**
@@ -72,8 +74,8 @@ public abstract class TrainElement {
      * @param Color a kapott szín
      * @return
      */
-    public void hopOff(Color color) {
-    	System.out.println("TrainElement.hopOff");
+    public void hopOff(Color color, String tab) {
+    	System.out.println(tab + "TrainElement.hopOff");
     }
 
     /**
@@ -81,7 +83,7 @@ public abstract class TrainElement {
      * @param TableElement 
      * @return
      */
-    public void setTunnelEntrance(TableElement te) {
-    	System.out.println("TrainElement.setTunnelEntrance");
+    public void setTunnelEntrance(TableElement te, String tab) {
+    	System.out.println(tab + "TrainElement.setTunnelEntrance");
     }
 }

@@ -2,71 +2,66 @@
 import java.util.*;
 
 /**
- * Alagút bejáratot megvalósító osztály
+ * 
  */
 public class TunnelEntrance extends Rail {
 
     /**
      * Default constructor
      */
-    public TunnelEntrance() {
-    	System.out.println("Constructor TunnelEntrance");
+    public TunnelEntrance(String tab) {
+    	System.out.println(tab + "Constructor TunnelEntrance");
+    	table = new Table(tab + "\t");
     }
 
     /**
-     * tárolja, hogy a bejárat aktív-e
+     * 
      */
     private boolean open;
-    
     /**
-     * mutató a pályára
+     * 
      */
-    private Table table = new Table();
+    private Table table;
 
     /**
-     * visszaadja, hogy a bejárat aktív-e
-     * @return boolean aktív-e
+     * @return
      */
-    public boolean isOpen() {
-        // TODO implement here
-    	System.out.println("TunnelEntrance.isOpen");
+    public boolean isOpen(String tab) {
+    	System.out.println(tab + "TunnelEntrance.isOpen");
         return open;
     }
 
     /**
-     * megváltoztatja a bejárat állapotát, nyitva illetve zárva között
      * @return
      */
-    public void changeStatus() {
-    	System.out.println("TunnelEntrance.changeStatus");
+    public void changeStatus(String tab) {
+    	System.out.println(tab + "TunnelEntrance.changeStatus");
     	if (open == true) open = false;
     	if (open == false) open = true;
     }
     
-    /**
-     * megvalósítja, hogy mi történjen amikor egy alagút bejáratra kattintunk
-     */
-    public void click(){
-    	System.out.println("TunnelEntrance.click");
-    	table.openTunnel(this);
+    public void click(String tab){
+    	System.out.println(tab + "TunnelEntrance.click");
+    	table.openTunnel(this, tab+"\t");
     }
 
-    /**
-     * megvalósítja, mi történjen, amikor egy TrainElement a mezõre lép
-     */
-    public void stepOn(TrainElement te) {
-    	System.out.println("TunnelEntrance.steOn");
-    	if(occupied) Game.gameOver();
-    	setOccupied(true);
-    	te.setTunnelEntrance(this);
-    	te.setTableElement(this);
+    public void stepOn(TrainElement te, String tab) {
+    	if(!open) {
+    		Game.gameOver(tab+"\t");
+    		return;
+    	}
+    	System.out.println(tab + "TunnelEntrance.stepOn");
+    	if(occupied) {
+    		Game.gameOver(tab+"\t");
+    		return;
+    	}
+    	setOccupied(true, tab+"\t");
+    	te.setTunnelEntrance(this, tab+"\t");
+    	te.setTableElement(this, tab+"\t");
     }
     
-    /**
-     * megvalósítja, mi történjen, amikor egy TrainElement elhagyja a mezõt
-     */
-    public void stepOff() {
-    	System.out.println("TunnelEntrance.stepOff");
-    	setOccupied(false);
+    public void stepOff(String tab) {
+    	System.out.println(tab + "TunnelEntrance.stepOff");
+    	setOccupied(false, tab+"\t");
     }
 }

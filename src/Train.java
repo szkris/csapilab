@@ -2,44 +2,32 @@
 import java.util.*;
 
 /**
- * A vonatot megvalósító osztály
+ * 
  */
 public class Train {
 
     /**
      * Default constructor
      */
-    public Train() {
-    	System.out.println("Constructor Train");
+    public Train(String tab) {
+    	System.out.println(tab + "Constructor Train");
     }
     
-    /*
-     * meghívja a move() függvényt minden TrainElement-re, így a vonat elemei tovább mozognak a pályán
-     */
-    public void move(){
-    	System.out.println("Train.move");
+    public void move(String tab){
+    	System.out.println(tab + "Train.move");
     }
     
-    /*
-     * leszállítja az utasokat
-     */
-    public void hopOff(){
-    	System.out.println("Train.hopOff");
+    public void hopOff(String tab){
+    	System.out.println(tab + "Train.hopOff");
     }
     
-    /*
-     * megmondja, hogy a vonat alagútban van e
-     */
-    public boolean isInTunnel(){
-    	System.out.println("Train.isInTunnel");
+    public boolean isInTunnel(String tab){
+    	System.out.println(tab + "Train.isInTunnel");
     	return false;
     }
     
-    /*
-     * megmondja, hogy a vonat üres e
-     */
-    public boolean isEmpty(){
-    	System.out.println("Train.isEmpty");
+    public boolean isEmpty(String tab){
+    	System.out.println(tab + "Train.isEmpty");
     	return false;
     }
 

@@ -2,20 +2,17 @@
 import java.util.*;
 
 /**
- * A mozdonyt megvalósító osztály
+ * 
  */
 public class Locomotive extends TrainElement {
 
-    /*
-     * mutató a vonatra, amely a mozdonyt tartalmazza
+    /**
+     * Default constructor
      */
 	private Train train;
 	
-	/**
-     * Default constructor
-     */
-    public Locomotive(Train t) {
-    	System.out.println("Constructor Locomotive");
+    public Locomotive(Train t, String tab) {
+    	System.out.println(tab + "Constructor Locomotive");
     	train = t;
     }
     
