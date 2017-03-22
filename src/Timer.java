@@ -14,24 +14,24 @@ public class Timer {
     /**
      * Default constructor
      */
-    public Timer(Game g) {
-    	System.out.println("Constructor Timer");
+    public Timer(Game g, String tab) {
+    	System.out.println(tab + "Constructor Timer");
     	game = g;
     }
 
     /**
      * @return
      */
-    public void start() {
-    	System.out.println("Timer.start");
-    	game.move();
+    public void start(String tab) {
+    	System.out.println(tab + "Timer.start");
+    	game.move(tab+"\t");
     }
 
     /**
      * @return
      */
-    public void stop() {
-    	System.out.println("Timer.stop");
+    public void stop(String tab) {
+    	System.out.println(tab+ "Timer.stop");
     }
 
 }

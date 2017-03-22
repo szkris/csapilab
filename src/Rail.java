@@ -5,12 +5,16 @@ import java.util.*;
  * 
  */
 public class Rail extends TableElement {
-
+	
     /**
      * Default constructor
      */
-    public Rail() {
-    	System.out.println("Constructor Rail");
+    public Rail(String tab) {
+    	System.out.println(tab + "Constructor Rail");
+    }
+    
+    public Rail(){
+    	
     }
 
     /**

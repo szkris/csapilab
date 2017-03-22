@@ -11,8 +11,8 @@ public class Locomotive extends TrainElement {
      */
 	private Train train;
 	
-    public Locomotive(Train t) {
-    	System.out.println("Constructor Locomotive");
+    public Locomotive(Train t, String tab) {
+    	System.out.println(tab + "Constructor Locomotive");
     	train = t;
     }
     

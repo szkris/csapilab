@@ -9,8 +9,8 @@ public class Field extends TableElement {
     /**
      * Default constructor
      */
-    public Field() {
-    	System.out.println("Constuctor Field");
+    public Field(String tab) {
+    	System.out.println(tab + "Constuctor Field");
     }
 
 }

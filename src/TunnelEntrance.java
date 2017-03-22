@@ -9,8 +9,9 @@ public class TunnelEntrance extends Rail {
     /**
      * Default constructor
      */
-    public TunnelEntrance() {
-    	System.out.println("Constructor TunnelEntrance");
+    public TunnelEntrance(String tab) {
+    	System.out.println(tab + "Constructor TunnelEntrance");
+    	table = new Table(tab + "\t");
     }
 
     /**
@@ -20,41 +21,47 @@ public class TunnelEntrance extends Rail {
     /**
      * 
      */
-    private Table table = new Table();
+    private Table table;
 
     /**
      * @return
      */
-    public boolean isOpen() {
-        // TODO implement here
-    	System.out.println("TunnelEntrance.isOpen");
+    public boolean isOpen(String tab) {
+    	System.out.println(tab + "TunnelEntrance.isOpen");
         return open;
     }
 
     /**
      * @return
      */
-    public void changeStatus() {
-    	System.out.println("TunnelEntrance.changeStatus");
+    public void changeStatus(String tab) {
+    	System.out.println(tab + "TunnelEntrance.changeStatus");
     	if (open == true) open = false;
     	if (open == false) open = true;
     }
     
-    public void click(){
-    	System.out.println("TunnelEntrance.click");
-    	table.openTunnel(this);
+    public void click(String tab){
+    	System.out.println(tab + "TunnelEntrance.click");
+    	table.openTunnel(this, tab+"\t");
     }
 
-    public void stepOn(TrainElement te) {
-    	System.out.println("TunnelEntrance.steOn");
-    	if(occupied) Game.gameOver();
-    	setOccupied(true);
-    	te.setTunnelEntrance(this);
-    	te.setTableElement(this);
+    public void stepOn(TrainElement te, String tab) {
+    	if(!open) {
+    		Game.gameOver(tab+"\t");
+    		return;
+    	}
+    	System.out.println(tab + "TunnelEntrance.stepOn");
+    	if(occupied) {
+    		Game.gameOver(tab+"\t");
+    		return;
+    	}
+    	setOccupied(true, tab+"\t");
+    	te.setTunnelEntrance(this, tab+"\t");
+    	te.setTableElement(this, tab+"\t");
     }
     
-    public void stepOff() {
-    	System.out.println("TunnelEntrance.stepOff");
-    	setOccupied(false);
+    public void stepOff(String tab) {
+    	System.out.println(tab + "TunnelEntrance.stepOff");
+    	setOccupied(false, tab+"\t");
     }
 }

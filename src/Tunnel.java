@@ -1,4 +1,6 @@
 
+import java.util.*;
+
 /**
  * 
  */
@@ -7,8 +9,8 @@ public class Tunnel extends Rail {
     /**
      * Default constructor
      */
-    public Tunnel() {
-    	System.out.println("Constructor Tunnel");
+    public Tunnel(String tab) {
+    	System.out.println(tab + "Constructor Tunnel");
     }
 
 
@@ -28,9 +30,8 @@ public class Tunnel extends Rail {
      * @param TunnelEntrance 
      * @return
      */
-    public boolean leadsTo(TunnelEntrance te) {
-        // TODO implement here
-    	System.out.println("Tunnel.leadsTo");
+    public boolean leadsTo(TunnelEntrance te, String tab) {
+    	System.out.println(tab + "Tunnel.leadsTo");
         return false;
     }
 

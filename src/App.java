@@ -6,206 +6,362 @@ import java.util.*;
  */
 public class App {
 
-	static private Game g;
+	static private Game g = new Game("");
 	
     /**
      * Default constructor
      */
-    public App() {
-    	//Létrehoz egy Game példányt majd meghívja annak run() metódusát
-    	g = new Game();
+    public App(String tab) {
+    	g = new Game(tab);
     }
 
-    public static void initGame(){
+    public static void initGame(String tab){
     	App a;
-		System.out.println("1");
 		//Létrehozunk egy App példányt
-		a = new App();
+		a = new App(tab);
 		//Meghívjuk a Game Run() metódusát
-		a.g.run();
+		a.g.run(tab);
     }
     
-    static void startTrain(){
-		Game game = new Game();
-		game.move();
+    static void startTrain(String tab){
+		g.move(tab);
 	}
 	
-    public static void Move(){
-    	Game g = new Game(); 	
+    static void stepOn(String tab){
+    	String choice;
+    	do {
+			System.out.println(tab + "Choose one number from below to proceed!");
+			System.out.println(tab + "1. Occupied");
+			System.out.println(tab + "2. Free");
+			System.out.println(tab + "'q' to go back to previous menu!");
+			Scanner scan = new Scanner(System.in);
+			choice = scan.nextLine();
+				switch(choice) {
+				case "1":
+					stepOnOccupied(tab + "\t");
+					break;
+				case "2":
+					stepOnFree(tab + "\t");
+					break;
+				}
+			} while (!choice.equals("q"));		
     }
     
-    public static void nextElementRailOrStation(){
-    	Train t = new Train();
-    	Car c = new Car(t);
-    	Rail r = new Rail();
-    	r.stepOn(c);
-    	c.getPreviousElement();
+    static void stepOnTunnelEntrance(String tab){
+    	String choice;
+    	Scanner scan = new Scanner(System.in);
+    	do {
+			System.out.println(tab + "Choose one number from below to proceed!");
+			System.out.println(tab + "1. Occupied");
+			System.out.println(tab + "2. Free");
+			System.out.println(tab + "'q' to go back to previous menu!");
+			choice = scan.nextLine();
+				switch(choice) {
+				case "1":
+					stepOnTunnelEntranceClosed("\t");
+					break;
+				case "2":
+					stepOnTunnelEntranceOpen("\t");
+					break;
+				}
+			} while (!choice.equals("q"));
     }
     
-    public static void nextElementSwitch(){
-    	Train t = new Train();
-    	Car c = new Car(t);
-    	Switch sw = new Switch();
-    	sw.nextElement(c);
-    	c.getPreviousElement();
+    public static void Move(String tab){
+    	String choice;
+    	Scanner scan = new Scanner(System.in);
+    	do {
+			System.out.println(tab + "Choose one number from below to proceed!");
+			System.out.println(tab + "1. NextElement Rail or Station");
+			System.out.println(tab + "2. NextElement Switch");
+			System.out.println(tab + "3. NextElement TunnelEntrance");
+			System.out.println(tab + "4. NextElement Tunnel");
+			System.out.println(tab + "5. StepOn");
+			System.out.println(tab + "6. StepOn TunnelEntrance");
+			System.out.println(tab + "7. StepOn Station");
+			System.out.println(tab + "8. StepOff");
+			System.out.println(tab + "9. StepOff TunnelEntrance");
+			System.out.println(tab + "'q' to go back to previous menu!");
+				
+			choice = scan.nextLine();
+				
+				switch(choice) {
+				case "1":
+					nextElementRailOrStation(tab + "\t");
+					break;
+				case "2":
+					nextElementSwitch(tab + "\t");
+					break;
+				case "3":
+					nextElementTunnelEntrance(tab + "\t");
+					break;
+				case "4":
+					nextElementTunnel(tab + "\t");
+					break;
+				case "5":
+					stepOn(tab + "\t");
+					break;
+				case "6":		
+					stepOnTunnelEntrance(tab + "\t");
+					break;
+				case "7":
+					stepOnStation(tab + "\t");
+					break;
+				case "8":
+					stepOff(tab + "\t");
+					break;
+				case "9":
+					stepOffTunnelEntrance(tab + "\t");
+					break;
+				}
+			} while (!choice.equals("q"));
     }
     
-    public static void nextElementTunnelEntrance(){
-    	Train t = new Train();
-    	Car c = new Car(t);
-    	TunnelEntrance tunEn = new TunnelEntrance();
+    public static void clickOnTunnelEntrance(String tab){
+    	Table t = new Table(tab);
+    	TunnelEntrance ent = new TunnelEntrance(tab);
+    	String choice;
+		Scanner scan = new Scanner(System.in);
     	
-    	String innerChoice2 = new String();
+    	do {				
+			System.out.println(tab + "Choose one number from below to proceed!");
+			System.out.println(tab + "1. Open");
+			System.out.println(tab + "2. Close");
+			System.out.println(tab + "3. Click on switch");
+			System.out.println(tab + "'q' to go back to previous menu!");
+			
+			choice = scan.nextLine();
+				
+				switch(choice) {
+				case "1":
+					openTunnelEntrance(tab + "\t");
+					break;
+				case "2":
+					closeTunnelEntrance(tab + "\t");
+					break;
+				case "3":
+					clickOnSwitch(tab + "\t");
+					break;
+				} 
+			} while (!choice.equals("q"));
+    }
+    
+    public static void nextElementRailOrStation(String tab){
+    	Train t = new Train(tab);
+    	Car c = new Car(t, tab);
+    	Rail r = new Rail(tab);
+    	r.stepOn(c, tab+"\t");
+    	c.getPreviousElement(tab);
+    }
+    
+    public static void nextElementSwitch(String tab){
+    	Train t = new Train(tab);
+    	Car c = new Car(t, tab);
+    	Switch sw = new Switch(tab);
+    	sw.nextElement(c, tab+"\t");
+    	c.getPreviousElement(tab+"\t");
+    	
+    	String choice;
+    	Scanner scan = new Scanner(System.in);
+
+		do {
+		System.out.println(tab + "Choose one number from below to proceed!");
+		System.out.println(tab + "1. Appropriate direction");
+		System.out.println(tab + "2. Wrong direction");
+		System.out.println(tab + "'q' to go back to previous menu!");
+			choice = scan.nextLine();
+			switch(choice) {
+			case "1":								
+				break;
+			case "2":
+				Game.gameOver(tab+"\t");
+				break;
+			}
+		} while (!choice.equals("q"));
+
+    }
+    
+    public static void nextElementTunnelEntrance(String tab){
+    	Train t = new Train(tab);
+    	Car c = new Car(t, tab);
+    	TunnelEntrance tunEn = new TunnelEntrance(tab);
+    	
+    	String choice = new String();
 		Scanner scan = new Scanner(System.in);
     	
 		do {
-			System.out.println("Choose one number from below to proceed!");
-			System.out.println("1. Open");
-			System.out.println("2. Closed");
-			System.out.println("'q' to go back to previous menu!");
+			System.out.println(tab + "Choose one number from below to proceed!");
+			System.out.println(tab + "1. Open");
+			System.out.println(tab + "2. Closed");
+			System.out.println(tab + "'q' to go back to previous menu!");
 			
-			innerChoice2 = scan.nextLine();
-			switch(innerChoice2) {
+			choice = scan.nextLine();
+			switch(choice) {
 			case "1":
-				c.getPreviousElement();
+				c.getPreviousElement(tab+"\t");
 				break;
 			case "2":
-				Game.gameOver();
+				Game.gameOver(tab+"\t");
 				break;
 			}
-		} while (!innerChoice2.equals("q"));
+		} while (!choice.equals("q"));
 		
     }
     
-    public static void nextElementTunnel(){
-    	Train t = new Train();
-    	Car c = new Car(t);
-    	TunnelEntrance tunEn1 = new TunnelEntrance();
-    	TunnelEntrance tunEn2 = new TunnelEntrance();
-    	Tunnel tun = new Tunnel();
+    public static void nextElementTunnel(String tab){
+    	Train t = new Train(tab);
+    	Car c = new Car(t, tab);
+    	TunnelEntrance tunEn1 = new TunnelEntrance(tab);
+    	TunnelEntrance tunEn2 = new TunnelEntrance(tab);
+    	Tunnel tun = new Tunnel(tab);
     	
-    	tun.nextElement(c);
-    	tunEn1.isOpen();
-    	tunEn2.isOpen();
+    	tun.nextElement(c, tab+"\t");
+    	tunEn1.isOpen(tab+"\t");
+    	tunEn2.isOpen(tab+"\t");
     	
-    	c.getPreviousElement();
+    	c.getPreviousElement(tab+"\t");
     	
-    	tun.leadsTo(tunEn2);
-    	tun.leadsTo(tunEn1);
+    	tun.leadsTo(tunEn2, tab+"\t");
+    	tun.leadsTo(tunEn1, tab+"\t");
     }
     
-	static void stepOnTunnelEntranceOpen(){
-		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
-		TunnelEntrance te = new TunnelEntrance();
+	static void stepOnTunnelEntranceOpen(String tab){
+		Train t = new Train(tab);
+		Locomotive loco = new Locomotive(t, tab);
+		TunnelEntrance te = new TunnelEntrance(tab);
+		TableElement tEl = new TableElement(tab);
+		if (te.isOpen(tab+"\t") == false) te.changeStatus(tab+"\t");
+		te.stepOn(loco,tab+"\t");
+	}
+	
+	static void stepOnTunnelEntranceClosed(String tab){
+		Train t = new Train(tab);
+		Locomotive loco = new Locomotive(t, tab);
+		TunnelEntrance te = new TunnelEntrance(tab+"\t");
 		TableElement tEl = new TableElement();
-		if (te.isOpen() == false) te.changeStatus();
-		te.stepOn(loco);
+		if (te.isOpen(tab+"\t")) te.changeStatus(tab+"\t");
+		te.stepOn(loco,tab+"\t");
 	}
 	
-	static void stepOnTunnelEntranceClosed(){
-		Game g = new Game();
-		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
-		TunnelEntrance te = new TunnelEntrance();
-		TableElement tEl = new TableElement();
-		if (te.isOpen()) te.changeStatus();
-		te.stepOn(loco);
+	static void stepOnStation(String tab){
+		Train t = new Train(tab);
+		Locomotive loco = new Locomotive(t, tab);
+		Station s = new Station(tab);
+		s.stepOn(loco, tab+"\t");
+		
+		String choice;
+		Scanner scan = new Scanner(System.in);
+		
+		do {
+			System.out.println(tab + "Choose one number from below to proceed!");
+			System.out.println(tab + "1. HopOff Train");
+			System.out.println(tab + "2. HopOff Locomotive");
+			System.out.println(tab + "3. HopOff Car");
+			System.out.println(tab + "'q' to go back to previous menu!");
+				choice = scan.nextLine();
+				switch(choice) {
+				case "1":
+					hopOffTrain(tab+"\t");
+					break;
+				case "2":
+					hopOffLocomotive(tab+"\t");
+					break;
+				case "3":
+					hopOffCar(tab+"\t");
+					break;
+				}
+			} while (!choice.equals("q"));
+			
 	}
 	
-	static void stepOnStation(){
-		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
-		Station s = new Station();
-		s.stepOn(loco);
+	static void stepOnFree(String tab){
+		Train t = new Train(tab);
+		Locomotive loco = new Locomotive(t, tab);
+		TableElement te = new TableElement(tab);
+		if(te.occupied) te.setOccupied(false, tab+"\t");
+		te.stepOn(loco, tab+"\t");
 	}
 	
-	static void stepOnFree(){
-		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
-		TableElement te = new TableElement();
-		if(te.occupied) te.setOccupied(false);
-		te.stepOn(loco);
+	static void stepOnOccupied(String tab){
+		Train t = new Train(tab);
+		Locomotive loco = new Locomotive(t, tab);
+		TableElement te = new TableElement(tab);
+		if(te.occupied == false) te.setOccupied(true, tab+"\t");
+		te.stepOn(loco, tab+"\t");
+		g.gameOver(tab+"\t");
 	}
 	
-	static void stepOnOccupied(){
-		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
-		TableElement te = new TableElement();
-		if(te.occupied == false) te.setOccupied(true);
-		te.stepOn(loco);
+	static void stepOff(String tab){
+		Train t = new Train(tab);
+		Locomotive loco = new Locomotive(t, tab);
+		TableElement te = new TableElement(tab);
+		te.setOccupied(false, tab+"\t");
 	}
 	
-	static void stepOff(){
-		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
-		TableElement te = new TableElement();
-		te.setOccupied(false);
+	static void stepOffTunnelEntrance(String tab){ 
+		Train t = new Train(tab);
+		Locomotive loco = new Locomotive(t, tab);
+		TunnelEntrance te = new TunnelEntrance(tab);
+		te.stepOff(tab+"\t");
+		te.setOccupied(false, tab+"\t");
+		loco.changeVisibility(tab+"\t");
 	}
 	
-	static void stepOffTunnelEntrance(){ 
-		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
-		TunnelEntrance te = new TunnelEntrance();
-		te.stepOff();
-		te.setOccupied(false);
-		loco.changeVisibility();
-	}
-	
-	static void hopOffTrain(){
-		Train t = new Train();
-		Car c = new Car(t);
-		Car c2 = new Car(t);
-		t.hopOff();
+	static void hopOffTrain(String tab){
+		Train t = new Train(tab);
+		Car c = new Car(t, tab);
+		Car c2 = new Car(t, tab);
+		t.hopOff(tab+"\t");
 		String choice;
 		String choice2;
 		Scanner scan = new Scanner(System.in);
 		do{
-			System.out.println("1 - has more element, 2 - no more element ");
+			System.out.println(tab + "1 - has more element, 2 - no more element ");
 			choice = scan.nextLine();
-			c2.isEmpty();
-			System.out.println("1 - empty, 2 - not empty");
+			if(choice.equals("2")) break;
+			c2.isEmpty(tab+"\t");
+			System.out.println(tab + "1 - empty, 2 - not empty");
 			choice2 = scan.nextLine();
 		} while(choice.equals("1") && choice2.equals("1"));
-		System.out.println("1 - Not empty car equals this, 2 - No more cars, or not this car is the first not empty");
+		System.out.println(tab + "1 - Not empty car equals this, 2 - No more cars, or not this car is the first not empty");
 		choice = scan.nextLine();
 		if(choice.equals("1")){
-			c.setEmpty();
-			System.out.println("1 - This is the last car, 2 - This is not the last car");
+			c.setEmpty(tab+"\t");
+			System.out.println(tab + "1 - This is the last car, 2 - This is not the last car");
 			choice = scan.nextLine();
 			if(choice.equals("1")){
-				g.mapCompleted();
+				g.mapCompleted(tab+"\t");
 			}
 		}
 	}
 		
-	static void hopOffLocomotive(){
-		Station s = new Station();
-		Train t = new Train();
-		Locomotive loco = new Locomotive(t);
+	static void hopOffLocomotive(String tab){
+		Station s = new Station(tab);
+		Train t = new Train(tab);
+		Locomotive loco = new Locomotive(t, tab);
 		Color c = Color.red;
-		loco.hopOff(c);
+		loco.hopOff(c, tab+"\t");
 	}
 	
-	static void hopOffCar(){
-		Station s = new Station();
-		Train t = new Train();
-		Car c = new Car(t);
+	static void hopOffCar(String tab){
+		Station s = new Station(tab);
+		Train t = new Train(tab);
+		Car c = new Car(t, tab);
 		Color col = Color.red;
-		c.hopOff(col);
-		System.out.println("1 - empty, 2 - not empty");
+		c.hopOff(col, tab+"\t");
+		System.out.println(tab + "1 - empty, 2 - not empty");
 		Scanner scan = new Scanner(System.in);
 		String choice = scan.nextLine();
     	switch (choice) {
     		case "1":
     			return;
     		case "2":
-    			t.hopOff();
-    			System.out.println("1 - can hop off, 2 - can't hop off");
+    			t.hopOff(tab+"\t");
+    			System.out.println(tab + "1 - can hop off, 2 - can't hop off");
     			String choice2 = scan.nextLine();
     			switch(choice2) {
     			case "1":
-    				c.setEmpty();
+    				c.setEmpty(tab+"\t");
     				break;
     			case "2":
     				break;
@@ -213,31 +369,26 @@ public class App {
     			break;
     		}
 	}
-		
-    public static void clickOnTunnelEntrance(){
-    	Table t = new Table();
-    	TunnelEntrance ent = new TunnelEntrance();
-    }
     
-    public static void openTunnelEntrance(){
-    	Table t = new Table();
-    	TunnelEntrance ent = new TunnelEntrance();
-    	ent.click();
+    public static void openTunnelEntrance(String tab){
+    	Table t = new Table(tab);
+    	TunnelEntrance ent = new TunnelEntrance(tab+"\t");
+    	ent.click(tab+"\t");
     	
     }
     
-    public static void closeTunnelEntrance() {
+    public static void closeTunnelEntrance(String tab) {
     	String choice;
-    	Table t = new Table();
-    	TunnelEntrance ent = new TunnelEntrance();
-    	ent.click();
-    	System.out.println("1 - occupied, 2 - not occupied");
+    	Table t = new Table(tab);
+    	TunnelEntrance ent = new TunnelEntrance(tab+"\t");
+    	ent.click(tab+"\t");
+    	System.out.println(tab + "1 - occupied, 2 - not occupied");
     	Scanner scan = new Scanner(System.in);
     	do {
     		choice = scan.nextLine();
     		switch (choice) {
     		case "1":
-    			System.out.println("Can't close tunnel, it's occupied!");
+    			System.out.println(tab + "Can't close tunnel, it's occupied!");
     			break;
     		case "2":
     			System.out.println("Tunnel closed!");
@@ -246,20 +397,20 @@ public class App {
     	} while(!choice.equals("q"));
     }
     
-    public static void clickOnSwitch() {
+    public static void clickOnSwitch(String tab) {
     	String choice;
-    	Switch s = new Switch();
-    	s.click();
-    	System.out.println("1 - occupied, 2 - not occupied");
+    	Switch s = new Switch(tab);
+    	s.click(tab+"\t");
+    	System.out.println(tab + "1 - occupied, 2 - not occupied");
     	Scanner scan = new Scanner(System.in);
     	do {
     		choice = scan.nextLine();
     		switch (choice) {
     		case "1":
-    			System.out.println("Not settable!");
+    			System.out.println(tab + "Not settable!");
     			break;
     		case "2":
-    			System.out.println("inactive = active, active = inactive");
+    			System.out.println(tab + "inactive = active, active = inactive");
     			break;
     		}
     	} while(!choice.equals("q"));
@@ -285,154 +436,20 @@ public static void main(String[] s) {
 		System.out.println("4. Click on TunnelEntrance");
 		System.out.println("'q' to exit!");
 		
-		String innerChoice;
-		String innerChoice2;
 		Scanner scan = new Scanner(System.in);
-	
-			choice = scan.nextLine();
+		choice = scan.nextLine();
 			switch(choice) {
 			case "1":
-				initGame();
+				initGame("\t");
 				break;
 			case "2":
-				startTrain();
+				startTrain("\t");
 				break;		
 			case "3":
-				Move();
-				
-				do {
-				System.out.println("Choose one number from below to proceed!");
-				System.out.println("1. NextElement Rail or Station");
-				System.out.println("2. NextElement Switch");
-				System.out.println("3. NextElement TunnelEntrance");
-				System.out.println("4. NextElement Tunnel");
-				System.out.println("5. StepOn");
-				System.out.println("6. StepOn TunnelEntrance");
-				System.out.println("7. StepOn Station");
-				System.out.println("8. StepOff");
-				System.out.println("9. StepOff TunnelEntrance");
-				System.out.println("'q' to go back to previous menu!");
-				
-					innerChoice = scan.nextLine();
-					
-					switch(innerChoice) {
-					case "1":
-						nextElementRailOrStation();
-						break;
-					case "2":
-						nextElementSwitch();
-
-						do {
-						System.out.println("Choose one number from below to proceed!");
-						System.out.println("1. Appropriate direction");
-						System.out.println("2. Wrong direction");
-						System.out.println("'q' to go back to previous menu!");
-							innerChoice2 = scan.nextLine();
-							switch(innerChoice2) {
-							case "1":								
-								break;
-							case "2":
-								Game.gameOver();
-								break;
-							}
-						} while (!innerChoice2.equals("q"));
-						break;
-					case "3":
-						nextElementTunnelEntrance();
-						break;
-					case "4":
-						nextElementTunnel();
-						break;
-					case "5":
-						do {
-						System.out.println("Choose one number from below to proceed!");
-						System.out.println("1. Occupied");
-						System.out.println("2. Free");
-						System.out.println("'q' to go back to previous menu!");
-							innerChoice2 = scan.nextLine();
-							switch(innerChoice2) {
-							case "1":
-								stepOnOccupied();
-								break;
-							case "2":
-								stepOnFree();
-								break;
-							}
-						} while (!innerChoice2.equals("q"));
-						break;
-					case "6":		
-						do {
-						System.out.println("Choose one number from below to proceed!");
-						System.out.println("1. Occupied");
-						System.out.println("2. Free");
-						System.out.println("'q' to go back to previous menu!");
-							innerChoice2 = scan.nextLine();
-							switch(innerChoice2) {
-							case "1":
-								stepOnTunnelEntranceClosed();
-								break;
-							case "2":
-								stepOnTunnelEntranceOpen();
-								break;
-							}
-						} while (!innerChoice2.equals("q"));
-						break;
-					case "7":
-						stepOnStation();
-						do {
-						System.out.println("Choose one number from below to proceed!");
-						System.out.println("1. HopOff Train");
-						System.out.println("2. HopOff Locomotive");
-						System.out.println("3. HopOff Car");
-						System.out.println("'q' to go back to previous menu!");
-							innerChoice2 = scan.nextLine();
-							switch(innerChoice2) {
-							case "1":
-								hopOffTrain();
-								break;
-							case "2":
-								hopOffLocomotive();
-								break;
-							case "3":
-								hopOffCar();
-								break;
-							}
-						} while (!innerChoice2.equals("q"));
-						break;
-					case "8":
-						stepOff();
-						break;
-					case "9":
-						stepOffTunnelEntrance();
-						break;
-					}
-				} while (!innerChoice.equals("q"));
+				Move("\t");
 				break;
 			case "4":
-				
-				clickOnTunnelEntrance();
-				
-				do {				
-				System.out.println("Choose one number from below to proceed!");
-				System.out.println("1. Open");
-				System.out.println("2. Close");
-				System.out.println("3. Click on switch");
-				System.out.println("'q' to go back to previous menu!");
-				
-					innerChoice = scan.nextLine();
-					
-					switch(innerChoice) {
-					case "1":
-						openTunnelEntrance();
-						break;
-					case "2":
-						closeTunnelEntrance();
-						break;
-					case "3":
-						clickOnSwitch();
-						break;
-					} 
-				} while (!innerChoice.equals("q"));
+				clickOnTunnelEntrance("\t");
 				break;
 			default:
 				break;

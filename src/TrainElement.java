@@ -9,8 +9,10 @@ public abstract class TrainElement {
     /**
      * Default constructor
      */
-    public TrainElement() {
-    	System.out.println("Constructor TrainElement");
+	public TrainElement(){}
+	
+    public TrainElement(String tab) {
+    	System.out.println(tab + "Constructor TrainElement");
     }
 
     /**
@@ -36,46 +38,46 @@ public abstract class TrainElement {
     /**
      * @return
      */
-    public void changeVisibility() {
-    	System.out.println("TrainElement.changeVisibility");
+    public void changeVisibility(String tab) {
+    	System.out.println(tab + "TrainElement.changeVisibility");
     }
 
     /**
      * @param TableElement 
      * @return
      */
-    public void setTableElement(TableElement te) {
-        System.out.println("TrainElement.setTableElement");
+    public void setTableElement(TableElement te, String tab) {
+        System.out.println(tab + "TrainElement.setTableElement");
     }
 
     /**
      * @return
      */
-    public TableElement getPreviousElement() {
-        System.out.println("TrainElement.getPreviousElement");
+    public TableElement getPreviousElement(String tab) {
+        System.out.println(tab + "TrainElement.getPreviousElement");
         return null;
     }
 
     /**
      * @return
      */
-    public void move() {
-        System.out.println("TrainElement.move");
+    public void move(String tab) {
+        System.out.println(tab + "TrainElement.move");
     }
 
     /**
      * @param Color 
      * @return
      */
-    public void hopOff(Color color) {
-    	System.out.println("TrainElement.hopOff");
+    public void hopOff(Color color, String tab) {
+    	System.out.println(tab + "TrainElement.hopOff");
     }
 
     /**
      * @param TableElement 
      * @return
      */
-    public void setTunnelEntrance(TableElement te) {
-    	System.out.println("TrainElement.setTunnelEntrance");
+    public void setTunnelEntrance(TableElement te, String tab) {
+    	System.out.println(tab + "TrainElement.setTunnelEntrance");
     }
 }

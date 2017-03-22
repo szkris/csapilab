@@ -23,32 +23,32 @@ public class Car extends TrainElement {
     /**
      * Default constructor
      */
-    public Car(Train t) {
-    	System.out.println("Constructor Car");
+    public Car(Train t, String tab) {
+    	System.out.println(tab  + "Constructor Car");
     	train = t;
     }
 
     /**
      * @return
      */
-    public boolean isEmpty() {
-    	System.out.println("Car.isEmpty");
+    public boolean isEmpty(String tab) {
+    	System.out.println(tab + "Car.isEmpty");
         return false;
     }
 
     /**
      * @return
      */
-    public Color getColor() {
-    	System.out.println("Car.getColor");
+    public Color getColor(String tab) {
+    	System.out.println(tab + "Car.getColor");
         return null;
     }
 
     /**
      * @return
      */
-    public void setEmpty() {
-    	System.out.println("Car.setEmpty");
+    public void setEmpty(String tab) {
+    	System.out.println(tab + "Car.setEmpty");
     }
 
 }

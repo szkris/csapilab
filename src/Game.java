@@ -23,12 +23,12 @@ public class Game {
     /**
      * Default constructor
      */
-    public Game() {
+    public Game(String tab) {
 
-    	System.out.println("Constructor Game");
+    	System.out.println(tab + "Constructor Game");
     	// Inicializálja a Table és a Timer változókat
-    	tbl = new Table();
-    	tmr = new Timer(this);
+    	tbl = new Table(tab+"\t");
+    	tmr = new Timer(this, tab+"\t");
     	
     	//Beállítjuk a változókat
     	hasMoreMap = true;
@@ -40,27 +40,28 @@ public class Game {
      * @param TableElement 
      * @return
      */
-    public void startTrain(Train t, TableElement te) {
-    	System.out.println("Game.startTrain");
+    public void startTrain(Train t, TableElement te, String tab) {
+    	System.out.println(tab + "Game.startTrain");
     }
 
     /**
      * @return
      */
-    public void run() {
-    	System.out.println("Game.Run()");
-    	System.out.println("HasMoreMap: 1-True, 2-False");
+    public void run(String tab) {
+    	System.out.println(tab + "Game.Run()");
+    	tbl.loadMap(tab+"\t");
+    	System.out.println(tab + "HasMoreMap: 1-True, 2-False");
     	String _hasmoremap = new Scanner(System.in).nextLine();
     	
     	switch(_hasmoremap){
     	case "1":
-    		tbl.loadMap();
-    		moreMap(true);
-    		tmr.start();
-    		tmr.stop();
+    		tbl.loadMap(tab+"\t");
+    		moreMap(true, tab+"\t");
+    		tmr.start(tab+"\t");
+    		tmr.stop(tab+"\t");
     		break;
     	case "2": 
-    		victory();
+    		victory(tab+"\t");
     		break;
     	}
     		
@@ -69,23 +70,23 @@ public class Game {
     /**
      * @return
      */
-    public static void gameOver() {
-    	System.out.println("Game.gameOver");
+    public static void gameOver(String tab) {
+    	System.out.println(tab + "Game.gameOver");
     }
 
     /**
      * @return
      */
-    public static void victory() {
-    	System.out.println("Game.victory");
+    public static void victory(String tab) {
+    	System.out.println(tab + "Game.victory");
     }
 
     /**
      * @return
      */
-    public void move() {
-    	System.out.println("Game.move");
-    	while(tbl.trainReady(1)){
+    public void move(String tab) {
+    	System.out.println(tab + "Game.move");
+    	while(tbl.trainReady(1, tab+"\t")){
     	}
     	
     }
@@ -94,15 +95,15 @@ public class Game {
      * @param boolean 
      * @return
      */
-    public void moreMap(boolean hasMoreMap) {
-    	System.out.println("Game.moreMap");
+    public void moreMap(boolean hasMoreMap, String tab) {
+    	System.out.println(tab + "Game.moreMap");
     }
 
     /**
      * @return
      */
-    public static void mapCompleted() {
-    	System.out.println("Game.mapCompleted");
+    public static void mapCompleted(String tab) {
+    	System.out.println(tab + "Game.mapCompleted");
     }
 
 }

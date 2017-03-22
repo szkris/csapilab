@@ -9,8 +9,13 @@ public class TableElement implements ITableElement {
     /**
      * Default constructor
      */
-    public TableElement() {
-    	System.out.println("Constructor TableElement");
+	
+	
+	public TableElement(){
+		
+	}
+    public TableElement(String tab) {
+    	System.out.println(tab + "Constructor TableElement");
     }
 
     /**
@@ -27,42 +32,45 @@ public class TableElement implements ITableElement {
      * @param boolean 
      * @return
      */
-    public void setOccupied(boolean bool) {
-    	System.out.println("TableElement.setOccupied");
+    public void setOccupied(boolean bool, String tab) {
+    	System.out.println(tab + "TableElement.setOccupied");
     }
 
     /**
      * @return
      */
-    public void stepOff() {
-    	System.out.println("TableElement.stepOff");
-    	setOccupied(false);
+    public void stepOff(String tab ) {
+    	System.out.println(tab + "TableElement.stepOff");
+    	setOccupied(false, tab+"\t");
     }
 
     /**
      * @return
      */
-    public void click() {
-    	System.out.println("TableElement.click");
-    }
-
-    /**
-     * @param TrainElement 
-     * @return
-     */
-    public void nextElement(TrainElement te) {
-    	System.out.println("TableElement.nextElement");
+    public void click(String tab) {
+    	System.out.println(tab + "TableElement.click");
     }
 
     /**
      * @param TrainElement 
      * @return
      */
-    public void stepOn(TrainElement te) {
-    	System.out.println("TableElement.stepOn");
-    	if(occupied) Game.gameOver();
-    	setOccupied(true);
-    	te.setTableElement(this);
+    public void nextElement(TrainElement te, String tab) {
+    	System.out.println(tab + "TableElement.nextElement");
+    }
+
+    /**
+     * @param TrainElement 
+     * @return
+     */
+    public void stepOn(TrainElement te, String tab) {
+    	System.out.println(tab + "TableElement.stepOn");
+    	if(occupied) {
+    		Game.gameOver(tab+"\t");
+    		return;
+    	}
+    	setOccupied(true, tab+"\t");
+    	te.setTableElement(this, tab+"\t");
     }
 
 }

@@ -29,30 +29,30 @@ public class Table {
     /**
      * Default constructor
      */
-    public Table() {
-    	System.out.println("Constructor Table");
+    public Table(String tab) {
+    	System.out.println(tab + "Constructor Table");
     }
 
     /**
      * @return
      */
-    public void loadMap() {
-    	System.out.println("Table.loadMap");
+    public void loadMap(String tab) {
+    	System.out.println(tab + "Table.loadMap");
     }
 
     /**
      * @return
      */
-    public TableElement getEntryPoint() {
-    	System.out.println("Table.getEntryPoint");
+    public TableElement getEntryPoint(String tab) {
+    	System.out.println(tab + "Table.getEntryPoint");
         return null;
     }
 
     /**
      * @return
      */
-    public Train getNextTrain() {
-    	System.out.println("Table.getNextTrain");
+    public Train getNextTrain(String tab) {
+    	System.out.println(tab + "Table.getNextTrain");
         return null;
     }
 
@@ -60,9 +60,9 @@ public class Table {
      * @param tick 
      * @return
      */
-    public boolean trainReady(int tick) {
-    	System.out.println("Table.trainReady()");
-        System.out.println("1-ready, 2-not ready");
+    public boolean trainReady(int tick, String tab) {
+    	System.out.println(tab + "Table.trainReady()");
+        System.out.println(tab + "1-ready, 2-not ready");
         String ready = new Scanner(System.in).nextLine();
         if (ready.equals("1")){
         	return true;
@@ -77,10 +77,10 @@ public class Table {
      * @param TunnelEntrance 
      * @return
      */
-    public boolean openTunnel(TunnelEntrance tunEn) {
-    	System.out.println("Table.openTunnel");
+    public boolean openTunnel(TunnelEntrance tunEn, String tab) {
+    	System.out.println(tab + "Table.openTunnel");
     	openTunnelEntrances = tunEn;
-    	openTunnelEntrances.changeStatus();
+    	openTunnelEntrances.changeStatus(tab+"\t");
         return false;
     }
 
