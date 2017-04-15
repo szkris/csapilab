@@ -13,17 +13,14 @@ public class Game {
     }
 
     /**
-     * 
+     * Megadja, hogy van-e még pálya, amit be lehet tölteni.
      */
     private boolean hasMoreMap;
 
     /**
-     * 
+     * Egy idõegység a játék idejében.
      */
     private int tick;
-
-
-
 
     /**
      * @param Train 
@@ -36,7 +33,7 @@ public class Game {
     }
 
     /**
-     * @return
+     * Elindítja a játékot.
      */
     public void run() {
         // TODO implement here
@@ -44,7 +41,7 @@ public class Game {
     }
 
     /**
-     * @return
+     * A játék végekor kerül meghívásra.
      */
     public static void gameOver() {
         // TODO implement here
@@ -52,7 +49,7 @@ public class Game {
     }
 
     /**
-     * @return
+     * Gyõzelem esetén meghívódó függvény.
      */
     public static void victory() {
         // TODO implement here
@@ -60,7 +57,7 @@ public class Game {
     }
 
     /**
-     * @return
+     * 
      */
     public void move() {
         // TODO implement here
@@ -77,7 +74,7 @@ public class Game {
     }
 
     /**
-     * @return
+     * 
      */
     public static void mapCompleted() {
         // TODO implement here
