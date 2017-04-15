@@ -1,16 +1,7 @@
-import java.util.*;
-
 /**
  * Egy alagútbejáratot megvalósító függvény.
  */
 public class TunnelEntrance extends Rail {
-
-    /**
-     * Konstrukor, amiben egy Table-t lehet átadni.
-     */
-    public TunnelEntrance(Table table) {
-    	this.table = table;
-    }
 
     /**
      * Itt tárolódik, hogy a bejárat aktív-e.
@@ -21,6 +12,13 @@ public class TunnelEntrance extends Rail {
      * Tárolja az alagútbejárathoz tartozó Table-t, hogy kommunikálhasson az asztallal.
      */
     private Table table;
+
+    /**
+     * Konstrukor, amiben egy Table-t lehet átadni.
+     */
+    public TunnelEntrance(Table table) {
+    	this.table = table;
+    }
 
     /**
      * @return Visszaadja, hogy nyitva van-e az alagútbejárat.

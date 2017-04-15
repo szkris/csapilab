@@ -1,10 +1,9 @@
-
 import java.util.*;
 
 /**
  * 
  */
-public class TableElement implements ITableElement {
+public abstract class TableElement implements ITableElement {
 
     /**
      * Default constructor
@@ -16,8 +15,6 @@ public class TableElement implements ITableElement {
      * 
      */
     private boolean occupied;
-
-
 
     /**
      * 
@@ -32,39 +29,4 @@ public class TableElement implements ITableElement {
         // TODO implement here
         
     }
-
-    /**
-     * @return
-     */
-    public void stepOff() {
-        // TODO implement here
-        
-    }
-
-    /**
-     * @return
-     */
-    public void click() {
-        // TODO implement here
-        
-    }
-
-    /**
-     * @param TrainElement 
-     * @return
-     */
-    public void nextElement(TrainElement te) {
-        // TODO implement here
-        
-    }
-
-    /**
-     * @param TrainElement 
-     * @return
-     */
-    public void stepOn(TrainElement te) {
-        // TODO implement here
-        
-    }
-
 }
