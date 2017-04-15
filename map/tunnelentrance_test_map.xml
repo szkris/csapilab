@@ -13,5 +13,11 @@
         </tunnel>
         <tunnelentrance refid1="3" refid2="5" open="false" id="4"/>
         <rail refid1="2" refid2="null" id = "5"/>
+        <route start="2" end="4">
+            <nextelem refid="3"/>
+        </route>
+        <route start="4" end="2">
+            <nextelem refid="3"/>
+        </route>
     </map>
 </game>

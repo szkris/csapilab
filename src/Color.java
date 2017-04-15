@@ -2,8 +2,5 @@
  * Szín enumeráció.
  */
 public enum Color {
-	YELLOW,
-	RED,
-	BLUE,
-	GREEN
+	YELLOW, RED, BLUE, GREEN
 }

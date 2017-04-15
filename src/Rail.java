@@ -13,15 +13,15 @@ public class Rail extends TableElement {
     	super(id);
     }
 
-    /**
-     * 
-     */
-    private TableElement elem1;
+	/**
+	 * 
+	 */
+	private TableElement elem1;
 
-    /**
-     * 
-     */
-    private TableElement elem2;
+	/**
+	 * 
+	 */
+	private TableElement elem2;
 
 	@Override
 	public void stepOff() {

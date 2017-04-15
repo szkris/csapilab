@@ -24,5 +24,24 @@
         <rail refid1="8" refid2="null" id = "13"/>
         <field id="14"/>
         <field id="15"/>
+        <route start="2" end="4">
+            <nextelem refid="3"/>
+        </route>
+        <route start="4" end="2">
+            <nextelem refid="3"/>
+        </route>
+        <route start="2" end="6">
+            <nextelem refid="3"/>
+        </route>
+        <route start="6" end="2">
+            <nextelem refid="3"/>
+        </route>
+        <route start="4" end="6">
+            <nextelem refid="3"/>
+        </route>
+        <route start="6" end="4">
+            <nextelem refid="3"/>
+        </route>
+        
     </map>
 </game>

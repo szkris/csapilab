@@ -3,59 +3,34 @@ import java.util.*;
 /**
  * 
  */
-public class Car extends Train {
+public class Car extends TrainElement {
 
-    /**
-     * Default constructor
-     */
-    public Car() {
-    }
+	/**
+	 * Létrehoz egy Car elemet a megadott paraméterekkel.
+	 * 
+	 * @param color
+	 *            Szín.
+	 * @param empty
+	 *            Üres-e.
+	 * @param train
+	 *            Elemet tartalamzó vonat.
+	 */
+	public Car(Color color, boolean empty, Train train) {
+		super(color, empty, train);
+	}
 
-    /**
-     * 
-     */
-    private Color color;
+	@Override
+	public void hopOff(Color color) {
+		if (isEmpty() || this.getColor() != color)
+			return;
+		train.hopOff(color, this);
+	}
 
-    /**
-     * 
-     */
-    private boolean empty;
-
-    /**
-     * 
-     */
-    private Train train;
-
-    /**
-     * @return
-     */
-    public boolean isEmpty() {
-        // TODO implement here
-        return false;
-    }
-
-    /**
-     * @return
-     */
-    public Color getColor() {
-        // TODO implement here
-        return null;
-    }
-
-    /**
-     * @return
-     */
-    public void setEmpty() {
-        // TODO implement here
-       
-    }
-
-    /**
-     * @return
-     */
-    public void setFull() {
-        // TODO implement here
-       
-    }
+	@Override
+	public void hopOn(Color color) {
+		if (color != getColor() || !isEmpty())
+			return;
+		changeEmpty();
+	}
 
 }

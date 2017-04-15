@@ -1,4 +1,5 @@
 
+import java.beans.Visibility;
 import java.util.*;
 
 /**
@@ -6,88 +7,155 @@ import java.util.*;
  */
 public abstract class TrainElement {
 
-    /**
-     * Default constructor
-     */
-    public TrainElement() {
-    }
+	/**
+	 * Alapértelmezett konstrukto.
+	 */
+	public TrainElement(Color color, boolean empty, Train train) {
+		this.empty = empty;
+		this.color = color;
+		this.train = train;
+	}
 
-    /**
-     * 
-     */
-    private boolean visible;
+	/**
+	 * Kocsi színe
+	 */
+	private Color color;
 
-    /**
-     * 
-     */
-    private TableElement prevTableElement;
+	/**
+	 * Üres-e a kocsi
+	 */
+	private boolean empty;
 
-    /**
-     * 
-     */
-    private TableElement currentTableElement;
+	/**
+	 * Kocsit tartalamzó vonat
+	 */
+	final protected Train train;
 
-    /**
-     * 
-     */
-    private TableElement enteredTunnel;
+	/**
+	 * Visszatér, hogy üres-e az elem.
+	 * 
+	 * @return Üres-e az elem.
+	 */
+	public boolean isEmpty() {
+		return empty;
+	}
 
-    /**
-     * Egy TrainElement objektum láthatóságát változtatja meg ellenkezõjére.
-     */
-    public void changeVisibility() {
-        visible = !visible;
-    }
+	/**
+	 * Láthatóság
+	 */
+	private boolean visible;
 
-    /**
-     * @param TableElement 
-     * @return
-     */
-    public void setTableElement(TableElement te) {
-        // TODO implement here
-    }
+	/**
+	 * Elözö pozíción lévö elem.
+	 */
+	private TableElement prevTableElement;
 
-    /**
-     * @return
-     */
-    public TableElement getPreviousElement() {
-        // TODO implement here
-        return null;
-    }
+	/**
+	 * Jelenlegi pozíción lévö elem.
+	 */
+	private TableElement currentTableElement;
 
-    /**
-     * @return
-     */
-    public void move() {
-        // TODO implement here
-        
-    }
+	/**
+	 * Alagútba ezen bejáraton érkezett.
+	 */
+	private TunnelEntrance enteredTunnel;
 
-    /**
-     * @param Color 
-     * @return
-     */
-    public void hopOff(Color color) {
-        // TODO implement here
-    }
+	/**
+	 * Visszatér a kocsi színével.
+	 * 
+	 * @return A kocsi színe.
+	 */
+	public Color getColor() {
+		return color;
+	}
 
-    /**
-     * @param TableElement 
-     * @return
-     */
-    public void setTunnelEntrance(TableElement te) {
-        // TODO implement here
-    }
+	/**
+	 * Megtölti vagy kiüríti az elemet.
+	 */
+	public void changeEmpty() {
+		empty = !empty;
+	}
 
-    /**
-     * @param Color 
-     * @return
-     */
-    public void hopOn(Color color) {
-        // TODO implement here
-    }
-    
-    public TableElement getTunnelEntrance(){
-    	return enteredTunnel;
-    }
+	/**
+	 * Egy TrainElement objektum láthatóságát változtatja meg ellenkezõjére.
+	 */
+	public void changeVisibility() {
+		visible = !visible;
+	}
+
+	/**
+	 * Beállítja a megadott táblaelemet aktuális elemnek.
+	 * 
+	 * @param te
+	 *            Aktuális táblaelem.
+	 */
+	public void setTableElement(TableElement te) {
+		this.currentTableElement = te;
+	}
+
+	/**
+	 * Visszatér az elözö pazícióban lézö elemmel.
+	 * 
+	 * @return Az elözö táblaelem.
+	 */
+	public TableElement getPreviousElement() {
+		return prevTableElement;
+	}
+
+	/**
+	 * Visszatér, hogy alagútban van-e (látható-e) az elem.
+	 * 
+	 * @return Látható-e az elem.
+	 */
+	public boolean isVisible() {
+		return visible;
+	}
+
+	/**
+	 * Az elem mozgatását végzö függvény.
+	 */
+	public void move() {
+		TableElement next = currentTableElement.nextElement(this);
+		currentTableElement.stepOff();
+		next.stepOn(this);
+	}
+
+	/**
+	 * Utasok leszállását megvalósító függvény.
+	 * 
+	 * @param color
+	 *            Milyen színü utasokat akarunk leszállítani.
+	 */
+	public void hopOff(Color color) {
+		return;
+	}
+
+	/**
+	 * Utasok felszállását megvalósító függvény.
+	 * 
+	 * @param color
+	 *            Milyen színü utasokat akarunk felszállítani.
+	 */
+	public void hopOn(Color color) {
+		return;
+	}
+
+	/**
+	 * Beállítja a paraméterként kapott TunnelEntrance-ot enteredTunnel-nek.
+	 * 
+	 * @param te
+	 *            Hol érkezett be az alagútba.
+	 */
+	public void setTunnelEntrance(TunnelEntrance te) {
+		this.enteredTunnel = te;
+	}
+
+	/**
+	 * Visszatér az alagútba beérkezéskor beállított alagútbejárattal.
+	 * 
+	 * @return Ezen az alagútbejáraton érkezett az alagútba.
+	 */
+	public TunnelEntrance getTunnelEntrance() {
+		return enteredTunnel;
+	}
 }

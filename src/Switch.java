@@ -6,57 +6,55 @@ import java.util.*;
  */
 public class Switch extends TableElement {
 
-    /**
-     * Default constructor
-     */
-    public Switch(int id) {
-    	super(id);
-    }
-
-    /**
-     * 
-     */
-    private TableElement fix;
-
-    /**
-     * 
-     */
-    private TableElement active;
-
-    /**
-     * 
-     */
-    private TableElement inactive;
-
-	@Override
-	public void stepOff() {
-		// TODO Auto-generated method stub
-		
+	/**
+	 * Konstruktor mely paraméterként megkapja a táblaelem ID-ját.
+	 * 
+	 * @param id
+	 *            Az elem ID-ja.
+	 */
+	public Switch(int id) {
+		super(id);
 	}
+
+	/**
+	 * Ez a táblaelem minden pillanatban aktív be/kimenetel.
+	 */
+	private TableElement fix;
+
+	/**
+	 * Ez a másik jelenleg aktív be/kimenetel.
+	 */
+	private TableElement active;
+
+	/**
+	 * A jelenleg inaktív be/kimenetel.
+	 */
+	private TableElement inactive;
 
 	@Override
 	public void click() {
-		// TODO Auto-generated method stub
-		
+		if(occupied) return;
+		TableElement temp = active;
+		active = inactive;
+		inactive = temp;
 	}
 
 	@Override
 	public TableElement nextElement(TrainElement te) {
-		// TODO Auto-generated method stub
-		return active;
-	}
-
-	@Override
-	public void stepOn(TrainElement te) {
-		// TODO Auto-generated method stub
-		
+		TableElement prev = te.getPreviousElement();
+		if(prev == fix)
+			return active;
+		if(prev == active)
+			return fix;
+		else
+			Game.gameOver();
+		return null;
 	}
 
 	@Override
 	public void setUpConnections(ArrayList<TableElement> list) {
-		// TODO Auto-generated method stub
-		
+		fix = list.get(0);
+		active = list.get(1);
+		inactive = list.get(2);
 	}
-
-
 }
