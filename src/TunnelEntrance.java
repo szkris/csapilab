@@ -23,11 +23,10 @@ public class TunnelEntrance extends Rail {
     private Table table;
 
     /**
-     * @return
+     * @return Visszaadja, hogy nyitva van-e az alagútbejárat.
      */
     public boolean isOpen() {
-        // TODO implement here
-        return false;
+        return open;
     }
 
     /**
