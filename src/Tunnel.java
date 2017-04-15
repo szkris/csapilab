@@ -12,8 +12,6 @@ public class Tunnel extends Rail {
     public Tunnel() {
     }
 
-
-
     /**
      * 
      */
@@ -24,7 +22,6 @@ public class Tunnel extends Rail {
      */
     private TableElement leadsto;
 
-
     /**
      * @param TunnelEntrance 
      * @return
@@ -33,5 +30,4 @@ public class Tunnel extends Rail {
         // TODO implement here
         return false;
     }
-
 }

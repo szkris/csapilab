@@ -1,4 +1,3 @@
-
 import java.util.*;
 
 /**
@@ -22,15 +21,10 @@ public class Car extends Train {
      */
     private boolean empty;
 
-
-
-
     /**
      * 
      */
     private Train train;
-
-
 
     /**
      * @return
