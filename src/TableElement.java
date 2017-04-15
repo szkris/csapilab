@@ -14,7 +14,7 @@ public abstract class TableElement implements ITableElement {
     /**
      * 
      */
-    private boolean occupied;
+    protected boolean occupied;
 
     /**
      * 

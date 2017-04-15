@@ -27,15 +27,11 @@ public class Tunnel extends TableElement {
 
 	@Override
 	public void stepOff() {
-		// TODO Auto-generated method stub
-		
+		setOccupied(false);
 	}
 
 	@Override
-	public void click() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void click() { }
 
 	@Override
 	public void nextElement(TrainElement te) {
@@ -45,7 +41,11 @@ public class Tunnel extends TableElement {
 
 	@Override
 	public void stepOn(TrainElement te) {
-		// TODO Auto-generated method stub
-		
+		if(occupied) {
+			Game.gameOver();
+		} else {
+			setOccupied(true);
+			te.setTableElement(this);
+		}
 	}
 }
