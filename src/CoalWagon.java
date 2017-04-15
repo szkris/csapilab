@@ -4,17 +4,17 @@ import java.util.*;
 /**
  * 
  */
-public class Station extends Rail {
+public class CoalWagon extends TrainElement {
 
     /**
      * Default constructor
      */
-    public Station() {
+    public CoalWagon() {
     }
 
     /**
      * 
      */
-    private Color color;
+    private Train train;
 
 }

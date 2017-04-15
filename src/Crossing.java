@@ -4,23 +4,23 @@ import java.util.*;
 /**
  * 
  */
-public class Rail extends TableElement {
+public class Crossing extends Rail {
 
     /**
      * Default constructor
      */
-    public Rail() {
+    public Crossing() {
     }
 
     /**
      * 
      */
-    private TableElement elem1;
+    private TableElement elem3;
 
     /**
      * 
      */
-    private TableElement elem2;
+    private TableElement elem4;
 
 
 }

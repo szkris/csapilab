@@ -2,90 +2,71 @@
 import java.util.*;
 
 /**
- * A Table osztály tárolja a pálya elemeit
+ * 
  */
 public class Table {
 
-	/**
-     * Szintek száma
+    /**
+     * Default constructor
+     */
+    public Table() {
+    	
+    }
+
+    /**
+     * 
      */
     private int numberOfLevels;
 
     /**
-     * Aktuális szint
+     * 
      */
     private int currentLevel;
-    
+
     /**
-     * A nyitott alagútbejáratok
+     * 
      */
     private TunnelEntrance openTunnelEntrances;
-    
+
     /**
-     * A vonatokat tároló lista
+     * @return
      */
-    private ArrayList<Train> trains;
-	
-    /**
-     * Default constructor
-     */
-    public Table(String tab) {
-    	System.out.println(tab + "Constructor Table");
+    public void loadMap() {
+        // TODO implement here
+        
     }
 
     /**
-     * betölti a következ pályát
      * @return
      */
-    public void loadMap(String tab) {
-    	System.out.println(tab + "Table.loadMap");
-    }
-
-    /**
-     * véletlenszerûen választ egy belépési pontot a vonatnak
-     * @return
-     */
-    public TableElement getEntryPoint(String tab) {
-    	System.out.println(tab + "Table.getEntryPoint");
+    public TableElement getEntryPoint() {
+        // TODO implement here
         return null;
     }
 
     /**
-     * visszaadja a soron következõ vonatot a trains listából
      * @return
      */
-    public Train getNextTrain(String tab) {
-    	System.out.println(tab + "Table.getNextTrain");
+    public Train getNextTrain() {
+        // TODO implement here
         return null;
     }
 
     /**
-     * megmmondja hogy a paraméterként kapott idõpillanatban kell e indítani vonatot
-     * @param tick idõpillanat (idõegység)
-     * @return boolean kell e indítani vonatot
+     * @param tick 
+     * @return
      */
-    public boolean trainReady(int tick, String tab) {
-    	System.out.println(tab + "Table.trainReady()");
-        System.out.println(tab + "1-ready, 2-not ready");
-        String ready = new Scanner(System.in).nextLine();
-        if (ready.equals("1")){
-        	return true;
-        }
-        if (ready.equals("2")){
-        	return false;
-        }
+    public boolean trainReady(int tick) {
+        // TODO implement here
         return false;
     }
 
     /**
-     * a TunnelEntrance hívja meg, a table tudja, hogy hány alagútbejárat van nyitva, ettõl függ hogy kattintásra nyit e új bejáratot
-     * @param TunnelEntrance alagút bejárat
-     * @return sikerült e az alagút nyitás
+     * @param TunnelEntrance 
+     * @return
      */
-    public boolean openTunnel(TunnelEntrance tunEn, String tab) {
-    	System.out.println(tab + "Table.openTunnel");
-    	openTunnelEntrances = tunEn;
-    	openTunnelEntrances.changeStatus(tab+"\t");
+    public boolean openTunnel(TunnelEntrance te) {
+        // TODO implement here
         return false;
     }
 

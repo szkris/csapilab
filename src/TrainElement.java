@@ -2,88 +2,89 @@
 import java.util.*;
 
 /**
- * Absztrakt osztály, amely a vonat elemeinek (mozdony és kocsik) viselkedését valósítja meg
+ * 
  */
 public abstract class TrainElement {
 
     /**
      * Default constructor
      */
-	public TrainElement(){}
-	
-    public TrainElement(String tab) {
-    	System.out.println(tab + "Constructor TrainElement");
+    public TrainElement() {
     }
 
     /**
-     * tárolja, hogy az adott objektum látható-e a grafikus felületen
+     * 
      */
     private boolean visible;
 
     /**
-     * az elõzõ elem amin a vonat állt
+     * 
      */
     private TableElement prevTableElement;
 
     /**
-     * a jelenlegi elem amin a vonat áll
+     * 
      */
     private TableElement currentTableElement;
 
     /**
-     * az az alagút, amiben a vonat halad
+     * 
      */
     private TableElement enteredTunnel;
 
     /**
-     * megváltoztatja az objektum (grafikai) láthatóságát
      * @return
      */
-    public void changeVisibility(String tab) {
-    	System.out.println(tab + "TrainElement.changeVisibility");
+    public void changeVisibility() {
+        // TODO implement here
+        
     }
 
     /**
-     * beállítja paraméterként kapott TableElement-et arra, amin a vonat áll
-     * @param TableElement itt áll a vonat
+     * @param TableElement 
      * @return
      */
-    public void setTableElement(TableElement te, String tab) {
-        System.out.println(tab + "TrainElement.setTableElement");
+    public void setTableElement(TableElement te) {
+        // TODO implement here
     }
 
     /**
-     * visszaadja azt a mezõt, amin a vonat áll
-     * @return TableElement amin a vonat áll
+     * @return
      */
-    public TableElement getPreviousElement(String tab) {
-        System.out.println(tab + "TrainElement.getPreviousElement");
+    public TableElement getPreviousElement() {
+        // TODO implement here
         return null;
     }
 
     /**
-     * meghívja minden vonatelem nextElement() függvényét, ezzel léptetve a vonatot
      * @return
      */
-    public void move(String tab) {
-        System.out.println(tab + "TrainElement.move");
+    public void move() {
+        // TODO implement here
+        
     }
 
     /**
-     * leszállítja az utasokat, ha az objektum színe megegyezik az átvett színnel
-     * @param Color a kapott szín
+     * @param Color 
      * @return
      */
-    public void hopOff(Color color, String tab) {
-    	System.out.println(tab + "TrainElement.hopOff");
+    public void hopOff(Color color) {
+        // TODO implement here
     }
 
     /**
-     * beállítja az enteredTunnel-t arra az alagútra, amiben a vonat halad
      * @param TableElement 
      * @return
      */
-    public void setTunnelEntrance(TableElement te, String tab) {
-    	System.out.println(tab + "TrainElement.setTunnelEntrance");
+    public void setTunnelEntrance(TableElement te) {
+        // TODO implement here
+    }
+
+    /**
+     * @param Color 
+     * @return
+     */
+    public void hopOn(Color color) {
+        // TODO implement here
     }
 }
