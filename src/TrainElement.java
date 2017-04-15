@@ -33,11 +33,10 @@ public abstract class TrainElement {
     private TableElement enteredTunnel;
 
     /**
-     * @return
+     * Egy TrainElement objektum láthatóságát változtatja meg ellenkezõjére.
      */
     public void changeVisibility() {
-        // TODO implement here
-        
+        visible = !visible;
     }
 
     /**
