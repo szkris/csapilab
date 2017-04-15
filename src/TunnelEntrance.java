@@ -7,18 +7,19 @@ import java.util.*;
 public class TunnelEntrance extends Rail {
 
     /**
-     * Default constructor
+     * Default kontruktor.
      */
     public TunnelEntrance() {
+    	
     }
 
     /**
-     * 
+     * Ebben a tagváltozóban tárolódik, hogy egy alagút zárva van-e, vagy nyitva. True = nyitva, false = zárva.
      */
     private boolean open;
 
     /**
-     * 
+     *
      */
     private Table table;
 
@@ -30,11 +31,10 @@ public class TunnelEntrance extends Rail {
     }
 
     /**
-     * @return
+     * Egy alagútbejárat állását az ellenkezõjére változtatja. 
      */
     public void changeStatus() {
-        // TODO implement here
-        
+    	open = !open;
     }
 
 }
