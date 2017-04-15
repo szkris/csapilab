@@ -9,7 +9,8 @@ public class Crossing extends Rail {
     /**
      * Default constructor
      */
-    public Crossing() {
+    public Crossing(int id) {
+    	super(id);
     }
 
     /**

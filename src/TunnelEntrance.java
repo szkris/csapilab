@@ -16,7 +16,8 @@ public class TunnelEntrance extends Rail {
     /**
      * Konstrukor, amiben egy Table-t lehet átadni.
      */
-    public TunnelEntrance(Table table) {
+    public TunnelEntrance(int id, Table table) {
+    	super(id);
     	this.table = table;
     }
 

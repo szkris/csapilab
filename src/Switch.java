@@ -9,7 +9,8 @@ public class Switch extends TableElement {
     /**
      * Default constructor
      */
-    public Switch() {
+    public Switch(int id) {
+    	super(id);
     }
 
     /**
@@ -40,13 +41,19 @@ public class Switch extends TableElement {
 	}
 
 	@Override
-	public void nextElement(TrainElement te) {
+	public TableElement nextElement(TrainElement te) {
+		// TODO Auto-generated method stub
+		return active;
+	}
+
+	@Override
+	public void stepOn(TrainElement te) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void stepOn(TrainElement te) {
+	public void setUpConnections(ArrayList<TableElement> list) {
 		// TODO Auto-generated method stub
 		
 	}

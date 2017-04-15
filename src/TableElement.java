@@ -5,10 +5,18 @@ import java.util.*;
  */
 public abstract class TableElement implements ITableElement {
 
+	
+	/**
+	 * Az elemet meghatározó azonosító.
+	 */
+	final int id;
+	
     /**
-     * Default constructor
+     * Default konstruktor.
+     * @param id Az elem ID-ja.
      */
-    public TableElement() {
+    public TableElement(int id) {
+    	this.id = id;
     }
 
     /**

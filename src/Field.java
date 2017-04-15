@@ -9,7 +9,8 @@ public class Field extends TableElement {
     /**
      * Default constructor
      */
-    public Field() {
+    public Field(int id) {
+    	super(id);
     }
 
 	@Override
@@ -25,13 +26,20 @@ public class Field extends TableElement {
 	}
 
 	@Override
-	public void nextElement(TrainElement te) {
+	public TableElement nextElement(TrainElement te) {
+		return null;
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void stepOn(TrainElement te) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setUpConnections(ArrayList<TableElement> list) {
 		// TODO Auto-generated method stub
 		
 	}

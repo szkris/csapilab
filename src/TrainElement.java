@@ -86,4 +86,8 @@ public abstract class TrainElement {
     public void hopOn(Color color) {
         // TODO implement here
     }
+    
+    public TableElement getTunnelEntrance(){
+    	return enteredTunnel;
+    }
 }

@@ -18,14 +18,16 @@ public interface ITableElement {
 
     /**
      * @param TrainElement 
-     * @return
+     * @return 
      */
-    public void nextElement(TrainElement te);
+    public TableElement nextElement(TrainElement te);
 
     /**
      * @param TrainElement 
      * @return
      */
     public void stepOn(TrainElement te);
+    
+    public void setUpConnections(ArrayList<TableElement> list);
 
 }

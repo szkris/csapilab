@@ -9,7 +9,8 @@ public class Rail extends TableElement {
     /**
      * Default constructor
      */
-    public Rail() {
+    public Rail(int id) {
+    	super(id);
     }
 
     /**
@@ -35,13 +36,20 @@ public class Rail extends TableElement {
 	}
 
 	@Override
-	public void nextElement(TrainElement te) {
+	public TableElement nextElement(TrainElement te) {
+		return elem1;
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void stepOn(TrainElement te) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setUpConnections(ArrayList<TableElement> list) {
 		// TODO Auto-generated method stub
 		
 	}

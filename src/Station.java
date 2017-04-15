@@ -9,7 +9,8 @@ public class Station extends Rail {
     /**
      * Default constructor
      */
-    public Station() {
+    public Station(int id) {
+    	super(id);
     }
 
     /**
