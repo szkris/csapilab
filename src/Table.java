@@ -48,7 +48,6 @@ public class Table {
 	 */
 	public void loadMap() {
 		// TODO implement here
-
 	}
 
 	/**

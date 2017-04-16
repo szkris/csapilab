@@ -7,35 +7,26 @@ import java.util.*;
 public class Field extends TableElement {
 
 	/**
-	 * Default constructor
+	 * Konstruktor mely paraméterként megkapja a táblaelem ID-ját.
+	 * 
+	 * @param id
+	 *            Az elem ID-ja.
 	 */
 	public Field(int id) {
 		super(id);
 	}
 
 	@Override
-	public void stepOff() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void click() {
-		// TODO Auto-generated method stub
-
-	}
+	public void click() {	}
 
 	@Override
 	public TableElement nextElement(TrainElement te) {
 		return null;
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void stepOn(TrainElement te) {
-		// TODO Auto-generated method stub
-
+		Game.gameOver();
 	}
 
 	@Override

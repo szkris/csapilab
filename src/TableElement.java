@@ -28,11 +28,6 @@ public abstract class TableElement implements ITableElement {
 	protected boolean occupied;
 
 	/**
-	 * A táblán lévö vonatelem. 
-	 */
-	private TrainElement trainElement;
-
-	/**
 	 * Beállítja a táblaelem foglaltságát a megadott értékre.
 	 * @param boolean Táblaelem kívánt foglaltsága.
 	 */

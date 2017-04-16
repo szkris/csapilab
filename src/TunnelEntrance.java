@@ -43,15 +43,14 @@ public class TunnelEntrance extends Rail {
 		table.openTunnel(this);
 	}
 
-	// TODO
-	@Override
-	public TableElement nextElement(TrainElement te) {
-		return null;
-	}
-
-	// TODO
 	@Override
 	public void stepOn(TrainElement te) {
+		if (occupied || !open)
+			Game.gameOver();
+		setOccupied(true);
+		te.changeVisibility();
+		te.setTunnelEntrance(this);
+		te.setTableElement(this);
 	}
 
 	// TODO
