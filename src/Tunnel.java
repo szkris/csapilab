@@ -36,6 +36,7 @@ public class Tunnel extends TableElement {
 
 	@Override
 	public void click() {
+		
 	}
 
 	@Override
