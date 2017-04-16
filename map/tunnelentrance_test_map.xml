@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<game>
-    <map>
+<table>
         <train starttick="1" startpos="1" id="1">
             <loco/>
             <car color="red" empty="true"/>
@@ -11,10 +10,9 @@
         <tunnelentrance refid1="3" refid2="5" open="false" id="4"/>
         <rail refid1="2" refid2="null" id = "5"/>
         <route start="2" end="4">
-            <nextelem refid="3"/>
+            <nextelem>3</nextelem>
         </route>
         <route start="4" end="2">
-            <nextelem refid="3"/>
+            <nextelem>3</nextelem>
         </route>
-    </map>
-</game>
+</table>

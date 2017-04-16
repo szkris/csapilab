@@ -1,9 +1,16 @@
 
 import java.util.*;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * 
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Rail extends TableElement {
 
     /**
@@ -16,11 +23,15 @@ public class Rail extends TableElement {
 	/**
 	 * 
 	 */
+    @XmlAttribute(name="refid1")
+    @XmlIDREF
 	private TableElement elem1;
 
 	/**
 	 * 
 	 */
+    @XmlAttribute(name="refid2")
+    @XmlIDREF
 	private TableElement elem2;
 
 	@Override

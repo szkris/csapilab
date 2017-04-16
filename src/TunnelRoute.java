@@ -1,19 +1,33 @@
 import java.util.ArrayList;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlList;
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class TunnelRoute {
 	/**
 	 * Alagút eleje
 	 */
+	@XmlAttribute(name="start")
+	@XmlIDREF
 	private TunnelEntrance from;
 
 	/**
 	 * Alagút vége
 	 */
+	@XmlAttribute(name="end")
+	@XmlIDREF
 	private TunnelEntrance to;
 
 	/**
 	 * Az alagútszakaszt alkotó alagút elemek.
 	 */
+	@XmlElement(name="nextelem")
+	@XmlIDREF	
 	private ArrayList<Tunnel> tunnels;
 
 	/**

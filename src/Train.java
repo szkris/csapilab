@@ -1,21 +1,35 @@
 
 import java.util.*;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAnyElement;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlIDREF;
+
 /**
  * 
  */
-public abstract class Train {
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Train {
 
 	/**
 	 * Alapértelmezett konstruktor.
 	 */
-	public Train() {
-	}
+	public Train() { }
 
 	/**
 	 * A vonatot alkotó elemek.
 	 */
+	@XmlAnyElement
 	private ArrayList<TrainElement> elements;
+	
+	@XmlAttribute(name="starttick")
+	private int starttick;
+	
+	@XmlAttribute(name="startpos")
+	@XmlIDREF
+	private TableElement startpos;
 
 	/**
 	 * Megvizsgálja, hogy a vonat minden eleme látható e. Ha van nem látható

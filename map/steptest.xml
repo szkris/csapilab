@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<game>
+<table>
     <map>
         <train starttick="1" startpos="1" id="1">
             <loco/>
@@ -9,4 +9,4 @@
         <rail refid1="1" refid2="3" id = "2"/>
         <rail refid1="2" refid2="null" id = "3"/>
     </map>
-</game>
+</table>

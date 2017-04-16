@@ -29,7 +29,6 @@ public class Game {
 	 */
 	public void startTrain(Train t, TableElement te) {
 		// TODO implement here
-
 	}
 
 	/**

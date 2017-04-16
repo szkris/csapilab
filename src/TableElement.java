@@ -1,17 +1,28 @@
 import java.util.*;
 
-import javafx.animation.SequentialTransitionBuilder;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlIDREF;
+
 
 /**
  * 
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public abstract class TableElement implements ITableElement {
 
 	/**
 	 * Az elemet meghatározó azonosító.
 	 */
-	final int id;
-
+	@XmlAttribute(name="id")	
+	@XmlID
+	String id;
+	
+	public void setId(String id){
+		this.id = id;
+	}
 	/**
 	 * Konstruktor mely paraméterként megkapja a táblaelem ID-ját.
 	 * 
@@ -19,7 +30,7 @@ public abstract class TableElement implements ITableElement {
 	 *            Az elem ID-ja.
 	 */
 	public TableElement(int id) {
-		this.id = id;
+		this.id = Integer.toString(id);
 	}
 
 	/**
@@ -58,6 +69,6 @@ public abstract class TableElement implements ITableElement {
 	 * @return Táblaelem ID-ja.
 	 */
 	public int getId() {
-		return id;
+		return Integer.parseInt(id);
 	}
 }
