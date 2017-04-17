@@ -39,6 +39,7 @@ public class Game {
 	 * Elindítja a játékot.
 	 */
 	public void run() {
+		if(timer!=null) timer.stop();
 		timer = new Timer(this);
 		timer.start();
 		//Elso palya beoltese
