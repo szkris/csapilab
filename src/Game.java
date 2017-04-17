@@ -9,13 +9,12 @@ public class Game {
 	/**
 	 * Default constructor
 	 */
-	public Game() {
-	}
-
+	public Game() { }
+	
 	/**
-	 * Megadja, hogy van-e még pálya, amit be lehet tölteni.
+	 * Pályát tartalmazó objektum
 	 */
-	private boolean hasMoreMap;
+	private Table table = new Table();
 
 	/**
 	 * Egy idõegység a játék idejében.
@@ -23,21 +22,14 @@ public class Game {
 	private int tick;
 
 	/**
-	 * @param Train
-	 * @param TableElement
-	 * @return
-	 */
-	public void startTrain(Train t, TableElement te) {
-		// TODO implement here
-
-	}
-
-	/**
 	 * Elindítja a játékot.
 	 */
 	public void run() {
-		// TODO implement here
-
+		//TODO
+	}
+	
+	public void loadMap(String map){
+		table.loadMap(map);
 	}
 
 	/**
@@ -45,7 +37,6 @@ public class Game {
 	 */
 	public static void gameOver() {
 		// TODO implement here
-
 	}
 
 	/**
@@ -53,32 +44,19 @@ public class Game {
 	 */
 	public static void victory() {
 		// TODO implement here
-
 	}
 
 	/**
-	 * 
+	 * Mozgatást megvalóstó osztály
 	 */
 	public void move() {
-		// TODO implement here
-
 	}
-
-	/**
-	 * @param boolean
-	 * @return
-	 */
-	public void moreMap(boolean hasMoreMap) {
-		// TODO implement here
-
-	}
-
+	
 	/**
 	 * 
 	 */
 	public static void mapCompleted() {
 		// TODO implement here
-
 	}
 
 }

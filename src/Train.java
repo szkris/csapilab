@@ -7,14 +7,15 @@ import java.util.*;
 public class Train {
 
 	/**
-	 * Konstruktor, mely beállítja a kezdöpozíciót, kezdö ütemet valamint az azonosítót.
+	 * Konstruktor, mely beállítja a kezdöpozíciót, kezdö ütemet valamint az
+	 * azonosítót.
 	 * 
 	 * @param starttick
 	 *            Kezdö ütem
 	 * @param startpos
 	 *            Kezdö pozíció
-	 * @param id 
-	 * 			  Vonat azonosítója
+	 * @param id
+	 *            Vonat azonosítója
 	 */
 	public Train(int starttick, TableElement startpos, int id) {
 		this.startpos = startpos;
@@ -22,16 +23,28 @@ public class Train {
 		this.id = id;
 	}
 
-
 	/**
 	 * A vonat azonosítója.
 	 */
 	private int id;
-	
+
 	/**
 	 * A vonat kezdésének üteme.
 	 */
 	private int starttick;
+	/**
+	 * Mennyit ment a vonat eddig.
+	 */
+	private int moved = 0;
+
+	/**
+	 * Getter a starttick attribútumhoz.
+	 * 
+	 * @return A vonat indulásának idöpillanata
+	 */
+	public int getStartTick() {
+		return starttick;
+	}
 
 	/**
 	 * A vonat kezdö pozíciója
@@ -59,10 +72,23 @@ public class Train {
 
 	/**
 	 * Vonat mozgatását megvalósító függvény.
+	 * 
+	 * @param tick
+	 *            Az aktuális idöpillanat
 	 */
-	public void move() {
-		for (TrainElement trainElement : elements) {
-			trainElement.move();
+	public void move(int tick) {
+		if (tick >= starttick) {
+			if (moved < elements.size()) {
+				for (int i = 0; i < moved; i++)
+					elements.get(i).move();
+				elements.get(moved).setTableElement(startpos);
+				moved++;
+			} else {
+				for (TrainElement trainElement : elements) {
+					trainElement.move();
+				}
+				moved++;
+			}
 		}
 	}
 

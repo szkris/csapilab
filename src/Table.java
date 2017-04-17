@@ -67,14 +67,6 @@ public class Table {
 				if (node.getNodeType() == Node.ELEMENT_NODE) {
 					Element elem = (Element) node;
 					tableElements.add(new Rail(TryParseInt(elem.getAttribute("id"))));
-					// System.out.println("First Name : " +
-					// eElement.getElementsByTagName("firstname").item(0).getTextContent());
-					// System.out.println("Last Name : " +
-					// eElement.getElementsByTagName("lastname").item(0).getTextContent());
-					// System.out.println("Nick Name : " +
-					// eElement.getElementsByTagName("nickname").item(0).getTextContent());
-					// System.out.println("Salary : " +
-					// eElement.getElementsByTagName("salary").item(0).getTextContent());
 				}
 			}
 			NodeList _field = doc.getElementsByTagName("field");
@@ -226,7 +218,6 @@ public class Table {
 						Node _n = _nl.item(j);
 						if (_n.getNodeType() == Node.ELEMENT_NODE) {
 							Element _e = (Element) _n;
-							System.out.println(TryParseInt(_e.getAttribute("refid")));
 							Tunnel teee = (Tunnel) getTableElement(TryParseInt(_e.getAttribute("refid")));
 							TableElement teee2 = getTableElement(TryParseInt(_e.getAttribute("refid")));
 							list.add((Tunnel) getTableElement(TryParseInt(_e.getAttribute("refid"))));
@@ -284,16 +275,7 @@ public class Table {
 	/**
 	 * @return
 	 */
-	public TableElement getEntryPoint() {
-		// TODO implement here
-		return null;
-	}
-
-	/**
-	 * @return
-	 */
 	public Train getNextTrain() {
-		// TODO implement here
 		return null;
 	}
 
@@ -301,9 +283,18 @@ public class Table {
 	 * @param tick
 	 * @return
 	 */
-	public boolean trainReady(int tick) {
-		// TODO implement here
-		return false;
+	public Train trainReady(int tick) {
+		for (Train train : train) {
+			if(train.getStartTick() == tick);
+				return train;
+		}
+		return null;
+	}
+	
+	public void move(int tick){
+		for (Train train : train) {
+			train.move(tick);
+		}
 	}
 
 	/**
@@ -365,7 +356,6 @@ public class Table {
 		}
 		return null;
 	}
-
 	private TableElement getTableElement(int id) {
 		for (TableElement tableElement : tableElements) {
 			if (tableElement.getId() == id) {
