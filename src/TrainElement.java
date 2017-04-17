@@ -20,7 +20,7 @@ public abstract class TrainElement {
 	 * Kocsi színe
 	 */
 	private Color color;
-
+	
 	/**
 	 * Üres-e a kocsi
 	 */
@@ -59,6 +59,10 @@ public abstract class TrainElement {
 	 * Jelenlegi pozíción lévö elem.
 	 */
 	private TableElement currentTableElement;
+	
+	public TableElement getcurrentTableElement(){
+		return currentTableElement;
+	}
 
 	/**
 	 * Alagútba ezen bejáraton érkezett.

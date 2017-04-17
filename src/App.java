@@ -90,6 +90,7 @@ public class App {
 	        	}
 	        }
 	        else if(s[0].equals("listTrain")){
+
 	        	for (int i = 0; i < game.getTable().getTrains().size(); i++){
 	        		
 	        			Train tr = (Train)game.getTable().getTrains().get(i);
@@ -103,6 +104,20 @@ public class App {
 	        					System.out.println("\tCoalWagon");
 	        			}
 	        			System.out.println();
+
+	        	for(int i = 0; i < game.getTable().getTrains().size(); i++){
+	        		System.out.println(game.getTable().getTrains().get(i).getId());
+	        		System.out.print(" ");
+	        		if(game.getTable().getTrains().get(i).getElements().size() > i){
+	        			System.out.print(game.getTable().getTrains().get(i).getElements().get(i).getColor());
+	        			System.out.print(" ");
+	        			System.out.print(game.getTable().getTrains().get(i).getElements().get(i).isEmpty());
+	        			System.out.print(" ");
+	        			System.out.print(game.getTable().getTrains().get(i).getElements().get(i).getcurrentTableElement());
+	        			System.out.println();
+	        		}
+	        		
+
 	        	}
 	        }
 	        else if(s[0].equals("hopOn")){

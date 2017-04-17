@@ -35,6 +35,10 @@ public class Table {
 	 * Vonatokat tároló lista
 	 */
 	private ArrayList<Train> train;
+	
+	public ArrayList<Train> getTrains(){
+		return train;
+	}
 
 	/**
 	 * Nyitott alagútbejáratok
