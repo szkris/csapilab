@@ -50,6 +50,7 @@ public class Game {
 	 * Mozgatást megvalóstó osztály
 	 */
 	public void move() {
+		table.move(tick);
 	}
 	
 	/**

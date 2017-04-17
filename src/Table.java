@@ -273,24 +273,9 @@ public class Table {
 	}
 
 	/**
-	 * @return
+	 * Vonatok mozgatása az aktuális idöpillanatban
+	 * @param tick Az aktuális idöpillanat
 	 */
-	public Train getNextTrain() {
-		return null;
-	}
-
-	/**
-	 * @param tick
-	 * @return
-	 */
-	public Train trainReady(int tick) {
-		for (Train train : train) {
-			if(train.getStartTick() == tick);
-				return train;
-		}
-		return null;
-	}
-	
 	public void move(int tick){
 		for (Train train : train) {
 			train.move(tick);
