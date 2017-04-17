@@ -106,8 +106,10 @@ public class Train {
 			return;
 		for (TrainElement trainElement : elements) {
 			if (!trainElement.isEmpty()) {
-				if (trainElement == car)
+				if (trainElement == car){
 					car.changeEmpty();
+					Game.mapCompleted();
+				}
 				return;
 			}
 		}

@@ -14,7 +14,7 @@ public class Game {
 	/**
 	 * Pályát tartalmazó objektum
 	 */
-	private Table table = new Table();
+	private static Table table = new Table();
 
 	/**
 	 * Egy idõegység a játék idejében.
@@ -42,14 +42,14 @@ public class Game {
 	 * A játék végekor kerül meghívásra.
 	 */
 	public static void gameOver() {
-		// TODO implement here
+		System.out.println("gameOver");
 	}
 
 	/**
 	 * Gyõzelem esetén meghívódó függvény.
 	 */
 	public static void victory() {
-		// TODO implement here
+		System.out.println("victory");
 	}
 
 	/**
@@ -61,10 +61,12 @@ public class Game {
 	}
 	
 	/**
-	 * 
+	 * Megvizsgálja, hogy végeztünk-e a pályán, ha igen, betölti a következöt
 	 */
 	public static void mapCompleted() {
-		// TODO implement here
+		if(table.mapCompleted()){
+			//TODO következö páyla betöltése
+		}
 	}
 
 }
