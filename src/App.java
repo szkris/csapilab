@@ -26,7 +26,7 @@ public class App {
 			line = br.readLine();
 			String[] s = line.split(" ");
 	        if(s[0].equals("loadMap")){
-	        	Game.loadMap("s[1]");
+	        	Game.loadMap(s[1]);
 	        }
 	        else if(s[0].equals("startTrain")){
 	        	
