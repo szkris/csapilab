@@ -103,7 +103,6 @@ public class App {
 	        				else if(te.getType().equals("coalwagon"))
 	        					System.out.println("\tCoalWagon");
 	        		}
-	        		System.out.println();
 	        	}
 	        }
 	        else if(s[0].equals("hopOn")){
