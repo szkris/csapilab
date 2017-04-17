@@ -38,14 +38,10 @@ public class TunnelEntrance extends Rail {
 		open = !open;
 	}
 
+	//Tábla kezeli a nyitást és zárást
 	@Override
 	public void click() {
-		if(open){
-			table.closeTunnel(this);
-		}
-		else{
-			table.openTunnel(this);
-		}
+		table.openTunnel(this);
 	}
 
 	@Override
