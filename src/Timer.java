@@ -25,14 +25,14 @@ public class Timer {
 	 * Elindítja az idözitöt
 	 */
 	public void start() {
-		timer = new java.util.Timer(true);
+		timer = new java.util.Timer(false);
 		TimerTask task = new TimerTask() {
 			@Override
 			public void run() {
 				game.move();
 			}
 		};
-		timer.schedule(task, 1000);
+		timer.schedule(task, 0, 1000);
 	}
 
 	/**

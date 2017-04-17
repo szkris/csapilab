@@ -33,7 +33,7 @@ public class Game {
 	/**
 	 * Játékhoz tartozó idözitö
 	 */
-	private Timer timer;
+	private static Timer timer;
 	
 	/**
 	 * Elindítja a játékot.
@@ -54,6 +54,7 @@ public class Game {
 	 * A játék végekor kerül meghívásra.
 	 */
 	public static void gameOver() {
+		timer.stop();
 		System.out.println("gameOver");
 	}
 
@@ -61,6 +62,7 @@ public class Game {
 	 * Gyõzelem esetén meghívódó függvény.
 	 */
 	public static void victory() {
+		timer.stop();
 		System.out.println("victory");
 	}
 
