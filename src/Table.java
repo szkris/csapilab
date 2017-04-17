@@ -94,9 +94,9 @@ public class Table {
 			}
 
 			NodeList _station = doc.getElementsByTagName("station");
-			for (int i = 0; i < _crossing.getLength(); i++) {
+			for (int i = 0; i < _station.getLength(); i++) {
 
-				Node node = _crossing.item(i);
+				Node node = _station.item(i);
 				if (node.getNodeType() == Node.ELEMENT_NODE) {
 					Element elem = (Element) node;
 					Color _color;
@@ -159,7 +159,7 @@ public class Table {
 			for (int i = 0; i < _station.getLength(); i++) {
 				Node node = _station.item(i);
 				if (node.getNodeType() == Node.ELEMENT_NODE) {
-					Element elem = (Element) node;
+					Element elem = (Element) node;					
 					TableElement tableelem = getTableElement(TryParseInt(elem.getAttribute("id")));
 					ArrayList<TableElement> list = new ArrayList<TableElement>();
 					list.add(getTableElement(TryParseInt(elem.getAttribute("refid1"))));
