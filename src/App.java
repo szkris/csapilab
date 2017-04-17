@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
@@ -13,12 +14,14 @@ public class App {
 	/**
 	 * @param String
 	 * @return
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		Game game = new Game();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("parancsok:");
-        String line = br.readLine();
+        String line;
+		line = br.readLine();
         String[] s = line.split(" ");
         if(s[0].equals("loadMap")){
         	game.loadMap("s[1]");
