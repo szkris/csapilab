@@ -375,7 +375,7 @@ public class Table {
 		return null;
 	}
 
-	public TableElement getTableElement(int id) {
+	private TableElement getTableElement(int id) {
 		for (TableElement tableElement : tableElements) {
 			if (tableElement.getId() == id) {
 				return tableElement;
@@ -384,7 +384,7 @@ public class Table {
 		return null;
 	}
 
-	public int TryParseInt(String str) {
+	private int TryParseInt(String str) {
 		try {
 			int r = Integer.parseInt(str);
 			return r;
