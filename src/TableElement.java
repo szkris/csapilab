@@ -11,6 +11,7 @@ public abstract class TableElement implements ITableElement {
 	 * Az elemet meghatározó azonosító.
 	 */
 	final int id;
+	protected String type;
 
 	/**
 	 * Konstruktor mely paraméterként megkapja a táblaelem ID-ját.
@@ -54,5 +55,9 @@ public abstract class TableElement implements ITableElement {
 	 */
 	public int getId() {
 		return id;
+	}
+	
+	public String getType(){
+		return type;
 	}
 }

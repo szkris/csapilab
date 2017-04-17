@@ -5,8 +5,6 @@ import java.util.*;
  * Állomást megvalósító osztály
  */
 public class Station extends Rail {
-	
-	private String type = "station";
 
 	/**
 	 * Konstruktor mely paraméterként megkapja a táblaelem ID-ját.
@@ -18,10 +16,7 @@ public class Station extends Rail {
 		super(id);
 		rand = new Random(id);
 		this.color = color;
-	}
-	
-	public String getType(){
-		return type;
+		type = "station";
 	}
 	
 	/**

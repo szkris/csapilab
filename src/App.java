@@ -57,11 +57,20 @@ public class App {
 	        			System.out.print(station.getId());
 	        			System.out.print(" ");
 	        			System.out.print(station.getColor());
+	        			System.out.println();
 	        		}
 	        	}
 	        }
 	        else if(s[0].equals("listSwitches")){
-	        	
+	        	for (int i = 0; i < game.getTable().getTableElements().size(); i++){
+	        		if(game.getTable().getTableElements().get(i).getType().equals("switch")){
+	        			Switch sw = (Switch)game.getTable().getTableElements().get(i);
+	        			System.out.print(sw.getId());
+	        			System.out.print(" ");
+	        			System.out.println();
+	        			// Doksiban van még itt valami, amit ki kell írnia, de nem tudom, mi az
+	        		}
+	        	}
 	        }
 	        else if(s[0].equals("listTunnelEntrance")){
 	        	

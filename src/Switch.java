@@ -14,6 +14,7 @@ public class Switch extends TableElement {
 	 */
 	public Switch(int id) {
 		super(id);
+		type = "switch";
 	}
 
 	/**
