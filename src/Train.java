@@ -147,6 +147,11 @@ public class Train {
 		return id;
 	}
 	
+	// TODO comments
+	/**
+	 * 
+	 * @return
+	 */
 	public ArrayList<TrainElement> getTrainElements(){
 		return elements;
 	}

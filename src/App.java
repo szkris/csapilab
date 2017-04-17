@@ -10,7 +10,9 @@ public class App {
 	 */
 	public App() {
 	}
-
+	
+	static boolean random = false;
+	
 	/**
 	 * @param String
 	 * @return
@@ -58,10 +60,7 @@ public class App {
 	        	for (int i = 0; i < game.getTable().getTableElements().size(); i++){
 	        		if(game.getTable().getTableElements().get(i).getType().equals("station")){
 	        			Station station = (Station)game.getTable().getTableElements().get(i);
-	        			System.out.print(station.getId());
-	        			System.out.print(" ");
-	        			System.out.print(station.getColor());
-	        			System.out.println();
+	        			System.out.println(station.getId() + " " + station.getColor());
 	        		}
 	        	}
 	        }
@@ -69,13 +68,7 @@ public class App {
 	        	for (int i = 0; i < game.getTable().getTableElements().size(); i++){
 	        		if(game.getTable().getTableElements().get(i).getType().equals("switch")){
 	        			Switch sw = (Switch)game.getTable().getTableElements().get(i);
-	        			System.out.print(sw.getId());
-	        			System.out.print(" ");
-	        			System.out.print(sw.getFix().getId());
-	        			System.out.print(" ");
-	        			System.out.print(sw.getActive().getId());
-	        			System.out.print(" ");
-	        			System.out.println();
+	        			System.out.println(sw.getId() + " " + sw.getFix().getId() + " " + sw.getActive().getId());
 	        			// Kiírja az ID-t a fix pozíciót és az éppen aktív pozíciót
 	        		}
 	        	}
@@ -113,7 +106,9 @@ public class App {
 	        	}
 	        }
 	        else if(s[0].equals("hopOn")){
-	        	
+	        	int i = Integer.parseInt(s[1]);
+	        	Station te = (Station)game.getTable().getTableElement(i);
+	        	te.getCurrentElement().changeEmpty();
 	        }
 		}
 	}

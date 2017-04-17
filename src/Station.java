@@ -6,6 +6,8 @@ import java.util.*;
  */
 public class Station extends Rail {
 
+	private TrainElement currentElement = null;
+	
 	/**
 	 * Konstruktor mely paraméterként megkapja a táblaelem ID-ját.
 	 * 
@@ -29,6 +31,11 @@ public class Station extends Rail {
 	 */
 	private Color color;
 	
+	// TODO comment
+	/**
+	 * 
+	 * @return
+	 */
 	public Color getColor(){
 		return color;
 	}
@@ -37,10 +44,33 @@ public class Station extends Rail {
 	public void stepOn(TrainElement te){
 		if(occupied) Game.gameOver();
 		setOccupied(true);
+		currentElement = te;
 		te.setTableElement(this);
+		
 		te.hopOff(color);
-		if(rand.nextInt()%10==0){
-			te.hopOn(color);
+		
+		if(App.random){
+			if(rand.nextInt()%10==0){
+				hopOn(te);
+			}
 		}
+	}
+	
+	public TrainElement getCurrentElement(){
+		return currentElement;
+	}
+	
+	@Override
+	public void stepOff(){
+		setOccupied(false);
+		currentElement = null;
+	}
+	
+	/**
+	 * Felszállítja az utasokat a vonat kocsijára
+	 * @param te A paraméterként kapott kocsi
+	 */
+	public void hopOn(TrainElement te){
+		te.hopOn(color);
 	}
 }
