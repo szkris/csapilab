@@ -27,6 +27,10 @@ public class Train {
 	 * A vonat azonosítója.
 	 */
 	private int id;
+	
+	public int getId(){
+		return id;
+	}
 
 	/**
 	 * A vonat kezdésének üteme.
@@ -55,6 +59,10 @@ public class Train {
 	 * A vonatot alkotó elemek.
 	 */
 	private ArrayList<TrainElement> elements = new ArrayList<TrainElement>();
+	
+	public ArrayList<TrainElement> getElements(){
+		return elements;
+	}
 
 	/**
 	 * Megvizsgálja, hogy a vonat minden eleme látható e. Ha van nem látható

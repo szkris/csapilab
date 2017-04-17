@@ -20,7 +20,7 @@ public abstract class TrainElement {
 	 * Kocsi színe
 	 */
 	private Color color;
-
+	
 	/**
 	 * Üres-e a kocsi
 	 */
