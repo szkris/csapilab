@@ -89,7 +89,7 @@ public class App {
 	        		}
 	        	}
 	        }
-	        else if(s[0].equals("listTrain")){
+	        else if(s[0].equals("listTrains")){
 
 	        	for (int i = 0; i < game.getTable().getTrains().size(); i++){
 	        		
