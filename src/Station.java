@@ -46,12 +46,11 @@ public class Station extends Rail {
 		setOccupied(true);
 		currentElement = te;
 		te.setTableElement(this);
-		
 		te.hopOff(color);
 		
 		if(App.random){
 			if(rand.nextInt()%10==0){
-				hopOn(te);
+				hopOn();
 			}
 		}
 	}
@@ -70,7 +69,7 @@ public class Station extends Rail {
 	 * Felszállítja az utasokat a vonat kocsijára
 	 * @param te A paraméterként kapott kocsi
 	 */
-	public void hopOn(TrainElement te){
-		te.hopOn(color);
+	public void hopOn(){
+		if(currentElement!=null) currentElement.hopOn(color);
 	}
 }

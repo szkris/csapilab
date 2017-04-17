@@ -108,7 +108,7 @@ public class App {
 	        else if(s[0].equals("hopOn")){
 	        	int i = Integer.parseInt(s[1]);
 	        	Station te = (Station)game.getTable().getTableElement(i);
-	        	te.getCurrentElement().changeEmpty();
+	        	te.hopOn();
 	        }
 		}
 	}
