@@ -18,7 +18,8 @@ public class Table {
 	/**
 	 * Default constructor
 	 */
-	public Table() {	}
+	public Table() {
+	}
 
 	/**
 	 * Alagútbejáratok között vezetö utatkat tároló lista
@@ -376,4 +377,16 @@ public class Table {
 		}
 	}
 
+	/**
+	 * Megvizsgálja, hogy van e még olyan vonat, amin van utas.
+	 * 
+	 * @return true ha minden vonat üres
+	 */
+	public boolean mapCompleted() {
+		for (Train train : train) {
+			if (!train.isEmpty())
+				return false;
+		}
+		return true;
+	}
 }

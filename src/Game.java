@@ -14,8 +14,17 @@ public class Game {
 	/**
 	 * Pályát tartalmazó objektum
 	 */
-	private Table table = new Table();
-
+	private static Table table = new Table();
+	
+	/**
+	 * Pályák nevét tároló lista
+	 */
+	private static ArrayList<String> maps = new ArrayList<String>();
+	
+	/**
+	 * Az aktuális pálya száma.
+	 */
+	private static int level = 0;
 	/**
 	 * Egy idõegység a játék idejében.
 	 */
@@ -32,9 +41,12 @@ public class Game {
 	public void run() {
 		timer = new Timer(this);
 		timer.start();
+		//Elso palya beoltese
+		//loadMap(maps.get(0));
+		//level++;
 	}
 	
-	public void loadMap(String map){
+	public static void loadMap(String map){
 		table.loadMap(map);
 	}
 
@@ -42,14 +54,14 @@ public class Game {
 	 * A játék végekor kerül meghívásra.
 	 */
 	public static void gameOver() {
-		// TODO implement here
+		System.out.println("gameOver");
 	}
 
 	/**
 	 * Gyõzelem esetén meghívódó függvény.
 	 */
 	public static void victory() {
-		// TODO implement here
+		System.out.println("victory");
 	}
 
 	/**
@@ -61,10 +73,16 @@ public class Game {
 	}
 	
 	/**
-	 * 
+	 * Megvizsgálja, hogy végeztünk-e a pályán, ha igen, betölti a következöt
 	 */
 	public static void mapCompleted() {
-		// TODO implement here
+		if(table.mapCompleted()){
+			//TODO következö pályla betöltése
+			//if(level>maps.size())
+			// 	victory();
+			//loadMap(maps.get(level));
+			//level++;
+		}
 	}
 
 }
