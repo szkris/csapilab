@@ -286,36 +286,34 @@ public class Table {
 	}
 
 	/**
-	 * Kinyitja az alagútbejáratot, ha nincs már kettö aktiválva, valamit
-	 * bezárja ha épp aktív.
+	 * Kinyitja az alagútbejáratot, ha nincs már kettö aktiválva.
 	 * 
 	 * @param TunnelEntrance
-	 *            A bezárni/kinyitni kívánt alagútbejárat.
+	 *            A kinyitni kívánt alagútbejárat.
 	 */
 	public void openTunnel(TunnelEntrance te) {
+		if (openTunnelEntrances[0] != null && openTunnelEntrances[1] != null)
+			return;
+		if (openTunnelEntrances[0] != null) {
+			openTunnelEntrances[0] = te;
+			te.changeStatus();
+		} else {
+			openTunnelEntrances[1] = te;
+			te.changeStatus();
+		}
+	}
+
+	public void closeTunnel(TunnelEntrance te) {
+		for (Train tr : train) {
+			if (tr.isInTunnel())
+				return;
+		}
 		if (openTunnelEntrances[0] == te) {
 			te.changeStatus();
 			openTunnelEntrances[0] = null;
-			return;
 		} else if (openTunnelEntrances[1] == te) {
 			te.changeStatus();
 			openTunnelEntrances[1] = null;
-		} else if (openTunnelEntrances[0] != null && openTunnelEntrances[1] != null) {
-			return;
-		} else {
-			for (Train tr : train) {
-				if (tr.isInTunnel())
-					return;
-			}
-			if (openTunnelEntrances[0] != null) {
-				openTunnelEntrances[0] = te;
-				te.changeStatus();
-				return;
-			} else {
-				openTunnelEntrances[1] = te;
-				te.changeStatus();
-				return;
-			}
 		}
 	}
 
@@ -352,11 +350,11 @@ public class Table {
 	 *            Keresett elem id-je
 	 * @return A keresett elem
 	 */
-	
-	public ArrayList<TableElement> getTableElements(){
+
+	public ArrayList<TableElement> getTableElements() {
 		return tableElements;
 	}
-	
+
 	public TableElement getTableElement(int id) {
 		for (TableElement tableElement : tableElements) {
 			if (tableElement.getId() == id) {
