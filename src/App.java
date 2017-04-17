@@ -13,9 +13,9 @@ public class App {
 	 * @return
 	 */
 	public static void main(String[] args) {
-		Table table = new Table();
-		table.loadMap("tunnelentrance_test_map.xml");
-		System.out.println("vege");
+		Game game = new Game();
+		game.loadMap("tunnelentrance_test_map.xml");
+		game.run();
 	}
 
 }

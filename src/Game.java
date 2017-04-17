@@ -22,10 +22,15 @@ public class Game {
 	private int tick;
 
 	/**
+	 * Játékhoz tartozó idözitö
+	 */
+	private Timer timer; 
+	/**
 	 * Elindítja a játékot.
 	 */
 	public void run() {
-		//TODO
+		timer = new Timer(this);
+		timer.start();
 	}
 	
 	public void loadMap(String map){
@@ -50,6 +55,7 @@ public class Game {
 	 * Mozgatást megvalóstó osztály
 	 */
 	public void move() {
+		tick++;
 		table.move(tick);
 	}
 	

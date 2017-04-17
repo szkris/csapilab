@@ -6,30 +6,39 @@ import java.util.*;
  */
 public class Timer {
 
+	java.util.Timer timer;
+	
 	/**
-	 * Default constructor
+	 * Konstruktor, mely átvesz egy játék osztály elemet.
+	 * @param game A játék, amelynek a timer-t szánjuk.
 	 */
-	public Timer() {
+	public Timer(Game game) {
+		this.game = game;
 	}
 
 	/**
-	 * 
+	 * A timerhez tartozó játékmenet
 	 */
-	private Game timer;
+	private Game game;
 
 	/**
-	 * @return
+	 * Elindítja az idözitöt
 	 */
 	public void start() {
-		// TODO implement here
-
+		timer = new java.util.Timer(true);
+		TimerTask task = new TimerTask() {
+			@Override
+			public void run() {
+				game.move();
+			}
+		};
+		timer.schedule(task, 1000);
 	}
 
 	/**
-	 * @return
+	 * Leállítja az idözítöt
 	 */
 	public void stop() {
-		// TODO implement here
-
+		timer.cancel();
 	}
 }
