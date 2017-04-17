@@ -77,7 +77,20 @@ public class App {
 	        	}
 	        }
 	        else if(s[0].equals("listTunnelEntrance")){
-	        	
+	        	for (int i = 0; i < game.getTable().getTableElements().size(); i++){
+	        		if(game.getTable().getTableElements().get(i).getType().equals("station")){
+	        			TunnelEntrance te = (TunnelEntrance)game.getTable().getTableElements().get(i);
+	        			System.out.print(te.getId());
+	        			System.out.print(" ");
+	        			if(te.isOpen()){
+	        				System.out.print("open");
+	        			}
+	        			else{
+	        				System.out.print("closed");
+	        			}
+	        			System.out.println();
+	        		}
+	        	}
 	        }
 	        else if(s[0].equals("listTrain")){
 	        	
