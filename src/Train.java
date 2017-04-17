@@ -137,4 +137,17 @@ public class Train {
 	public void addElement(TrainElement elem) {
 		elements.add(elem);
 	}
+	
+	/**
+	 * Visszaadja a vonat ID-ját
+	 * 
+	 * @return vonat ID-ja
+	 */
+	public int getID(){
+		return id;
+	}
+	
+	public ArrayList<TrainElement> getTrainElements(){
+		return elements;
+	}
 }

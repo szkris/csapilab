@@ -27,6 +27,11 @@ public abstract class TrainElement {
 	private boolean empty;
 
 	/**
+	 * Vonatelem típusa
+	 */
+	protected String type;
+	
+	/**
 	 * Kocsit tartalamzó vonat
 	 */
 	final protected Train train;
@@ -158,4 +163,13 @@ public abstract class TrainElement {
 	public TunnelEntrance getTunnelEntrance() {
 		return enteredTunnel;
 	}
+	
+	/**
+	 * Visszaadja a vonatelem típusát
+	 * @return vonatelem típusa
+	 */
+	public String getType(){
+		return type;
+	}
+	
 }

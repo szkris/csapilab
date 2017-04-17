@@ -16,6 +16,7 @@ public class Tunnel extends TableElement {
 	 */
 	public Tunnel(int id, Table table) {
 		super(id);
+		type = "tunnel";
 		this.table = table;
 	}
 

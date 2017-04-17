@@ -17,6 +17,7 @@ public class Car extends TrainElement {
 	 */
 	public Car(Color color, boolean empty, Train train) {
 		super(color, empty, train);
+		type = "car";
 	}
 
 	@Override
@@ -32,5 +33,4 @@ public class Car extends TrainElement {
 			return;
 		changeEmpty();
 	}
-
 }

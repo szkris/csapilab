@@ -360,6 +360,10 @@ public class Table {
 	public ArrayList<TableElement> getTableElements() {
 		return tableElements;
 	}
+	
+	public ArrayList<Train> getTrains(){
+		return train;
+	}
 
 	public TableElement getTableElement(int id) {
 		for (TableElement tableElement : tableElements) {

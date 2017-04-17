@@ -48,7 +48,11 @@ public class App {
 	        		game.getTable().getTableElement(i).click();
 	        }
 	        else if(s[0].equals("step")){
-	        	
+	        	int i = Integer.parseInt(s[1]);
+	        	while(i != 0){
+	        		game.move();
+	        		i--;
+	        	}
 	        }
 	        else if(s[0].equals("listStations")){
 	        	for (int i = 0; i < game.getTable().getTableElements().size(); i++){
@@ -93,7 +97,20 @@ public class App {
 	        	}
 	        }
 	        else if(s[0].equals("listTrain")){
-	        	
+	        	for (int i = 0; i < game.getTable().getTrains().size(); i++){
+	        		
+	        			Train tr = (Train)game.getTable().getTrains().get(i);
+	        			System.out.println(tr.getID());
+	        			for (TrainElement te : tr.getTrainElements()){
+	        				if(te.getType().equals("car"))
+	        					System.out.println("\tCar " + te.getColor() + " " + te.isEmpty());
+	        				else if(te.getType().equals("locomotive"))
+	        					System.out.println("\tLocomotive");
+	        				else if(te.getType().equals("coalwagon"))
+	        					System.out.println("\tCoalWagon");
+	        			}
+	        			System.out.println();
+	        	}
 	        }
 	        else if(s[0].equals("hopOn")){
 	        	

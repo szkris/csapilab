@@ -11,6 +11,7 @@ public class Crossing extends Rail {
 	 */
 	public Crossing(int id) {
 		super(id);
+		type = "crossing";
 	}
 
 	/**

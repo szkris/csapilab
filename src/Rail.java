@@ -14,6 +14,7 @@ public class Rail extends TableElement {
 	 */
 	public Rail(int id) {
 		super(id);
+		type = "rail";
 	}
 
 	/**

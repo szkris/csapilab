@@ -21,6 +21,7 @@ public class TunnelEntrance extends Rail {
 	 */
 	public TunnelEntrance(int id, Table table) {
 		super(id);
+		type = "tunnelEntrance";
 		this.table = table;
 	}
 

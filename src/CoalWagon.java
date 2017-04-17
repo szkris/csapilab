@@ -18,6 +18,7 @@ public class CoalWagon extends TrainElement {
 	 */
 	public CoalWagon(Color color, boolean empty, Train train) {
 		super(color, empty, train);
+		type = "coalwagon";
 	}
 
 	/**

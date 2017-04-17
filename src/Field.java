@@ -14,6 +14,7 @@ public class Field extends TableElement {
 	 */
 	public Field(int id) {
 		super(id);
+		type = "field";
 	}
 
 	@Override

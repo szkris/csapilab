@@ -41,7 +41,7 @@ public class Game {
 	public void run() {
 		if(timer!=null) timer.stop();
 		timer = new Timer(this);
-		timer.start();
+		//timer.start();
 		//Elso palya beoltese
 		//loadMap(maps.get(0));
 		//level++;

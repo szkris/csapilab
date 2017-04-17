@@ -18,10 +18,12 @@ public class Locomotive extends TrainElement {
 	 */
 	public Locomotive(Color color, boolean empty, Train train) {
 		super(color, empty, train);
+		type = "locomotive";
 	}
 
 	/**
 	 * A loco-t tartalamzó vonat.
 	 */
 	private Train train;
+	
 }
