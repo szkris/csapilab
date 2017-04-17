@@ -253,7 +253,7 @@ public class Table {
 							_train.addElement(new CoalWagon(null, true, _train));
 						} else {
 							Color _color;
-							String __c = elem.getAttribute("color");
+							String __c = _e.getAttribute("color");
 							if (__c.equals("red"))
 								_color = Color.RED;
 							else if (__c.equals("blue"))
