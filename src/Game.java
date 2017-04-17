@@ -46,6 +46,10 @@ public class Game {
 		//level++;
 	}
 	
+	public Table getTable(){
+		return table;
+	}
+	
 	public static void loadMap(String map){
 		table.loadMap(map);
 	}

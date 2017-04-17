@@ -19,6 +19,7 @@ public class App {
 	public static void main(String[] args) throws IOException {
 		Game game = new Game();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		game.run();
 		System.out.println("parancsok:");
         String line;
 		while(true){
@@ -31,7 +32,8 @@ public class App {
 	        	
 	        }
 	        else if(s[0].equals("setSwitch")){
-	        	
+	        	int i = Integer.parseInt(s[1]);
+	        	game.getTable().getTableElement(i).click();
 	        }
 	        else if(s[0].equals("openTunnelEntrance")){
 	        	
@@ -58,7 +60,6 @@ public class App {
 	        	
 	        }
 		}
-		game.run();
 	}
 
 }
