@@ -9,6 +9,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
 /**
  * Pályát tároló osztály
  */
@@ -17,10 +18,7 @@ public class Table {
 	/**
 	 * Default constructor
 	 */
-	public Table() {
-		openTunnelEntrances[0] = null;
-		openTunnelEntrances[1] = null;
-	}
+	public Table() {	}
 
 	/**
 	 * Alagútbejáratok között vezetö utatkat tároló lista
@@ -51,6 +49,8 @@ public class Table {
 	public void loadMap(String map) {
 		try {
 
+			openTunnelEntrances[0] = null;
+			openTunnelEntrances[1] = null;
 			tunnelRoutes = new ArrayList<TunnelRoute>();
 			train = new ArrayList<Train>();
 			tableElements = new ArrayList<TableElement>();
@@ -274,9 +274,11 @@ public class Table {
 
 	/**
 	 * Vonatok mozgatása az aktuális idöpillanatban
-	 * @param tick Az aktuális idöpillanat
+	 * 
+	 * @param tick
+	 *            Az aktuális idöpillanat
 	 */
-	public void move(int tick){
+	public void move(int tick) {
 		for (Train train : train) {
 			train.move(tick);
 		}
@@ -341,6 +343,14 @@ public class Table {
 		}
 		return null;
 	}
+
+	/**
+	 * Segédosztály a táblán lévö elemek kereséséhez.
+	 * 
+	 * @param id
+	 *            Keresett elem id-je
+	 * @return A keresett elem
+	 */
 	private TableElement getTableElement(int id) {
 		for (TableElement tableElement : tableElements) {
 			if (tableElement.getId() == id) {
@@ -350,6 +360,13 @@ public class Table {
 		return null;
 	}
 
+	/**
+	 * Segédosztály az XML int-ek beolvasásához.
+	 * 
+	 * @param XML-böl
+	 *            beolvasott szöveg.
+	 * @return 0-ha nem sikerült kiolvasni, különben int ként a megadott szöveg
+	 */
 	private int TryParseInt(String str) {
 		try {
 			int r = Integer.parseInt(str);
