@@ -97,11 +97,11 @@ public class App {
 	        			System.out.println(tr.getID());
 	        			for (TrainElement te : tr.getTrainElements()){
 	        				if(te.getType().equals("car"))
-	        					System.out.println("\tCar " + te.getColor() + " " + te.isEmpty());
+	        					System.out.println("\tCar " + te.getColor() + " " + te.isEmpty() + " " + te.getcurrentTableElement().getId());
 	        				else if(te.getType().equals("locomotive"))
-	        					System.out.println("\tLocomotive");
+	        					System.out.println("\tLocomotive " + "null" + " " + "true" + " " + te.getcurrentTableElement().getId());
 	        				else if(te.getType().equals("coalwagon"))
-	        					System.out.println("\tCoalWagon");
+	        					System.out.println("\tCoalWagon " + "null" + " " + "true" + " " + te.getcurrentTableElement().getId());
 	        		}
 	        	}
 	        }
