@@ -92,36 +92,37 @@ public class App {
 
 	        	for (int i = 0; i < game.getTable().getTrains().size(); i++){
 	        		
-	        			Train tr = (Train)game.getTable().getTrains().get(i);
-	        			System.out.println(tr.getID());
-	        			for (TrainElement te : tr.getTrainElements()){
-	        				if(te.getType().equals("car")){
+	        		Train tr = (Train)game.getTable().getTrains().get(i);
+	        		System.out.println("( Train " + tr.getID());
+	        		for (TrainElement te : tr.getTrainElements()){
+	        			if(te.getType().equals("car")){
+	        				
+	        				System.out.print("\tCar " + te.getColor() + " " + te.isEmpty() + " ");
+	        				if (te.getcurrentTableElement() == null)
+	        					System.out.print("0");
+	        				else 
+	        					System.out.print(te.getcurrentTableElement().getId());
+	        				System.out.println();
+	        			}
+	        			else if(te.getType().equals("locomotive")){
 	        					
-	        					System.out.print("\tCar " + te.getColor() + " " + te.isEmpty());
-	        					if (te.getcurrentTableElement() == null)
-	        						System.out.print(" 0");
-	        					else 
-	        						System.out.print(te.getcurrentTableElement().getId());
-	        					System.out.println();
-	        				}
-	        				else if(te.getType().equals("locomotive")){
-	        					
-	        					System.out.print("\tLocomotive null true");
-	        					if (te.getcurrentTableElement() == null)
-	        						System.out.print(" 0");
-	        					else 
-	        						System.out.print(te.getcurrentTableElement().getId());
-	        					System.out.println();
-	        				}
-	        				else if(te.getType().equals("coalwagon")){
-	        					System.out.print("\tCoalWagon null true");
-	        					if (te.getcurrentTableElement() == null)
-	        						System.out.print(" 0");
-	        					else 
-	        						System.out.print(te.getcurrentTableElement().getId());
-	        					System.out.println();
-	        				}
+	        				System.out.print("\tLocomotive null true ");
+	        				if (te.getcurrentTableElement() == null)
+	        					System.out.print("0");
+	        				else 
+	        					System.out.print(te.getcurrentTableElement().getId());
+	        				System.out.println();
+	        			}
+	        			else if(te.getType().equals("coalwagon")){
+	        				System.out.print("\tCoalWagon null true ");
+	        				if (te.getcurrentTableElement() == null)
+	        					System.out.print("0");
+	        				else 
+	        					System.out.print(te.getcurrentTableElement().getId());
+	        				System.out.println();
+	        			}
 	        		}
+	        		System.out.println(")");
 	        	}
 	        }
 	        else if(s[0].equals("hopOn")){
