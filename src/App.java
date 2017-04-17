@@ -67,14 +67,30 @@ public class App {
 	        			Switch sw = (Switch)game.getTable().getTableElements().get(i);
 	        			System.out.print(sw.getId());
 	        			System.out.print(" ");
+	        			System.out.print(sw.getFix().getId());
+	        			System.out.print(" ");
+	        			System.out.print(sw.getActive().getId());
+	        			System.out.print(" ");
 	        			System.out.println();
-	        			// Doksiban van még itt valami, amit ki kell írnia, de nem tudom, mi az
 	        			// Kiírja az ID-t a fix pozíciót és az éppen aktív pozíciót
 	        		}
 	        	}
 	        }
 	        else if(s[0].equals("listTunnelEntrance")){
-	        	
+	        	for (int i = 0; i < game.getTable().getTableElements().size(); i++){
+	        		if(game.getTable().getTableElements().get(i).getType().equals("station")){
+	        			TunnelEntrance te = (TunnelEntrance)game.getTable().getTableElements().get(i);
+	        			System.out.print(te.getId());
+	        			System.out.print(" ");
+	        			if(te.isOpen()){
+	        				System.out.print("open");
+	        			}
+	        			else{
+	        				System.out.print("closed");
+	        			}
+	        			System.out.println();
+	        		}
+	        	}
 	        }
 	        else if(s[0].equals("listTrain")){
 	        	

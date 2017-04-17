@@ -22,10 +22,17 @@ public class Switch extends TableElement {
 	 */
 	private TableElement fix;
 
+	public TableElement getFix(){
+		return fix;
+	}
 	/**
 	 * Ez a másik jelenleg aktív be/kimenetel.
 	 */
 	private TableElement active;
+	
+	public TableElement getActive(){
+		return active;
+	}
 
 	/**
 	 * A jelenleg inaktív be/kimenetel.
