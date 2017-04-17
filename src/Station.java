@@ -5,6 +5,8 @@ import java.util.*;
  * Állomást megvalósító osztály
  */
 public class Station extends Rail {
+	
+	private String type = "station";
 
 	/**
 	 * Konstruktor mely paraméterként megkapja a táblaelem ID-ját.
@@ -18,6 +20,10 @@ public class Station extends Rail {
 		this.color = color;
 	}
 	
+	public String getType(){
+		return type;
+	}
+	
 	/**
 	 * Random szám generátor.
 	 */
@@ -27,6 +33,10 @@ public class Station extends Rail {
 	 * Állomás színe
 	 */
 	private Color color;
+	
+	public Color getColor(){
+		return color;
+	}
 	
 	@Override
 	public void stepOn(TrainElement te){

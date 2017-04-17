@@ -51,7 +51,14 @@ public class App {
 	        	
 	        }
 	        else if(s[0].equals("listStations")){
-	        	
+	        	for (int i = 0; i < game.getTable().getTableElements().size(); i++){
+	        		if(game.getTable().getTableElements().get(i).getType().equals("station")){
+	        			Station station = (Station)game.getTable().getTableElements().get(i);
+	        			System.out.print(station.getId());
+	        			System.out.print(" ");
+	        			System.out.print(station.getColor());
+	        		}
+	        	}
 	        }
 	        else if(s[0].equals("listSwitches")){
 	        	

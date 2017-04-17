@@ -352,6 +352,11 @@ public class Table {
 	 *            Keresett elem id-je
 	 * @return A keresett elem
 	 */
+	
+	public ArrayList<TableElement> getTableElements(){
+		return tableElements;
+	}
+	
 	public TableElement getTableElement(int id) {
 		for (TableElement tableElement : tableElements) {
 			if (tableElement.getId() == id) {
