@@ -36,10 +36,16 @@ public class App {
 	        	game.getTable().getTableElement(i).click();
 	        }
 	        else if(s[0].equals("openTunnelEntrance")){
-	        	
+	        	int i = Integer.parseInt(s[1]);
+	        	TunnelEntrance te = (TunnelEntrance)game.getTable().getTableElement(i);
+	        	if(!te.isOpen())
+	        		game.getTable().getTableElement(i).click();
 	        }
 	        else if(s[0].equals("closeTunnelEntrance")){
-	        	
+	        	int i = Integer.parseInt(s[1]);
+	        	TunnelEntrance te = (TunnelEntrance)game.getTable().getTableElement(i);
+	        	if(te.isOpen())
+	        		game.getTable().getTableElement(i).click();
 	        }
 	        else if(s[0].equals("step")){
 	        	

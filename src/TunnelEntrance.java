@@ -40,7 +40,12 @@ public class TunnelEntrance extends Rail {
 
 	@Override
 	public void click() {
-		table.openTunnel(this);
+		if(open){
+			table.closeTunnel(this);
+		}
+		else{
+			table.openTunnel(this);
+		}
 	}
 
 	@Override
