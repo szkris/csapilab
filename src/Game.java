@@ -59,7 +59,7 @@ public class Game {
 	 * A játék végekor kerül meghívásra.
 	 */
 	public static void gameOver() {
-		timer.stop();
+		//timer.stop();
 		System.out.println("gameOver");
 	}
 
@@ -67,7 +67,7 @@ public class Game {
 	 * Gyõzelem esetén meghívódó függvény.
 	 */
 	public static void victory() {
-		timer.stop();
+		//timer.stop();
 		System.out.println("victory");
 	}
 
@@ -84,6 +84,7 @@ public class Game {
 	 */
 	public static void mapCompleted() {
 		if(table.mapCompleted()){
+			victory();
 			//TODO következö pályla betöltése
 			//if(level>maps.size())
 			// 	victory();

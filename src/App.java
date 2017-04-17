@@ -98,9 +98,9 @@ public class App {
 	        				if(te.getType().equals("car"))
 	        					System.out.println("\tCar " + te.getColor() + " " + te.isEmpty() + " " + te.getcurrentTableElement().getId());
 	        				else if(te.getType().equals("locomotive"))
-	        					System.out.println("\tLocomotive " + "null" + " " + "true" + " " + te.getcurrentTableElement().getId());
+	        					System.out.println("\tLocomotive null true "+ te.getcurrentTableElement().getId());
 	        				else if(te.getType().equals("coalwagon"))
-	        					System.out.println("\tCoalWagon " + "null" + " " + "true" + " " + te.getcurrentTableElement().getId());
+	        					System.out.println("\tCoalWagon null true "+ te.getcurrentTableElement().getId());
 	        		}
 	        	}
 	        }
