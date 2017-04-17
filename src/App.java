@@ -67,8 +67,11 @@ public class App {
 	        			Switch sw = (Switch)game.getTable().getTableElements().get(i);
 	        			System.out.print(sw.getId());
 	        			System.out.print(" ");
+	        			System.out.print(sw.getFix().getId());
+	        			System.out.print(" ");
+	        			System.out.print(sw.getActive().getId());
+	        			System.out.print(" ");
 	        			System.out.println();
-	        			// Doksiban van még itt valami, amit ki kell írnia, de nem tudom, mi az
 	        			// Kiírja az ID-t a fix pozíciót és az éppen aktív pozíciót
 	        		}
 	        	}
