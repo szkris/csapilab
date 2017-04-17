@@ -15,7 +15,13 @@ public class TunnelRoute {
 	 * Az alagútszakaszt alkotó alagút elemek.
 	 */
 	private ArrayList<Tunnel> tunnels;
-
+	
+	public TunnelRoute(TunnelEntrance from, TunnelEntrance to, ArrayList<Tunnel> tunnels){
+		this.from = from;
+		this.to= to;
+		this.tunnels = tunnels;
+	}
+	
 	/**
 	 * Megegyezik-e a paraméterekkel megadott alagútszakasszal.
 	 * 

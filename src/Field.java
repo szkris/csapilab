@@ -30,9 +30,6 @@ public class Field extends TableElement {
 	}
 
 	@Override
-	public void setUpConnections(ArrayList<TableElement> list) {
-		// TODO Auto-generated method stub
-
-	}
+	public void setUpConnections(ArrayList<TableElement> list) {}
 
 }

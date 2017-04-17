@@ -12,9 +12,10 @@ public class Station extends Rail {
 	 * @param id
 	 *            Az elem ID-ja.
 	 */
-	public Station(int id) {
+	public Station(int id, Color color) {
 		super(id);
 		rand = new Random(id);
+		this.color = color;
 	}
 	
 	/**

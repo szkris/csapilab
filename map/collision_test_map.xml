@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <game>
-    <map>
-        <train starttick="1" startpos="2" id="1">
-            <loco/>
-            <car color="red" empty="true"/>
-        </train>
-        <train starttick="1" startpos="4" id="2">
-            <loco/>
-            <car color="red" empty="true"/>
-        </train>
-        <field id="1"/>
-        <rail refid1="null" refid2="5" id="2"/>
-        <field id="3"/>
-        <rail refid1="null" refid2="5" id="4"/>
-        <crossing refid1="4" refid2="2" refid3="6" refid4="8" id="5"/>
-        <field id="7"/>
-        <rail refid1="5" refid2="null" id = "6"/>
-        <rail refid1="5" refid2="null" id = "8"/>
-        <field id="9"/>
-    </map>
+    <train starttick="1" startpos="2" id="1">
+        <loco/>
+        <car color="red" empty="true"/>
+    </train>
+    <train starttick="1" startpos="4" id="2">
+        <loco/>
+        <car color="red" empty="true"/>
+    </train>
+    <field id="1"/>
+    <rail refid1="null" refid2="5" id="2"/>
+    <field id="3"/>
+    <rail refid1="null" refid2="5" id="4"/>
+    <crossing refid1="4" refid2="2" refid3="6" refid4="8" id="5"/>
+    <field id="7"/>
+    <rail refid1="5" refid2="null" id = "6"/>
+    <rail refid1="5" refid2="null" id = "8"/>
+    <field id="9"/>
 </game>

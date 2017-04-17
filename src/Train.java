@@ -4,18 +4,44 @@ import java.util.*;
 /**
  * 
  */
-public abstract class Train {
+public class Train {
 
 	/**
-	 * Alapértelmezett konstruktor.
+	 * Konstruktor, mely beállítja a kezdöpozíciót, kezdö ütemet valamint az azonosítót.
+	 * 
+	 * @param starttick
+	 *            Kezdö ütem
+	 * @param startpos
+	 *            Kezdö pozíció
+	 * @param id 
+	 * 			  Vonat azonosítója
 	 */
-	public Train() {
+	public Train(int starttick, TableElement startpos, int id) {
+		this.startpos = startpos;
+		this.starttick = starttick;
+		this.id = id;
 	}
+
+
+	/**
+	 * A vonat azonosítója.
+	 */
+	private int id;
+	
+	/**
+	 * A vonat kezdésének üteme.
+	 */
+	private int starttick;
+
+	/**
+	 * A vonat kezdö pozíciója
+	 */
+	private TableElement startpos;
 
 	/**
 	 * A vonatot alkotó elemek.
 	 */
-	private ArrayList<TrainElement> elements;
+	private ArrayList<TrainElement> elements = new ArrayList<TrainElement>();
 
 	/**
 	 * Megvizsgálja, hogy a vonat minden eleme látható e. Ha van nem látható

@@ -41,8 +41,8 @@ public class Rail extends TableElement {
 
 	@Override
 	public void setUpConnections(ArrayList<TableElement> list) {
-		// TODO Auto-generated method stub
-
+		this.elem1 = list.get(0);
+		this.elem2 = list.get(1);
 	}
 
 }

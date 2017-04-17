@@ -13,8 +13,9 @@ public class App {
 	 * @return
 	 */
 	public static void main(String[] args) {
-		// TODO implement here
-
+		Table table = new Table();
+		table.loadMap("tunnelentrance_test_map.xml");
+		System.out.println("vege");
 	}
 
 }

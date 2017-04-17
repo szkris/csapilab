@@ -37,7 +37,10 @@ public class Crossing extends Rail {
 
 	@Override
 	public void setUpConnections(ArrayList<TableElement> list) {
-		// TODO Auto-generated method stub
+		this.elem1 = list.get(0);
+		this.elem3 = list.get(1);
+		this.elem2 = list.get(2);
+		this.elem4 = list.get(3);
 	}
 
 }

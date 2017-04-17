@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <game>
-    <map>
-        <train starttick="1" startpos="1" id="1">
-            <loco/>
-            <car color="red" empty="false"/>
-        </train>
-        <rail refid1="null" refid2="2" id="1"/>
-        <station refid1="1" refid2="3" color="red" id="2"/>
-        <rail refid1="2" refid2="null" id = "3"/>
-    </map>
+    <train starttick="1" startpos="1" id="1">
+        <loco/>
+        <car color="red" empty="false"/>
+    </train>
+    <rail refid1="null" refid2="2" id="1"/>
+    <station refid1="1" refid2="3" color="red" id="2"/>
+    <rail refid1="2" refid2="null" id = "3"/>
 </game>

@@ -52,9 +52,4 @@ public class TunnelEntrance extends Rail {
 		te.setTunnelEntrance(this);
 		te.setTableElement(this);
 	}
-
-	// TODO
-	@Override
-	public void setUpConnections(ArrayList<TableElement> list) {
-	}
 }
