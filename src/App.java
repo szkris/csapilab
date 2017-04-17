@@ -69,7 +69,6 @@ public class App {
 	        		if(game.getTable().getTableElements().get(i).getType().equals("switch")){
 	        			Switch sw = (Switch)game.getTable().getTableElements().get(i);
 	        			System.out.println(sw.getId() + " " + sw.getFix().getId() + " " + sw.getActive().getId());
-	        			// Kiírja az ID-t a fix pozíciót és az éppen aktív pozíciót
 	        		}
 	        	}
 	        }
