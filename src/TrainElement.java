@@ -3,7 +3,7 @@ import java.beans.Visibility;
 import java.util.*;
 
 /**
- * 
+ * Vonatelemeket megvalósító abstract ösosztály
  */
 public abstract class TrainElement {
 

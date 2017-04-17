@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * Szénszállító kocsit megvalósító osztály
  */
 public class CoalWagon extends TrainElement {
 

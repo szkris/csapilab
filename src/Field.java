@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * Üres mezöt megvalósító osztály
  */
 public class Field extends TableElement {
 

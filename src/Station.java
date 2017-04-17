@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * Állomást megvalósító osztály
  */
 public class Station extends Rail {
 

@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * Alagut szakaszokat megvalósító osztály
+ */
 public class TunnelRoute {
 	/**
 	 * Alagút eleje

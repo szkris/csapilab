@@ -9,11 +9,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
-import com.sun.org.apache.xalan.internal.xsltc.dom.DocumentCache;
-
 /**
- * 
+ * Pályát tároló osztály
  */
 public class Table {
 
@@ -26,36 +23,30 @@ public class Table {
 	}
 
 	/**
-	 * 
-	 */
-	private int numberOfLevels;
-
-	/**
-	 * 
-	 */
-	private int currentLevel;
-
-	/**
-	 * 
+	 * Alagútbejáratok között vezetö utatkat tároló lista
 	 */
 	private ArrayList<TunnelRoute> tunnelRoutes;
 
 	/**
-	 * 
+	 * Táblaelemeket tároló lista
 	 */
 	private ArrayList<TableElement> tableElements;
+
 	/**
-	 * 
+	 * Vonatokat tároló lista
 	 */
 	private ArrayList<Train> train;
 
 	/**
-	 * 
+	 * Nyitott alagútbejáratok
 	 */
 	private TunnelEntrance[] openTunnelEntrances = new TunnelEntrance[2];
 
 	/**
-	 * @return
+	 * Pálya betöltése
+	 * 
+	 * @param map
+	 *            A pálya neve
 	 */
 	public void loadMap(String map) {
 		try {
@@ -278,7 +269,7 @@ public class Table {
 							else if (__c.equals("green"))
 								_color = Color.GREEN;
 							else
-								_color = Color.YELLOW;								
+								_color = Color.YELLOW;
 							_train.addElement(new Car(_color, Boolean.parseBoolean(_e.getAttribute("empty")), _train));
 						}
 					}

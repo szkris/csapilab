@@ -1,7 +1,7 @@
 import java.util.*;
 
 /**
- * 
+ * Utasokat szállító vagont megvalósító osztály
  */
 public class Car extends TrainElement {
 

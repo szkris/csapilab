@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * Váltót megvalósító osztály
  */
 public class Switch extends TableElement {
 

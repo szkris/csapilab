@@ -3,7 +3,7 @@ import java.util.*;
 import javafx.animation.SequentialTransitionBuilder;
 
 /**
- * 
+ * Táblaelemeket megvalósító abstract ösosztály
  */
 public abstract class TableElement implements ITableElement {
 

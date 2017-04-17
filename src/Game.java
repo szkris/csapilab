@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * Játékot megvalósító osztály
  */
 public class Game {
 

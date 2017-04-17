@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * Táblaelemek által használt függvényeket megvalósító interface
  */
 public interface ITableElement {
 

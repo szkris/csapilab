@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * Keresztezödést megvalósító osztály
  */
 public class Crossing extends Rail {
 

@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * Vonatot megvalósító osztály
  */
 public class Train {
 

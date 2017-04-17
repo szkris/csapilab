@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * Idözitöt megvalóstó osztály
  */
 public class Timer {
 

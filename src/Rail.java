@@ -2,7 +2,7 @@
 import java.util.*;
 
 /**
- * 
+ * Síneket megvalósító osztály
  */
 public class Rail extends TableElement {
 
