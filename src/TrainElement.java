@@ -54,6 +54,10 @@ public abstract class TrainElement {
 	 * Jelenlegi pozíción lévö elem.
 	 */
 	private TableElement currentTableElement;
+	
+	public TableElement getcurrentTableElement(){
+		return currentTableElement;
+	}
 
 	/**
 	 * Alagútba ezen bejáraton érkezett.

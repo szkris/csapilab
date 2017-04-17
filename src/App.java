@@ -100,6 +100,8 @@ public class App {
 	        			System.out.print(game.getTable().getTrains().get(i).getElements().get(i).getColor());
 	        			System.out.print(" ");
 	        			System.out.print(game.getTable().getTrains().get(i).getElements().get(i).isEmpty());
+	        			System.out.print(" ");
+	        			System.out.print(game.getTable().getTrains().get(i).getElements().get(i).getcurrentTableElement());
 	        			System.out.println();
 	        		}
 	        		
