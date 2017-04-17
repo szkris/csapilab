@@ -19,7 +19,6 @@ public class App {
 	public static void main(String[] args) throws IOException {
 		Game game = new Game();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		game.run();
 		System.out.println("parancsok:");
         String line;
 		while(true){
@@ -98,6 +97,7 @@ public class App {
 	        else if(s[0].equals("hopOn")){
 	        	
 	        }
+	        game.run();
 		}
 	}
 
