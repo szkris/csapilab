@@ -95,12 +95,32 @@ public class App {
 	        			Train tr = (Train)game.getTable().getTrains().get(i);
 	        			System.out.println(tr.getID());
 	        			for (TrainElement te : tr.getTrainElements()){
-	        				if(te.getType().equals("car"))
-	        					System.out.println("\tCar " + te.getColor() + " " + te.isEmpty() + " " + te.getcurrentTableElement().getId());
-	        				else if(te.getType().equals("locomotive"))
-	        					System.out.println("\tLocomotive " + "null" + " " + "true" + " " + te.getcurrentTableElement().getId());
-	        				else if(te.getType().equals("coalwagon"))
-	        					System.out.println("\tCoalWagon " + "null" + " " + "true" + " " + te.getcurrentTableElement().getId());
+	        				if(te.getType().equals("car")){
+	        					
+	        					System.out.print("\tCar " + te.getColor() + " " + te.isEmpty());
+	        					if (te.getcurrentTableElement() == null)
+	        						System.out.print(" 0");
+	        					else 
+	        						System.out.print(te.getcurrentTableElement().getId());
+	        					System.out.println();
+	        				}
+	        				else if(te.getType().equals("locomotive")){
+	        					
+	        					System.out.print("\tLocomotive null true");
+	        					if (te.getcurrentTableElement() == null)
+	        						System.out.print(" 0");
+	        					else 
+	        						System.out.print(te.getcurrentTableElement().getId());
+	        					System.out.println();
+	        				}
+	        				else if(te.getType().equals("coalwagon")){
+	        					System.out.print("\tCoalWagon null true");
+	        					if (te.getcurrentTableElement() == null)
+	        						System.out.print(" 0");
+	        					else 
+	        						System.out.print(te.getcurrentTableElement().getId());
+	        					System.out.println();
+	        				}
 	        		}
 	        	}
 	        }
@@ -111,5 +131,4 @@ public class App {
 	        }
 		}
 	}
-
 }
