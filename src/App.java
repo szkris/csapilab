@@ -21,8 +21,8 @@ public class App {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("parancsok:");
         String line;
-		line = br.readLine();
 		while(true){
+			line = br.readLine();
 			String[] s = line.split(" ");
 	        if(s[0].equals("loadMap")){
 	        	Game.loadMap("s[1]");
