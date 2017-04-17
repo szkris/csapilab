@@ -57,6 +57,10 @@ public abstract class TableElement implements ITableElement {
 		return id;
 	}
 	
+	/**
+	 * Visszatér az elem típusával
+	 * @return
+	 */
 	public String getType(){
 		return type;
 	}

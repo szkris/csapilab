@@ -6,6 +6,9 @@ import java.util.*;
  */
 public class Station extends Rail {
 
+	/**
+	 * Az állomáson álló vonatelemet tárolja. Ha nincs rajta semmi, akkor null.
+	 */
 	private TrainElement currentElement = null;
 	
 	/**

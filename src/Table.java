@@ -350,21 +350,26 @@ public class Table {
 	}
 
 	/**
-	 * Segédosztály a táblán lévö elemek kereséséhez.
-	 * 
-	 * @param id
-	 *            Keresett elem id-je
-	 * @return A keresett elem
+	 * Visszaadja az elemeket tároló listát
+	 * @return
 	 */
-
 	public ArrayList<TableElement> getTableElements() {
 		return tableElements;
 	}
 	
+	/**
+	 * Visszaadja a vonatokat tároló listát.
+	 * @return
+	 */
 	public ArrayList<Train> getTrains(){
 		return train;
 	}
 
+	/**
+	 * Visszaadja a paraméterként kapott id-jû elemet ha az létezik
+	 * @param id
+	 * @return
+	 */
 	public TableElement getTableElement(int id) {
 		for (TableElement tableElement : tableElements) {
 			if (tableElement.getId() == id) {
