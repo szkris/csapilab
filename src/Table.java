@@ -303,6 +303,12 @@ public class Table {
 		}
 	}
 
+	/**
+	 * Bezárja a megadott alagútbejáratot, ha nincs alagútban vonat.
+	 * 
+	 * @param te
+	 *            A bezárandó alagútbejárat.
+	 */
 	public void closeTunnel(TunnelEntrance te) {
 		for (Train tr : train) {
 			if (tr.isInTunnel())
