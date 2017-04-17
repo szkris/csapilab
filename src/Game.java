@@ -7,7 +7,7 @@ import java.util.*;
 public class Game {
 
 	/**
-	 * Default constructor
+	 * Alapértelmezett konstruktor
 	 */
 	public Game() { }
 	
@@ -19,12 +19,13 @@ public class Game {
 	/**
 	 * Egy idõegység a játék idejében.
 	 */
-	private int tick;
+	private int tick = 0;
 
 	/**
 	 * Játékhoz tartozó idözitö
 	 */
-	private Timer timer; 
+	private Timer timer;
+	
 	/**
 	 * Elindítja a játékot.
 	 */
