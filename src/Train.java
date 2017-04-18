@@ -73,9 +73,9 @@ public class Train {
 	public boolean isInTunnel() {
 		for (TrainElement trainElement : elements) {
 			if (!trainElement.isVisible())
-				return false;
+				return true;
 		}
-		return true;
+		return false;
 	}
 
 	/**

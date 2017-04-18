@@ -14,6 +14,7 @@ public abstract class TrainElement {
 		this.empty = empty;
 		this.color = color;
 		this.train = train;
+		this.visible = true;
 	}
 
 	/**
