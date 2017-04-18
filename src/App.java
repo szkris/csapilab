@@ -60,7 +60,7 @@ public class App {
 	        	for (int i = 0; i < game.getTable().getTableElements().size(); i++){
 	        		if(game.getTable().getTableElements().get(i).getType().equals("station")){
 	        			Station station = (Station)game.getTable().getTableElements().get(i);
-	        			System.out.println(station.getId() + " " + station.getColor());
+	        			System.out.println("(" + station.getId() + " " + station.getColor() + ")");
 	        		}
 	        	}
 	        }
@@ -68,7 +68,7 @@ public class App {
 	        	for (int i = 0; i < game.getTable().getTableElements().size(); i++){
 	        		if(game.getTable().getTableElements().get(i).getType().equals("switch")){
 	        			Switch sw = (Switch)game.getTable().getTableElements().get(i);
-	        			System.out.println(sw.getId() + " " + sw.getFix().getId() + " " + sw.getActive().getId());
+	        			System.out.println("( " + sw.getId() + " " + sw.getFix().getId() + " " + sw.getActive().getId() + " )");
 	        		}
 	        	}
 	        }
@@ -76,7 +76,7 @@ public class App {
 	        	for (int i = 0; i < game.getTable().getTableElements().size(); i++){
 	        		if(game.getTable().getTableElements().get(i).getType().equals("station")){
 	        			TunnelEntrance te = (TunnelEntrance)game.getTable().getTableElements().get(i);
-	        			System.out.print(te.getId());
+	        			System.out.print("(" + te.getId());
 	        			System.out.print(" ");
 	        			if(te.isOpen()){
 	        				System.out.print("open");
@@ -84,6 +84,7 @@ public class App {
 	        			else{
 	        				System.out.print("closed");
 	        			}
+	        			System.out.print(")");
 	        			System.out.println();
 	        		}
 	        	}
