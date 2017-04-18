@@ -54,6 +54,7 @@ public class TunnelRoute {
 					return tunnels.get(i + 1);
 			}
 		}
+		Game.gameOver();
 		return null;
 	}
 }

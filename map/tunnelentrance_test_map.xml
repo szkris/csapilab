@@ -8,7 +8,7 @@
     <tunnelentrance refid1="1" refid2="3" open="false" id="2"/>
     <tunnel id="3"/>
     <tunnelentrance refid1="3" refid2="5" open="false" id="4"/>
-    <rail refid1="2" refid2="null" id = "5"/>
+    <rail refid1="4" refid2="null" id = "5"/>
     <route start="2" end="4">
         <nextelem refid="3"/>
     </route>

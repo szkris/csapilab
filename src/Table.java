@@ -295,10 +295,10 @@ public class Table {
 		if (openTunnelEntrances[0] != null && openTunnelEntrances[1] != null)
 			return;
 		if (openTunnelEntrances[0] != null) {
-			openTunnelEntrances[0] = te;
+			openTunnelEntrances[1] = te;
 			te.changeStatus();
 		} else {
-			openTunnelEntrances[1] = te;
+			openTunnelEntrances[0] = te;
 			te.changeStatus();
 		}
 	}
@@ -334,7 +334,8 @@ public class Table {
 	 * @return Következö Tunnel elem az alagútjáraton.
 	 */
 	public TableElement getNextTunnel(TunnelEntrance start, Tunnel at) {
-		TunnelEntrance end;
+		if(openTunnelEntrances[0] == null || openTunnelEntrances[1] == null) Game.gameOver();
+		TunnelEntrance end = null;
 		if (start == openTunnelEntrances[0])
 			end = openTunnelEntrances[1];
 		else
@@ -346,6 +347,7 @@ public class Table {
 				return tr.getNext(at);
 			}
 		}
+		Game.gameOver();
 		return null;
 	}
 

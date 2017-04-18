@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Egy alagútbejáratot megvalósító függvény.
  */
 public class TunnelEntrance extends Rail {
-
+	
 	/**
 	 * Itt tárolódik, hogy a bejárat aktív-e.
 	 */

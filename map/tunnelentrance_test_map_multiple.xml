@@ -12,7 +12,7 @@
         <nextelem refid="8"/>
     </tunnel>
     <tunnelentrance refid1="3" refid2="5" open="false" id="4"/>
-    <rail refid1="2" refid2="null" id = "5"/>
+    <rail refid1="4" refid2="null" id = "5"/>
     <field id="6"/>
     <field id="7"/>
     <tunnelentrance refid1="3" refid2="13" open="false" id="8"/>

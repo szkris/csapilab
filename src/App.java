@@ -40,12 +40,12 @@ public class App {
 	        else if(s[0].equals("openTunnelEntrance")){
 	        	int i = Integer.parseInt(s[1]);
 	        	TunnelEntrance te = (TunnelEntrance)game.getTable().getTableElement(i);
-	        	game.getTable().getTableElement(i).click();
+	        	game.getTable().openTunnel(te);
 	        }
 	        else if(s[0].equals("closeTunnelEntrance")){
 	        	int i = Integer.parseInt(s[1]);
 	        	TunnelEntrance te = (TunnelEntrance)game.getTable().getTableElement(i);
-	        	game.getTable().getTableElement(i).click();
+	        	game.getTable().closeTunnel(te);
 	        }
 	        else if(s[0].equals("step")){
 	        	int i = Integer.parseInt(s[1]);

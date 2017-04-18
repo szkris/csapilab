@@ -61,6 +61,7 @@ public class Game {
 	public static void gameOver() {
 		//timer.stop();
 		System.out.println("gameOver");
+		System.exit(0);
 	}
 
 	/**
