@@ -8,6 +8,6 @@
     <switch refid1="1" refid2="3" refid3="5" id="2"/>
     <rail refid1="2" refid2="null" id = "3"/>
     <field id="4"/>
-    <rail refid1="5" refid2="null" id = "3"/>
+    <rail refid1="2" refid2="null" id = "5"/>
     <field id="6"/>
 </game>
