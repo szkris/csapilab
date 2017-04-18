@@ -29,16 +29,16 @@
     <route start="4" end="2">
         <nextelem refid="3"/>
     </route>
-    <route start="2" end="6">
+    <route start="2" end="8">
         <nextelem refid="3"/>
     </route>
-    <route start="6" end="2">
+    <route start="8" end="2">
         <nextelem refid="3"/>
     </route>
-    <route start="4" end="6">
+    <route start="4" end="8">
         <nextelem refid="3"/>
     </route>
-    <route start="6" end="4">
+    <route start="8" end="4">
         <nextelem refid="3"/>
     </route>
 </game>

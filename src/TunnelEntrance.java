@@ -51,7 +51,7 @@ public class TunnelEntrance extends Rail {
 
 	@Override
 	public void stepOn(TrainElement te) {
-		if (occupied || !open)
+		if (occupied || !open || !table.twoEntrancesOpen())
 			Game.gameOver();
 		setOccupied(true);
 		te.changeVisibility();

@@ -409,4 +409,11 @@ public class Table {
 		}
 		return true;
 	}
+	/**
+	 * Visszaadja, hogy két bejárat van-e nyitva.
+	 * @return true ha két bejárat van nyitva, false, ha kevesebb.
+	 */
+	public boolean twoEntrancesOpen(){
+		return(openTunnelEntrances[0]!= null && openTunnelEntrances[1]!=null);
+	}
 }
