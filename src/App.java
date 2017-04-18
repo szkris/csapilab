@@ -73,7 +73,7 @@ public class App {
 	        	}
 	        }
 	        else if(s[0].equals("listTunnelEntrance")){
-	        	System.out.println	("(");
+	        	System.out.print("(");
 	        	for (int i = 0; i < game.getTable().getTableElements().size(); i++){
 	        		if(game.getTable().getTableElements().get(i).getType().equals("tunnelEntrance")){
 	        			TunnelEntrance te = (TunnelEntrance)game.getTable().getTableElements().get(i);
