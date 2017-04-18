@@ -1,0 +1,9 @@
+(2 red)
+( Train 1
+	Locomotive null true 2
+CoalCar null true 1
+)
+( Train 1
+	Locomotive null true 3
+CoalCar null true 2
+)

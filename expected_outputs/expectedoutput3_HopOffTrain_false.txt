@@ -1,0 +1,9 @@
+(2 red)
+( Train 1
+	Locomotive null true 2
+Car blue false 1
+)
+( Train 1
+	Locomotive null true 3
+Car blue false 2
+)

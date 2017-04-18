@@ -1,0 +1,16 @@
+(2 false
+4 false
+8 false
+)
+(2 true
+4 true
+8 false
+)
+(2 true
+4 true
+8 false
+)
+(2 true
+4 false
+8 true
+)
