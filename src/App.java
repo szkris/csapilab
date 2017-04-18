@@ -91,7 +91,7 @@ public class App {
 
 	        	for (int i = 0; i < game.getTable().getTrains().size(); i++){
 	        		
-	        		Train tr = (Train)game.getTable().getTrains().get(i);
+	        		Train tr = game.getTable().getTrains().get(i);
 	        		System.out.println("( Train " + tr.getID());
 	        		for (TrainElement te : tr.getTrainElements()){
 	        			if(te.getType().equals("car")){

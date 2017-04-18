@@ -1,7 +1,5 @@
 import java.util.*;
 
-import javafx.animation.SequentialTransitionBuilder;
-
 /**
  * Táblaelemeket megvalósító abstract ösosztály
  */
