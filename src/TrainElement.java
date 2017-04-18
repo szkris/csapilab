@@ -126,6 +126,7 @@ public abstract class TrainElement {
 	public void move() {
 		TableElement next = currentTableElement.nextElement(this);
 		currentTableElement.stepOff();
+		prevTableElement = currentTableElement;
 		next.stepOn(this);
 	}
 

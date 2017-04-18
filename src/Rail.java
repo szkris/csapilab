@@ -36,8 +36,9 @@ public class Rail extends TableElement {
 		TableElement prev = te.getPreviousElement();
 		if (prev == elem1)
 			return elem2;
-		else
+		else 
 			return elem1;
+			
 	}
 
 	@Override
