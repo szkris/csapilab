@@ -23587,7 +23587,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFboalP1H5B6zE="
 							},
-							"name": "DrawCar",
+							"name": "DrawCoalWagon",
 							"visible": true,
 							"defaultDiagram": false,
 							"ownedViews": [
@@ -23618,11 +23618,11 @@
 											"containerExtending": false,
 											"left": 75.97900390625,
 											"top": 10,
-											"width": 52.28271484375,
+											"width": 99.26171875,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "DrawCar",
+											"text": "DrawCoalWagon",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -23943,7 +23943,7 @@
 													"height": 13,
 													"autoResize": false,
 													"underline": false,
-													"text": "Car",
+													"text": "CoalWagon",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -24145,7 +24145,7 @@
 													"height": 13,
 													"autoResize": false,
 													"underline": false,
-													"text": "car: GCar",
+													"text": "coal: GCoalWagon",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -27754,7 +27754,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFboalP1H5B6zE="
 							},
-							"name": "Car",
+							"name": "CoalWagon",
 							"visibility": "public",
 							"represent": {
 								"$ref": "AAAAAAFboapL0360yPw="
@@ -27767,7 +27767,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFboalP1H5B6zE="
 							},
-							"name": "car",
+							"name": "coal",
 							"visibility": "public",
 							"represent": {
 								"$ref": "AAAAAAFboaqz537WGyc="
@@ -27890,7 +27890,7 @@
 					"isStatic": false,
 					"isLeaf": false,
 					"type": {
-						"$ref": "AAAAAAFboRXIF6UxbSQ="
+						"$ref": "AAAAAAFboRXN1KV4TGo="
 					},
 					"isReadOnly": false,
 					"isOrdered": false,
