@@ -5,7 +5,7 @@ public class View {
 	
 	private Table tableCopy;
 	
-	public int loadMap(){
+	public void loadMap(int i){
 		
 	}
 	
