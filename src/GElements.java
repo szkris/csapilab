@@ -1,5 +1,5 @@
 
-public abstract class GElements {
+public abstract class GElements implements IDrawable {
 	private int id;
 	private int x;
 	private int y;
