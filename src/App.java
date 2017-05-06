@@ -19,7 +19,16 @@ public class App {
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
+		Menu menu = new Menu();
+		menu.newGame();
+		
 		Game game = new Game();
+		
+		game.loadMap("collision_test_map"); //majd az elso mapet kell itt
+		
+		menu.exit();
+		
+		/** Console Controls **/
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("parancsok:");
         String line;
@@ -27,7 +36,7 @@ public class App {
 			line = br.readLine();
 			String[] s = line.split(" ");
 	        if(s[0].equals("loadMap")){
-	        	Game.loadMap(s[1]);
+	        	game.loadMap(s[1]);
 	        	game.run();
 	        }
 	        else if(s[0].equals("startTrain")){

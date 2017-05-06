@@ -6,6 +6,8 @@ import java.util.*;
  */
 public class Game {
 
+	private View view;
+	
 	/**
 	 * Alapértelmezett konstruktor
 	 */
@@ -51,8 +53,12 @@ public class Game {
 		return table;
 	}
 	
-	public static void loadMap(String map){
+	public void loadMap(String map){
 		table.loadMap(map);
+		view = new View();
+		view.loadMap(i); //kell valami prameter
+		
+		run();
 	}
 
 	/**
