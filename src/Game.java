@@ -56,7 +56,7 @@ public class Game {
 	public void loadMap(String map){
 		table.loadMap(map);
 		view = new View();
-		view.loadMap(i); //kell valami prameter
+		//view.loadMap(i);
 		
 		run();
 	}

@@ -1,3 +1,5 @@
+
+import java.awt.Dimension;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,6 +18,18 @@ public class App extends JFrame{
 	 * Default constructor
 	 */
 	public App() {
+		Menu menu = new Menu();
+		
+		/** JFrame létrehozása **/
+		setPreferredSize(new Dimension(600, 600));
+		add(menu.panel);
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
+		pack();
+		setVisible(true);
+		setFocusable(true);
+		menu.panel.setFocusable(true);
 	}
 	
 	static boolean random = false;
@@ -26,14 +40,7 @@ public class App extends JFrame{
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
-		Menu menu = new Menu();
-		menu.newGame();
-		
 		Game game = new Game();
-		
-		game.loadMap("collision_test_map"); //majd az elso mapet kell itt
-		
-		menu.exit();
 		
 		/** Console Controls **/
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

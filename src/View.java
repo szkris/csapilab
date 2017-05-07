@@ -9,7 +9,7 @@ public class View {
 	
 	private ArrayList<GElements> gelements;
 	
-	public void loadMap(int i){
+	public void loadMap(int id){
 		
 	}
 	

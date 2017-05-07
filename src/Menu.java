@@ -10,7 +10,7 @@ public class Menu {
 	
 	public Menu(){
 		panel = new JPanel();
-		panel.setBackground(Color.RED);
+		
 		//Buttons
 			JButton newGameButton = new JButton("Új játék");
 			JButton exitButton = new JButton("Kilépés");
