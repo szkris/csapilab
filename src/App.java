@@ -3,7 +3,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class App {
+import javax.swing.JFrame;
+
+public class App extends JFrame{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Default constructor
