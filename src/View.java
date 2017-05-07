@@ -14,7 +14,9 @@ public class View {
 	}
 	
 	public void drawAll(){
-		
+		for(int i = 0; i < gelements.size(); i++){
+			gelements.get(i).draw();
+		}
 	}
 	
 	public void addTrain(Train t){
