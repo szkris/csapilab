@@ -18,17 +18,19 @@ public class App extends JFrame{
 	 * Default constructor
 	 */
 	public App() {
+		super("Terepasztal");
+		
 		Menu menu = new Menu();
 		
 		/** JFrame létrehozása **/
-		setPreferredSize(new Dimension(600, 600));
-		add(menu.panel);
+		this.setPreferredSize(new Dimension(600, 600));
+		this.add(menu.panel);
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setResizable(false);
-		pack();
-		setVisible(true);
-		setFocusable(true);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setResizable(false);
+		this.pack();
+		this.setVisible(true);
+		this.setFocusable(true);
 		menu.panel.setFocusable(true);
 	}
 	
