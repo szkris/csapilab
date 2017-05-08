@@ -23,14 +23,14 @@ public class Menu {
 	public class newGameButtonActionListener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			newGame();
+			App.newGame();
 		}
 	}
 
 	public class exitButtonActionListener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			exit();
+			App.exit();
 		}
 	}
 

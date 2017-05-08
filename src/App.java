@@ -40,6 +40,14 @@ public class App extends JFrame{
 		menu.panel.setFocusable(true);
 	}
 	
+	public static void newGame(){
+		
+	}
+	
+	public static void exit(){
+		System.exit(0);
+	}
+	
 	static boolean random = false;
 	
 	/**
@@ -49,6 +57,8 @@ public class App extends JFrame{
 	 */
 	public static void main(String[] args) throws IOException {
 		Initialize();
+		
+		
 		/*
 		//Console Controls
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
