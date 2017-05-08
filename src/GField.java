@@ -9,6 +9,10 @@ public class GField extends GElements {
 		this.field = field;
 	}
 	
+	public GField(Field field){
+		this.field = field;
+	}
+	
 	@Override
 	public void draw(Graphics g) {
 		// TODO Auto-generated method stub

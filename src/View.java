@@ -1,90 +1,120 @@
+import java.awt.Button;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Graphics;
+import java.awt.GridLayout;
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
-public class View {
+public class View extends JPanel {
+
+	public final static int TILE_HEIGHT = 100;
+	public final static int TILE_WIDTH = 100;
+	public static int COLUMN = 3;
+	public static int ROW = 1;
+
+	private Table tableCopy;
+	private ArrayList<GElements> gelements;
 	
-	public View(Table table){
+	public View() {		
+		super();
+		
+		JLabel background = new JLabel();
+		background.setIcon(new ImageIcon(
+				new ImageIcon("img/background.png").getImage().getScaledInstance(App.WIDTH, App.HEIGHT, Image.SCALE_DEFAULT)));
+		background.setBounds(0, 0, App.WIDTH, App.HEIGHT);
+		this.setLayout(null);
+		this.add(background, new Integer(0));
+		this.setPreferredSize(new Dimension(App.WIDTH, App.HEIGHT));
+
+		/*JPanel top = new JPanel();
+	    top.setBackground(Color.white);
+	    top.setBounds(20, 20, 50, 50);
+	    JButton middle = new JButton();
+	    middle.setBackground(Color.gray);
+	    middle.setBounds(40, 40, 50, 50);
+	    JButton bottom = new JButton();
+	    bottom.setBackground(Color.black);
+	    bottom.setBounds(60, 60, 50, 50);
+	    this.add(middle, new Integer(2));
+	    this.add(top, new Integer(3));
+	    this.add(bottom, new Integer(1));
+		 */
+
+	}
+
+	/**
+	 * 
+	 * @param table
+	 */
+	public void setTable(Table table) {
 		tableCopy = table;
 	}
-	
-	int column;
-	
-	private static int TILEHEIGHT = 50;
-	private static int TILEWIDTH = 50;
-	
-	protected JPanel panel = new JPanel();
-	
-	private Table tableCopy;
-	
-	private ArrayList<GElements> gelements = new ArrayList<GElements>();
-	
-	public void loadMap(int id){
-			int x = 0, y = 0;
-			gelements.clear();
-			FileReader fr;
-			try {
-				fr = new FileReader("map/"+ id+".txt");
-				BufferedReader br = new BufferedReader(fr);
-				String line;
-				column = Integer.parseInt(br.readLine());
-				while((line=br.readLine())!=null){
-					String[] indexes = line.replace(" ", "").split(",");
-					for (String string : indexes) {
-						int index = Integer.parseInt(string);
-						TableElement te = tableCopy.getTableElement(index);	
-						switch(te.getType()){
-						case "rail":
-							gelements.add(new GRail((Rail)te, x, y));
-							break;
-						case "field":
-							gelements.add(new GField((Field)te, x, y));
-							break;
-						case "switch":
-							gelements.add(new GSwitch((Switch)te, x, y));
-							break;
-						case "crossing":
-							gelements.add(new GCrossing((Crossing)te, x, y));
-							break;
-						case "station":
-							gelements.add(new GStation((Station)te, x, y));
-							break;
-						case "tunnelentrance":
-							gelements.add(new GTunnelEntrance((TunnelEntrance)te, x, y));
-							break;
-						default:
-							break;
-						}
-						if(index%column == 0){
-							y+=TILEHEIGHT;
-							x = 0;
-						} else {
-							x+=TILEWIDTH;
-						}
-					}
-				}
-			} catch (Exception e) {				
-				e.printStackTrace();
+
+	/**
+	 * 
+	 * @param id
+	 */
+	public void loadMap(int id) {
+		gelements = new ArrayList<GElements>();
+		FileReader fr;
+		int x = 0, y = 0;
+
+		ArrayList<TableElement> list = tableCopy.getTableElements();
+		for (TableElement te : list) {
+			String type = te.getType();
+			
+			switch(type){
+			case "rail":
+				gelements.add(new GRail((Rail) te));
+				break;
+			case "field":
+				gelements.add(new GField((Field) te));
+				break;
+			/*case "switch":
+				gelements.add(new GSwitch((Switch) te));
+				break;
+			case "crossing":
+				gelements.add(new GCrossing((Crossing) te));
+				break;
+			case "station":
+				gelements.add(new GStation((Station) te));
+				break;
+			case "tunnelentrance":
+				gelements.add(new GTunnelEntrance((TunnelEntrance) te));
+				break;
+			*/
+			default:
+				break;
 			}
 		}
-	
-	
-	public void drawAll(){
-		for(int i = 0; i < gelements.size(); i++){
-			gelements.get(i).draw(panel.getParent().getGraphics());
+		for (GElements ge : gelements) {
+
+			this.add(ge, new Integer(2));
 		}
-		panel.invalidate();
+		this.validate();
 	}
-	
-	public void addTrain(Train t){
-		
+
+	public void drawAll() {
+		this.repaint();
 	}
-	
-	public void click(int x, int y){
-		
+
+	public void addTrain(Train t) {
+
+	}
+
+	public void click(int x, int y) {
+
 	}
 }

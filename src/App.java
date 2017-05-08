@@ -1,54 +1,60 @@
 
 import java.awt.CardLayout;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.text.View;
 
 public class App extends JFrame{
 
+	
+	public final static int HEIGHT = 600;
+	public final static int WIDTH = 600; 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
 	private static App app = new App();
+	private static Game game;
+	private static Menu menu;
+	private static CardLayout cardLayout = new CardLayout();
+	
 	/**
 	 * Default constructor
 	 */
 	public App() {
 		super("Terepasztal");
 	}
-	private static Game game;
-	private static Menu menu;
-	private static CardLayout cardLayout = new CardLayout();
 	
 	public static void Initialize(){
-		menu = new Menu();		
-		
-		app.setPreferredSize(new Dimension(600, 600));
-		app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		menu = new Menu();
+		game = new Game();
 		
 		app.setLayout(cardLayout);
-		app.add(menu.panel);
+		app.getContentPane().add(menu, "menu");
+		app.getContentPane().add(game.view, "game");
+		
+		app.getContentPane().setPreferredSize(new Dimension(WIDTH, HEIGHT));
+		app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		app.setResizable(false);
 		app.pack();
 		app.setVisible(true);
 		app.setFocusable(true);
-		menu.panel.setFocusable(true);
 	}
 	
 	public static void newGame(){
 		game = new Game();
-		app.add(game.view.panel);
-		cardLayout.next(app.getContentPane());
-		game = new Game();
+		cardLayout.show(app.getContentPane(), "game");
 		game.run();
-		
 	}
 	
 	public static void exit(){

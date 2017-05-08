@@ -1,20 +1,26 @@
 
+import java.awt.Image;
 import java.io.IOException;
 import java.util.*;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
 
 /**
  * Játékot megvalósító osztály
  */
-public class Game {
+public class Game{
 
-	public static View view;
+	public static View view = new View();
 	
 	/**
 	 * Alapértelmezett konstruktor
 	 */
 	public Game() {
 		maps.add("map1.xml");
-		view = new View(table);
+		view.setTable(table);
 	}
 	
 	/**
@@ -45,9 +51,8 @@ public class Game {
 	 * Elindítja a játékot.
 	 * @throws IOException 
 	 */
-	public void run() {
+	public void run() {		
 		if(timer!=null) timer.stop();
-		//Elso palya beoltese
 		String map = maps.get(level);
 		loadMap(map);
 		timer = new Timer(this);

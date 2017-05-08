@@ -1,5 +1,7 @@
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-public abstract class GElements implements IDrawable {
+public abstract class GElements extends JPanel implements IDrawable {
 	protected int x;
 	protected int y;
 	//private Image img;
@@ -9,6 +11,10 @@ public abstract class GElements implements IDrawable {
 	protected GElements(int x, int y){
 		this.x = x;
 		this.y = y;
+	}
+	protected GElements(){
+		this.x = 0;
+		this.y = 0;
 	}
 	
 	public int getX(){
