@@ -40,7 +40,7 @@ public class Table {
 	 * Nyitott alagútbejáratok
 	 */
 	private TunnelEntrance[] openTunnelEntrances = new TunnelEntrance[2];
-
+	
 	/**
 	 * Pálya betöltése
 	 * 
@@ -49,7 +49,6 @@ public class Table {
 	 */
 	public void loadMap(String map) {
 		try {
-
 			openTunnelEntrances[0] = null;
 			openTunnelEntrances[1] = null;
 			tunnelRoutes = new ArrayList<TunnelRoute>();

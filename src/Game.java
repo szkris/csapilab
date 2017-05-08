@@ -6,12 +6,14 @@ import java.util.*;
  */
 public class Game {
 
-	private View view;
+	private static View view = new View();
 	
 	/**
 	 * Alapértelmezett konstruktor
 	 */
-	public Game() { }
+	public Game() {
+		maps.add("map1.xml");
+	}
 	
 	/**
 	 * Pályát tartalmazó objektum
@@ -42,39 +44,38 @@ public class Game {
 	 */
 	public void run() {
 		if(timer!=null) timer.stop();
-		timer = new Timer(this);
-		//timer.start();
 		//Elso palya beoltese
-		//loadMap(maps.get(0));
-		//level++;
+		String map = maps.get(level);
+		loadMap(map);
+		timer = new Timer(this);
+		timer.start();
 	}
 	
 	public Table getTable(){
 		return table;
 	}
 	
-	public void loadMap(String map){
+	public static void loadMap(String map){
 		table.loadMap(map);
-		view = new View();
-		//view.loadMap(i);
-		
-		run();
+		view.loadMap(level);
+		level++;
 	}
 
 	/**
 	 * A játék végekor kerül meghívásra.
 	 */
 	public static void gameOver() {
-		//timer.stop();
+		timer.stop();
+		//TODO gameover
 		System.out.println("gameOver");
-		System.exit(0);
 	}
 
 	/**
 	 * Gyõzelem esetén meghívódó függvény.
 	 */
 	public static void victory() {
-		//timer.stop();
+		timer.stop();
+		//TODO victory
 		System.out.println("victory");
 	}
 
@@ -91,12 +92,9 @@ public class Game {
 	 */
 	public static void mapCompleted() {
 		if(table.mapCompleted()){
-			victory();
-			//TODO következö pályla betöltése
-			//if(level>maps.size())
-			// 	victory();
-			//loadMap(maps.get(level));
-			//level++;
+			if(level>=maps.size())
+			 	victory();
+			loadMap(maps.get(level));
 		}
 	}
 

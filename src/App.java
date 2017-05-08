@@ -27,7 +27,6 @@ public class App extends JFrame{
 	
 	public static void Initialize(){
 		menu = new Menu();		
-		game = new Game();
 		
 		app.setPreferredSize(new Dimension(600, 600));
 		app.add(menu.panel);
@@ -41,7 +40,8 @@ public class App extends JFrame{
 	}
 	
 	public static void newGame(){
-		
+		game = new Game();
+		game.run();
 	}
 	
 	public static void exit(){
@@ -57,8 +57,6 @@ public class App extends JFrame{
 	 */
 	public static void main(String[] args) throws IOException {
 		Initialize();
-		
-		
 		/*
 		//Console Controls
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
