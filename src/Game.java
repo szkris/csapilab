@@ -14,7 +14,7 @@ public class Game {
 	 */
 	public Game() {
 		maps.add("map1.xml");
-		view=new View(table);
+		view = new View(table);
 	}
 	
 	/**
@@ -88,6 +88,7 @@ public class Game {
 	public void move() {
 		tick++;
 		table.move(tick);
+		view.drawAll();
 	}
 	
 	/**

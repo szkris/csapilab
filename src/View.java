@@ -14,6 +14,9 @@ public class View {
 	
 	int column;
 	
+	private static int TILEHEIGHT = 50;
+	private static int TILEWIDTH = 50;
+	
 	protected JPanel panel = new JPanel();
 	
 	private Table tableCopy;
@@ -21,6 +24,7 @@ public class View {
 	private ArrayList<GElements> gelements = new ArrayList<GElements>();
 	
 	public void loadMap(int id){
+			int x = 0, y = 0;
 			gelements.clear();
 			FileReader fr;
 			try {
@@ -31,28 +35,35 @@ public class View {
 				while((line=br.readLine())!=null){
 					String[] indexes = line.replace(" ", "").split(",");
 					for (String string : indexes) {
-						TableElement te = tableCopy.getTableElement(Integer.parseInt(string));	
+						int index = Integer.parseInt(string);
+						TableElement te = tableCopy.getTableElement(index);	
 						switch(te.getType()){
 						case "rail":
-							gelements.add(new GRail((Rail)te));
+							gelements.add(new GRail((Rail)te, x, y));
 							break;
 						case "field":
-							gelements.add(new GField((Field)te));
+							gelements.add(new GField((Field)te, x, y));
 							break;
 						case "switch":
-							gelements.add(new GSwitch((Switch)te));
+							gelements.add(new GSwitch((Switch)te, x, y));
 							break;
 						case "crossing":
-							gelements.add(new GCrossing((Crossing)te));
+							gelements.add(new GCrossing((Crossing)te, x, y));
 							break;
 						case "station":
-							gelements.add(new GStation((Station)te));
+							gelements.add(new GStation((Station)te, x, y));
 							break;
 						case "tunnelentrance":
-							gelements.add(new GTunnelEntrance((TunnelEntrance)te));
+							gelements.add(new GTunnelEntrance((TunnelEntrance)te, x, y));
 							break;
 						default:
 							break;
+						}
+						if(index%column == 0){
+							y+=TILEHEIGHT;
+							x = 0;
+						} else {
+							x+=TILEWIDTH;
 						}
 					}
 				}
@@ -64,8 +75,9 @@ public class View {
 	
 	public void drawAll(){
 		for(int i = 0; i < gelements.size(); i++){
-			gelements.get(i).draw();
+			gelements.get(i).draw(panel.getParent().getGraphics());
 		}
+		panel.invalidate();
 	}
 	
 	public void addTrain(Train t){
