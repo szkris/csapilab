@@ -19,10 +19,15 @@ public class App extends JFrame{
 	 */
 	public App() {
 		super("Terepasztal");
+	}
+	
+	private static Menu menu;
+	private static Game game;
+	
+	public void Initialize(){
+		menu = new Menu();		
+		game = new Game();
 		
-		Menu menu = new Menu();
-		
-		/** JFrame létrehozása **/
 		this.setPreferredSize(new Dimension(600, 600));
 		this.add(menu.panel);
 		
@@ -33,7 +38,6 @@ public class App extends JFrame{
 		this.setFocusable(true);
 		menu.panel.setFocusable(true);
 	}
-	
 	static boolean random = false;
 	
 	/**
@@ -42,7 +46,9 @@ public class App extends JFrame{
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
-		Game game = new Game();
+		App app = new App();
+		app.Initialize();
+				
 		
 		/** Console Controls **/
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
