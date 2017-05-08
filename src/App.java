@@ -14,6 +14,7 @@ public class App extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 
+	private static App app = new App();
 	/**
 	 * Default constructor
 	 */
@@ -24,20 +25,21 @@ public class App extends JFrame{
 	private static Menu menu;
 	private static Game game;
 	
-	public void Initialize(){
+	public static void Initialize(){
 		menu = new Menu();		
 		game = new Game();
 		
-		this.setPreferredSize(new Dimension(600, 600));
-		this.add(menu.panel);
+		app.setPreferredSize(new Dimension(600, 600));
+		app.add(menu.panel);
 		
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setResizable(false);
-		this.pack();
-		this.setVisible(true);
-		this.setFocusable(true);
+		app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		app.setResizable(false);
+		app.pack();
+		app.setVisible(true);
+		app.setFocusable(true);
 		menu.panel.setFocusable(true);
 	}
+	
 	static boolean random = false;
 	
 	/**
@@ -46,11 +48,9 @@ public class App extends JFrame{
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
-		App app = new App();
-		app.Initialize();
-				
-		
-		/** Console Controls **/
+		Initialize();
+		/*
+		//Console Controls
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("parancsok:");
         String line;
@@ -160,6 +160,8 @@ public class App extends JFrame{
 	        	Station te = (Station)game.getTable().getTableElement(i);
 	        	te.hopOn();
 	        }
+	        
 		}
+		*/
 	}
 }
