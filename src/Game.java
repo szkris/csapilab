@@ -1,4 +1,5 @@
 
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -6,13 +7,14 @@ import java.util.*;
  */
 public class Game {
 
-	public static View view = new View();
+	public static View view;
 	
 	/**
 	 * Alapértelmezett konstruktor
 	 */
 	public Game() {
 		maps.add("map1.xml");
+		view=new View(table);
 	}
 	
 	/**
@@ -41,6 +43,7 @@ public class Game {
 	
 	/**
 	 * Elindítja a játékot.
+	 * @throws IOException 
 	 */
 	public void run() {
 		if(timer!=null) timer.stop();

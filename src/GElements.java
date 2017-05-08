@@ -1,17 +1,11 @@
 
 public abstract class GElements implements IDrawable {
-	private int id;
-	private int x;
-	private int y;
+	protected int x;
+	protected int y;
 	//private Image img;
 	
-	public int getId(){
-		return id;
-	}
 	
-	public void click(){
-		
-	}
+	public abstract void click();
 	
 	public int getX(){
 		return x;

@@ -23,9 +23,8 @@ public class App extends JFrame{
 	public App() {
 		super("Terepasztal");
 	}
-	
-	private static Menu menu;
 	private static Game game;
+	private static Menu menu;
 	private static CardLayout cardLayout = new CardLayout();
 	
 	public static void Initialize(){
@@ -36,7 +35,6 @@ public class App extends JFrame{
 		
 		app.setLayout(cardLayout);
 		app.add(menu.panel);
-		app.add(game.view.panel);
 		app.setResizable(false);
 		app.pack();
 		app.setVisible(true);
@@ -45,6 +43,8 @@ public class App extends JFrame{
 	}
 	
 	public static void newGame(){
+		game = new Game();
+		app.add(game.view.panel);
 		cardLayout.next(app.getContentPane());
 		game = new Game();
 		game.run();
