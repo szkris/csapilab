@@ -1,4 +1,5 @@
 
+import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,6 +7,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 import javax.swing.JFrame;
+import javax.swing.text.View;
 
 public class App extends JFrame{
 
@@ -13,7 +15,7 @@ public class App extends JFrame{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
 	private static App app = new App();
 	/**
 	 * Default constructor
@@ -24,14 +26,17 @@ public class App extends JFrame{
 	
 	private static Menu menu;
 	private static Game game;
+	private static CardLayout cardLayout = new CardLayout();
 	
 	public static void Initialize(){
 		menu = new Menu();		
 		
 		app.setPreferredSize(new Dimension(600, 600));
-		app.add(menu.panel);
-		
 		app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		app.setLayout(cardLayout);
+		app.add(menu.panel);
+		app.add(game.view.panel);
 		app.setResizable(false);
 		app.pack();
 		app.setVisible(true);
@@ -40,8 +45,10 @@ public class App extends JFrame{
 	}
 	
 	public static void newGame(){
+		cardLayout.next(app.getContentPane());
 		game = new Game();
 		game.run();
+		
 	}
 	
 	public static void exit(){

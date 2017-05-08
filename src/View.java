@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 public class View {
-	protected JPanel panel;
+	protected JPanel panel = new JPanel();
 	
 	private Table tableCopy;
 	

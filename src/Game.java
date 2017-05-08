@@ -6,7 +6,7 @@ import java.util.*;
  */
 public class Game {
 
-	private static View view = new View();
+	public static View view = new View();
 	
 	/**
 	 * Alapértelmezett konstruktor
