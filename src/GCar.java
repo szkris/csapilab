@@ -17,7 +17,11 @@ public class GCar extends GElements {
 	@Override
 	public void draw(Graphics g) {
 		// TODO Auto-generated method stub
-		
+	}
+	
+	@Override
+	public int getId(){
+		return 0;
 	}
 
 }

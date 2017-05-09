@@ -79,6 +79,11 @@ public class GRail extends GElements {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public int getId(){
+		return rail.id;
+	}
 
 	@Override
 	public void draw(Graphics g) {

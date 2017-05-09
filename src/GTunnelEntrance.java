@@ -18,7 +18,10 @@ public class GTunnelEntrance extends GElements {
 	@Override
 	public void click() {
 		// TODO Auto-generated method stub
-		
+	}
+	@Override
+	public int getId(){
+		return te.id;
 	}
 
 }

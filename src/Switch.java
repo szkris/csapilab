@@ -65,4 +65,21 @@ public class Switch extends TableElement {
 		active = list.get(1);
 		inactive = list.get(2);
 	}
+	@Override
+	public ArrayList<Integer> getNeighbours(){
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		if(fix!=null)
+			list.add(fix.getId());
+		else 
+			list.add(0);
+		if(active!=null)
+			list.add(active.getId());
+		else
+			list.add(0);
+		if(inactive!=null)
+			list.add(inactive.getId());
+		else 
+			list.add(0);
+		return list;
+	}
 }

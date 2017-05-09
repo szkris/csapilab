@@ -5,6 +5,8 @@ import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Point;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -17,22 +19,49 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
+
 public class View extends JPanel {
 
 	public static int COLUMN = 5;
 	public static int ROW = 5;
-	public static int TILE_HEIGHT = App.HEIGHT/ROW;
-	public static int TILE_WIDTH = App.WIDTH/COLUMN;
-	
+	public static int TILE_HEIGHT = App.HEIGHT / ROW;
+	public static int TILE_WIDTH = App.WIDTH / COLUMN;
+
 	private Table tableCopy;
 	private ArrayList<GElements> gelements;
-	
-	public View() {		
+
+	public View() {
 		super();
-		
+		this.addMouseListener(new MouseListener() {
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				click(e.getX(), e.getY());
+			}
+		});
+
 		JLabel background = new JLabel();
-		background.setIcon(new ImageIcon(
-				new ImageIcon("img/grass.png").getImage().getScaledInstance(App.WIDTH, App.HEIGHT, Image.SCALE_DEFAULT)));
+		background.setIcon(new ImageIcon(new ImageIcon("img/grass.png").getImage().getScaledInstance(App.WIDTH,
+				App.HEIGHT, Image.SCALE_DEFAULT)));
 		background.setBounds(0, 0, App.WIDTH, App.HEIGHT);
 		this.setLayout(null);
 		this.add(background, new Integer(0), -1);
@@ -59,26 +88,26 @@ public class View extends JPanel {
 		ArrayList<TableElement> list = tableCopy.getTableElements();
 		for (TableElement te : list) {
 			String type = te.getType();
-			
-			switch(type){
+
+			switch (type) {
 			case "rail":
 				gelements.add(new GRail((Rail) te));
 				break;
 			case "field":
 				gelements.add(new GField((Field) te));
 				break;
-			//case "switch":
-			//	gelements.add(new GSwitch((Switch) te));
-			//	break;
+			case "switch":
+				gelements.add(new GSwitch((Switch) te));
+				break;
 			case "crossing":
 				gelements.add(new GCrossing((Crossing) te));
 				break;
-			//case "station":
-			//	gelements.add(new GStation((Station) te));
-			//	break;
-			//case "tunnelentrance":
-			//	gelements.add(new GTunnelEntrance((TunnelEntrance) te));
-			//	break;
+			// case "station":
+			// gelements.add(new GStation((Station) te));
+			// break;
+			// case "tunnelentrance":
+			// gelements.add(new GTunnelEntrance((TunnelEntrance) te));
+			// break;
 			default:
 				break;
 			}
@@ -88,21 +117,22 @@ public class View extends JPanel {
 		}
 		this.validate();
 	}
-	
+
 	/**
 	 * Megadja, hogy az adott index milyen oszlopban és sorban szerepel
+	 * 
 	 * @param index
 	 * @return
 	 */
-	public static Point getPosition(int index){
+	public static Point getPosition(int index) {
 		Point point = new Point();
-		int row = (int)((index-1)/COLUMN);
-		int column = index-1-row*COLUMN;
-		
+		int row = (int) ((index - 1) / COLUMN);
+		int column = index - 1 - row * COLUMN;
+
 		point.setLocation(column, row);
 		return point;
 	}
-	
+
 	public void drawAll() {
 		this.repaint();
 	}
@@ -113,5 +143,17 @@ public class View extends JPanel {
 
 	public void click(int x, int y) {
 
+		int row = y/TILE_HEIGHT;
+		int column = x/TILE_WIDTH;
+
+		//0->N-1
+		//1->N
+		int index = row*ROW + column + 1;
+		for (GElements ge : gelements) {
+			if(ge.getId()==index){
+				ge.click();
+				break;
+			}
+		}
 	}
 }

@@ -22,7 +22,11 @@ public class GField extends GElements {
 	@Override
 	public void click() {
 		// TODO Auto-generated method stub
-		
+	}
+	
+	@Override
+	public int getId(){
+		return field.id;
 	}
 
 }

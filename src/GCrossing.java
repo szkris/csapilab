@@ -33,8 +33,12 @@ public class GCrossing extends GElements {
 
 	@Override
 	public void click() {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
+	}
+	
+	@Override
+	public int getId(){
+		return crossing.id;
 	}
 
 }

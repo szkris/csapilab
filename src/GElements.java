@@ -24,4 +24,6 @@ public abstract class GElements extends JPanel implements IDrawable {
 	public int getY(){
 		return y;
 	}
+	
+	public abstract int getId();
 }

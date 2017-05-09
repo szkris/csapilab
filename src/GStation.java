@@ -18,7 +18,10 @@ public class GStation extends GElements {
 	@Override
 	public void click() {
 		// TODO Auto-generated method stub
-		
+	}
+	@Override
+	public int getId(){
+		return station.id;
 	}
 
 }
