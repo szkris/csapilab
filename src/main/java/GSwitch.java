@@ -3,21 +3,35 @@ package main.java;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Point;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 
+/**
+ * A váltó osztály grafikus megjelenítéséhez szolgáló osztály
+ */
+@SuppressWarnings("serial")
 public class GSwitch extends GElements {
 
+	/**
+	 * A megjelenítendö váltó
+	 */
 	Switch sw;
 	JLabel label = new JLabel();
+	/**
+	 * Aktuális megjelenítendö icon
+	 */
 	ImageIcon imageIcon = null;
+	/**
+	 * Kattintásra következö icon
+	 */
 	ImageIcon nextIcon = null;
 
+	/**
+	 * Konstruktor mely megkapja a megjelenítendö váltó
+	 * @param sw A megjelenítendö váltó
+	 */
 	public GSwitch(Switch sw) {
 		int id = sw.getId();
 		this.sw = sw;
@@ -28,6 +42,7 @@ public class GSwitch extends GElements {
 		this.setBounds(x, y, View.TILE_WIDTH, View.TILE_HEIGHT + 5);
 		this.setOpaque(false);
 
+		// Lekérjük a szomszádokat hogy beállítsuk az állását
 		ArrayList<Integer> neighbours = sw.getNeighbours();
 		Point fix = View.getPosition(neighbours.get(0));
 		Point active = View.getPosition(neighbours.get(1));
@@ -168,7 +183,7 @@ public class GSwitch extends GElements {
 
 	@Override
 	public void draw(Graphics g) {
-		// TODO Auto-generated method stub
+		// Változást a kattintásban kezeljük
 	}
 	
 	public int getId(){

@@ -6,12 +6,22 @@ import java.awt.Point;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-
+/**
+ * A Crossing megjelenítéséhez tartozó osztály
+ */
+@SuppressWarnings("serial")
 public class GCrossing extends GElements {
-
+	
+	/**
+	 * A megjelenítendö keresztezödés
+	 */
 	Crossing crossing;
 	JLabel label = new JLabel();
 	
+	/**
+	 * Konstruktor mely paraméterként megkapja a megjelenítendö keresztezödést
+	 * @param crossing A megjelenítendö keresztezödés
+	 */
 	public GCrossing(Crossing crossing){
 		int id = crossing.getId();
 		this.crossing = crossing;

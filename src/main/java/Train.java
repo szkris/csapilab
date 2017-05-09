@@ -157,10 +157,9 @@ public class Train {
 		return id;
 	}
 	
-	// TODO comments
 	/**
-	 * 
-	 * @return
+	 * Visszaadja a vonatban lévö vonatelemeket. 
+	 * @return A vonatban lévö vonatelemek
 	 */
 	public ArrayList<TrainElement> getTrainElements(){
 		return elements;

@@ -22,7 +22,10 @@ public class Table {
 	 */
 	public Table() {
 	}
-
+	
+	/**
+	 * Sorok és oszlopok száma
+	 */
 	public static int row = 0;
 	public static int column = 0;
 	
@@ -228,8 +231,6 @@ public class Table {
 						Node _n = _nl.item(j);
 						if (_n.getNodeType() == Node.ELEMENT_NODE) {
 							Element _e = (Element) _n;
-							Tunnel teee = (Tunnel) getTableElement(TryParseInt(_e.getAttribute("refid")));
-							TableElement teee2 = getTableElement(TryParseInt(_e.getAttribute("refid")));
 							list.add((Tunnel) getTableElement(TryParseInt(_e.getAttribute("refid"))));
 						}
 					}

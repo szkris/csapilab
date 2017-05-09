@@ -36,6 +36,10 @@ public abstract class TableElement implements ITableElement {
 		occupied = te;
 	}
 	
+	/**
+	 * Megadja az elemmel szomszédos elemek id-jét
+	 * @return A szomdédok id-jének listája
+	 */
 	public ArrayList<Integer> getNeighbours(){return null;}
 	
 	@Override

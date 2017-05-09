@@ -8,27 +8,32 @@ import java.util.*;
 public interface ITableElement {
 
 	/**
-	 * @return
+	 * Az elemröl való lelépést megvalósító függvény
 	 */
 	public void stepOff();
 
 	/**
-	 * @return
+	 * Az elemre való kattintást megvalósító osztály
 	 */
 	public void click();
 
 	/**
-	 * @param TrainElement
-	 * @return
+	 * Visszaadja a következö táblaelemet
+	 * @param TrainElement A léptetni kívánt vonatelem
+	 * @return A következö táblaelem
 	 */
 	public TableElement nextElement(TrainElement te);
 
 	/**
-	 * @param TrainElement
-	 * @return
+	 * A táblaelemre lépést megvalósító osztály
+	 * @param TrainElement A léptetni kívánt vonatelem
 	 */
 	public void stepOn(TrainElement te);
 
+	/**
+	 * Szomszédok beállítása
+	 * @param Szomszédok listája
+	 */
 	public void setUpConnections(ArrayList<TableElement> list);
 
 }

@@ -1,9 +1,5 @@
 package main.java;
 
-
-import java.beans.Visibility;
-import java.util.*;
-
 /**
  * Vonatelemeket megvalósító abstract ösosztály
  */

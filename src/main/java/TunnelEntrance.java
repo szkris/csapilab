@@ -62,6 +62,7 @@ public class TunnelEntrance extends Rail {
 		te.setTunnelEntrance(this);
 		te.setTableElement(this);
 	}
+	
 	@Override
 	public ArrayList<Integer> getNeighbours(){
 		ArrayList<Integer> list = new ArrayList<Integer>();

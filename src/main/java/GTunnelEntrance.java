@@ -7,13 +7,24 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+/**
+ * Az alagútbejárat grafikus megjelenítését szolgáló osztály
+ */
+@SuppressWarnings("serial")
 public class GTunnelEntrance extends GElements {
 
+	/**
+	 * A megjelenítendö alagútbejárat
+	 */
 	TunnelEntrance te;
 	JLabel label = new JLabel();
 	ImageIcon openIcon = null;
 	ImageIcon closedIcon = null;
 
+	/**
+	 * Konstruktor mely megkapja a megjelenítendö alagútbejáratot
+	 * @param te A megjelenítendö alagútbejárat
+	 */
 	public GTunnelEntrance(TunnelEntrance te) {
 		int id = te.getId();
 		this.te = te;
@@ -23,9 +34,11 @@ public class GTunnelEntrance extends GElements {
 		y = point.y * View.TILE_HEIGHT;
 		this.setBounds(x, y, View.TILE_WIDTH, View.TILE_HEIGHT + 5);
 		this.setOpaque(false);
+		// Lekérdezzük a szomszédot, hogy megtudjuk merre kell állnia az alagútbejáratnak
 		ArrayList<Integer> neighbours = te.getNeighbours();
 		Point neighbourrail = View.getPosition(neighbours.get(0));
 
+		// Beállítjuk a megfelelö képet
 		if (neighbourrail.x > point.x) {
 			openIcon = new ImageIcon(new ImageIcon(App.cl.getResource("img/tunnelentrance_open_right.png")).getImage()
 					.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
@@ -57,11 +70,12 @@ public class GTunnelEntrance extends GElements {
 
 	@Override
 	public void draw(Graphics g) {
-		// TODO Auto-generated method stub
+		//Kattintásra változtatjuk a grafikát
 	}
 
 	@Override
 	public void click() {
+		// Ha nyitva volt és változott az állapot akkor bezárjuk, ha forditva akkor kinyitjuk
 		te.click();
 		if(te.isOpen())
 			label.setIcon(openIcon);

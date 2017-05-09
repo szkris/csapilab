@@ -35,9 +35,11 @@ public class GCar extends GElements {
 	
 	/**
 	 * Konstruktor mely paraméterként átveszi az ábrázolandó kocsit 
-	 * @param car
+	 * @param car Az ábrázolandó kocsi
 	 */
 	public GCar(Car car) {
+		
+		// Képek betöltése
 		red = new ImageIcon(new ImageIcon(App.cl.getResource("img/car_red.png")).getImage()
 				.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
 		green = new ImageIcon(new ImageIcon(App.cl.getResource("img/car_green.png")).getImage()
@@ -55,6 +57,7 @@ public class GCar extends GElements {
 	    yellow_empty = new ImageIcon(new ImageIcon(App.cl.getResource("img/car_yellow_empty.png")).getImage()
 				.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
 		
+	    // Szín beoállítása
 		this.car = car;
 		switch (car.getColor()) {
 		case RED:

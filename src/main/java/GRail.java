@@ -5,19 +5,25 @@ import java.awt.Image;
 import java.awt.Point;
 import java.util.ArrayList;
 
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.border.BevelBorder;
 
-import java.awt.Color;
-import java.awt.Dimension;
-
+/**
+ * A sín megjelenitéséhez szolgáló osztály
+ */
+@SuppressWarnings("serial")
 public class GRail extends GElements {
 
+	/**
+	 * A megjelenitendö sín
+	 */
 	Rail rail;
 	JLabel label = new JLabel();
 	
+	/**
+	 * Konstruktor mely paraméterként megkapja a megjelenitendö sínt
+	 * @param rail A megjelenitendö sín
+	 */
 	public GRail(Rail rail){
 		int id = rail.getId();
 		this.rail = rail;
@@ -28,7 +34,7 @@ public class GRail extends GElements {
 		this.setBounds(x, y, View.TILE_WIDTH, View.TILE_HEIGHT+5);
 		this.setOpaque(false);
 		
-		
+		//Lekérdezzük a szomszédait, ettöl függ hogy merre fog állni a sín
 		ImageIcon imageIcon = null;
 		ArrayList<Integer> neighbours = rail.getNeighbours();
 		Point neighbour1 = View.getPosition(neighbours.get(0));
@@ -78,8 +84,7 @@ public class GRail extends GElements {
 
 	@Override
 	public void click() {
-		// TODO Auto-generated method stub
-		
+		// Kattintásra nem történik semmi
 	}
 	
 	@Override
@@ -89,6 +94,7 @@ public class GRail extends GElements {
 
 	@Override
 	public void draw(Graphics g) {
+		//Nem változik a rajz
 	}
 
 }

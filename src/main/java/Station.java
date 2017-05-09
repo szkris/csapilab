@@ -60,6 +60,10 @@ public class Station extends Rail {
 		}
 	}
 	
+	/**
+	 * Visszatér az állomáson lévö vonatelemmel.
+	 * @return Az állomáson lévö vonatelem.
+	 */
 	public TrainElement getCurrentElement(){
 		return currentElement;
 	}

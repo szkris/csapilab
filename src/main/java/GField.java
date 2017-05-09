@@ -1,29 +1,33 @@
 package main.java;
 
 import java.awt.Graphics;
-
+/**
+ * A mezö megjelenitéséül szolgáló osztály
+ */
+@SuppressWarnings("serial")
 public class GField extends GElements {
-
+	
+	/**
+	 * A tárolt mezö
+	 */
 	Field field;
 	
-	public GField(Field field, int x, int y){
-		super(x,y);
-		this.field = field;
-	}
-	
+	/**
+	 * Konstruktor mely paraméterként megkapja a megjelenitendö mezöt
+	 * @param field A megjelenitendö mezö
+	 */
 	public GField(Field field){
 		this.field = field;
 	}
 	
 	@Override
 	public void draw(Graphics g) {
-		// TODO Auto-generated method stub
-
+		//Kirajzolásnál nem kell semmi, a háttérkét látszódik csak
 	}
 
 	@Override
 	public void click() {
-		// TODO Auto-generated method stub
+		//Nincs kattintásra semmi
 	}
 	
 	@Override

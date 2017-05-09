@@ -6,17 +6,27 @@ import java.awt.Point;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-
+/**
+ * A mozdony grafikus megjelenitéséhez szolgáló osztály
+ */
+@SuppressWarnings("serial")
 public class GLocomotive extends GElements {
 
+	/**
+	 * A megjelenitendö mozdony 
+	 */
 	Locomotive loco = null;
 	private static ImageIcon imageIcon = null;
 	JLabel label = new JLabel();
 	
+	/**
+	 * Konstruktor mely megkapja a megjelenitendö mozdonyt
+	 * @param loco A megjelenitendö mozdony
+	 */
 	public GLocomotive(Locomotive loco){
 		this.loco = loco;
 		this.label.setIcon(imageIcon);
-		imageIcon = imageIcon = new ImageIcon(new ImageIcon(App.cl.getResource("img/thomas.png")).getImage()
+		imageIcon = new ImageIcon(new ImageIcon(App.cl.getResource("img/thomas.png")).getImage()
 				.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
 		this.setOpaque(false);
 		
@@ -26,6 +36,7 @@ public class GLocomotive extends GElements {
 	
 	@Override
 	public void draw(Graphics g) {
+		//Ha látható, kirajzoljuk
 		if(loco.getcurrentTableElement()!=null){
 			int id = loco.getcurrentTableElement().getId();
 			Point point = View.getPosition(id);
@@ -42,7 +53,7 @@ public class GLocomotive extends GElements {
 
 	@Override
 	public void click() {
-		// TODO Auto-generated method stub		
+		//Kattintásra nem történik semmi
 	}
 	@Override
 	public int getId(){

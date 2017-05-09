@@ -3,17 +3,13 @@ package main.java;
 
 import java.awt.CardLayout;
 import java.awt.Dimension;
-import java.io.File;
 import java.io.IOException;
 
 import javax.swing.JFrame;
 
-import com.sun.glass.ui.Application;
-
-import javafx.embed.swing.JFXPanel;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-
+/**
+ * Az alkalmazást megvalósító osztály
+ */
 @SuppressWarnings("serial")
 public class App extends JFrame{
 

@@ -6,13 +6,24 @@ import java.awt.Point;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-
+/**
+ * CoalWagon osztályhoz tartozó grafikus megjelenítés
+ */
+@SuppressWarnings("serial")
 public class GCoalWagon extends GElements {
 
+	/**
+	 * A megjelenítendö objektum
+	 */
 	CoalWagon cw = null;
+	
 	private static ImageIcon imageIcon=null;
 	JLabel label = new JLabel();
 	
+	/**
+	 * Konstruktor mely megkapja paraméterként a megjelenítendö szeneskocsit
+	 * @param cw A megjelenítendö szeneskocsi
+	 */
 	public GCoalWagon(CoalWagon cw){
 		this.cw = cw;
 		imageIcon = new ImageIcon(new ImageIcon(App.cl.getResource("img/coalwagon.png")).getImage()

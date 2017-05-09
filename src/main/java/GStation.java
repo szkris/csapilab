@@ -7,11 +7,22 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+/**
+ * Az állomás grafikus megjelenitéséért felelös osztály
+ */
+@SuppressWarnings("serial")
 public class GStation extends GElements {
 
+	/**
+	 * A megjelenítendö állomás
+	 */
 	Station station;
 	JLabel label = new JLabel();
 
+	/**
+	 * Konstruktor mely paraméterként megkapja a megjelenítendö állomást 
+	 * @param station A megjelenitendö állomás
+	 */
 	public GStation(Station station) {
 		int id = station.getId();
 		this.station = station;
@@ -22,10 +33,13 @@ public class GStation extends GElements {
 		y = point.y * View.TILE_HEIGHT;
 		this.setBounds(x, y, View.TILE_WIDTH, View.TILE_HEIGHT + 5);
 		this.setOpaque(false);
+		
+		//Lekérdezzük a szomszédokat, ettöl függ merre fog állni az állomáson a sín
 		ArrayList<Integer> neighbours = station.getNeighbours();
 		Point neighbour1 = View.getPosition(neighbours.get(0));
 		Point neighbour2 = View.getPosition(neighbours.get(1));
 
+		//Beállítjuk a megfelelö képet
 		if (neighbour1.x > point.x || neighbour2.x > point.x) {
 			if (station.getColor().equals(Color.GREEN))
 				imageIcon = new ImageIcon(new ImageIcon(App.cl.getResource("img/greenstation.png")).getImage()
@@ -61,13 +75,12 @@ public class GStation extends GElements {
 
 	@Override
 	public void draw(Graphics g) {
-		// TODO Auto-generated method stub
-
+		// Nem változik a megjelenítés
 	}
 
 	@Override
 	public void click() {
-		// TODO Auto-generated method stub
+		// Kattintásra nem történik semmi
 	}
 
 	@Override

@@ -1,41 +1,59 @@
 package main.java;
 
-import java.awt.Button;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 
-import java.awt.Color;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
+/**
+ * A megjelenítéseket kezelö osztály  
+ */
+@SuppressWarnings("serial")
 public class View extends JPanel {
 
+	/**
+	 * Oszlopok száma
+	 */
 	public static int COLUMN = 0;
+	/**
+	 * Sorok száma
+	 */
 	public static int ROW = 0;
+	/**
+	 * Egy mezö szélessége és magassága
+	 */
 	public static int TILE_HEIGHT = 0;
 	public static int TILE_WIDTH = 0;
 
+	/**
+	 * Az aktuális tábla
+	 */
 	private Table tableCopy;
+	/**
+	 * A megjelenítendö táblaelemek grafikus osztályai
+	 */
 	private ArrayList<GElements> gelements;
+	/**
+	 * A megjelenítendö vonatelemek grafikus osztályai
+	 */
 	private ArrayList<GElements> trainelements;
+	/**
+	 * Háttérkép
+	 */
 	JLabel background = new JLabel();
 
+	/**
+	 * Konstruktor
+	 */
 	public View() {
 		super();
+		// Létrehozzuk a kattintást érzékelö mouselistenert, ami átadja a click függvénynek a koordinátáit
 		this.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseReleased(MouseEvent e) {
@@ -67,17 +85,18 @@ public class View extends JPanel {
 	}
 
 	/**
-	 * 
-	 * @param table
+	 * Beállítja a használatban lévö pályát
+	 * @param table A jelenlegi pálya
 	 */
 	public void setTable(Table table) {
 		tableCopy = table;
 	}
 
 	/**
-	 * 
-	 * @param id
+	 * Betölti a megadott azonosítóval rendelkezö pályát
+	 * @param id A pálya azonosítója
 	 */
+	@SuppressWarnings("static-access")
 	public void loadMap(int id) {
 		this.removeAll();
 		this.add(background, new Integer(0), -1);
@@ -89,13 +108,11 @@ public class View extends JPanel {
 		}
 		gelements = new ArrayList<GElements>();
 		trainelements = new ArrayList<GElements>();
-		FileReader fr;
-		int x = 0, y = 0;
 		
+		//Létrehozzuk a grafikus osztályokat a táblaelemekhez
 		ArrayList<TableElement> list = tableCopy.getTableElements();
 		for (TableElement te : list) {
 			String type = te.getType();
-
 			switch (type) {
 			case "rail":
 				gelements.add(new GRail((Rail) te));
@@ -119,10 +136,12 @@ public class View extends JPanel {
 				break;
 			}
 		}
+		// Hozzáadjuk öket a panelhez
 		for (GElements ge : gelements) {
 			this.add(ge, new Integer(2), 0);
 		}
 
+		// Létrehozzuk a megjelenítendö vonatelemekhez tartozó grafikus osztályokat
 		for (Train train : tableCopy.getTrains()) {
 			for (TrainElement traine : train.getElements()) {
 				switch (traine.getType()) {
@@ -139,6 +158,7 @@ public class View extends JPanel {
 			}
 		}
 
+		// Hozzáadjuk öket egy panelhez
 		for (GElements gElements : trainelements) {
 			this.add(gElements, new Integer(4), 0);
 		}
@@ -148,8 +168,8 @@ public class View extends JPanel {
 	/**
 	 * Megadja, hogy az adott index milyen oszlopban és sorban szerepel
 	 * 
-	 * @param index
-	 * @return
+	 * @param index A pályaelem indexe
+	 * @return Az index helye x: sor y: oszlop
 	 */
 	public static Point getPosition(int index) {
 		Point point = new Point();
@@ -160,6 +180,9 @@ public class View extends JPanel {
 		return point;
 	}
 
+	/**
+	 * Kiralyzolja a vonatelemeket az új pozíciójukba
+	 */
 	public void drawAll() {
 		for (GElements ge : trainelements) {
 			ge.draw(this.getGraphics());
@@ -167,6 +190,12 @@ public class View extends JPanel {
 		this.repaint();
 	}
 
+	/**
+	 * Átkonvertelja a megadott x, y koordinátát indexé 
+	 * és meghívja az adott indexü táblaelemhez tartozó grafikus osztály clikk függvényét
+	 * @param x X koodináta
+	 * @param y Y koordináta
+	 */
 	public void click(int x, int y) {
 
 		int row = y / TILE_HEIGHT;

@@ -61,10 +61,13 @@ public class Game{
 	 * @throws IOException 
 	 */
 	public void run() {
+		//Music inicializáláshoz kell javaFX inicializálás
+		@SuppressWarnings("unused")
 		JFXPanel panel = new JFXPanel();
 		Media hit = new Media(new File(App.cl.getResource("music/thomas.mp3").getFile()).toURI().toString());
 		MediaPlayer mediaPlayer = new MediaPlayer(hit);
 		mediaPlayer.play();
+		
 		if(timer!=null) timer.stop();
 		level=0;
 		String map = maps.get(level);

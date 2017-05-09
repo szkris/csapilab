@@ -7,10 +7,6 @@ import java.util.*;
  */
 public class Tunnel extends TableElement {
 
-	/**
-	 * Itt tároljuk, hogy az alagúttal mely elemek szomszédosak
-	 */
-	private ArrayList<TableElement> neighbours;
 	private Table table;
 
 	/**
@@ -43,6 +39,5 @@ public class Tunnel extends TableElement {
 
 	@Override
 	public void setUpConnections(ArrayList<TableElement> list) {
-		this.neighbours = list;
 	}
 }

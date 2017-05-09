@@ -1,7 +1,5 @@
 package main.java;
 
-import java.util.*;
-
 /**
  * A mozdonyt megvalósító osztály.
  */
@@ -21,10 +19,5 @@ public class Locomotive extends TrainElement {
 		super(color, empty, train);
 		type = "locomotive";
 	}
-
-	/**
-	 * A loco-t tartalamzó vonat.
-	 */
-	private Train train;
 	
 }
