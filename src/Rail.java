@@ -38,7 +38,6 @@ public class Rail extends TableElement {
 			return elem2;
 		else 
 			return elem1;
-			
 	}
 
 	@Override

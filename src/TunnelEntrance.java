@@ -26,7 +26,7 @@ public class TunnelEntrance extends Rail {
 		type = "tunnelentrance";
 		this.table = table;
 	}
-
+	
 	/**
 	 * @return Visszaadja, hogy nyitva van-e az alagútbejárat.
 	 */

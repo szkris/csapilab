@@ -103,7 +103,8 @@ public class Game{
 		if(table.mapCompleted()){
 			if(level>=maps.size())
 			 	victory();
-			loadMap(maps.get(level));
+			else
+				loadMap(maps.get(level));
 		}
 	}
 

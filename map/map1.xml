@@ -14,7 +14,7 @@
     <rail refid1="3" refid2="19" id = "11"/>
     <field id = "12"/>
     <rail refid1="5" refid2="21" id = "13"/>
-    <tunnelentrance refid1="22" id = "14"/>
+    <tunnelentrance refid1="22" refid2="999" id = "14"/>
     <field id = "15"/>
     <rail refid1="8" refid2="24" id = "16"/>
     
@@ -29,7 +29,7 @@
     
     <rail refid1="17" refid2="26" id = "25"/>
     <rail refid1="25" refid2="34" id = "26"/>
-    <tunnelentrance refid1="19" id="27"/>
+    <tunnelentrance refid1="19" refid22="992" id="27"/>
     <field id="28"/>
     <station refid1="21" refid2="37" color="yellow" id="29"/>
     <switch refid1="38" refid2="31" refid3="22" id="30"/>
@@ -48,7 +48,7 @@
     <rail refid1="33" refid2="49" id="41"/>
     <rail refid1="50" refid2="43" id="42"/>
     <rail refid1="42" refid2="35" id="43"/>
-    <tunnelentrance refid1="45" id="44"/>
+    <tunnelentrance refid1="45" refid2="991" id="44"/>
     <switch refid1="37" refid2="53" refid3="44" id="45"/>
     <station refid1="38" refid2="54" color="green" id="46"/>
     <field id="47"/>
@@ -71,6 +71,95 @@
     <switch refid1="54" refid2="61" refid3="63" id="62"/>
     <rail refid1="62" refid2="64" id="63"/>
     <rail refid1="63" refid2="56" id="64"/>
+    
+    <tunnel id="991">
+        <nextelem refid="44"/>
+        <nextelem refid="992"/>
+    </tunnel>
+    <tunnel id="992">
+        <nextelem refid="991"/>
+        <nextelem refid="27"/>
+        <nextelem refid="993"/>
+    </tunnel>
+    <tunnel id="993">
+        <nextelem refid="992"/>
+        <nextelem refid="994"/>
+    </tunnel>
+    <tunnel id="994">
+        <nextelem refid="993"/>
+        <nextelem refid="995"/>
+    </tunnel>
+    <tunnel id="995">
+        <nextelem refid="994"/>
+        <nextelem refid="996"/>
+    </tunnel>
+    <tunnel id="996">
+        <nextelem refid="995"/>
+        <nextelem refid="997"/>
+    </tunnel>
+    <tunnel id="997">
+        <nextelem refid="998"/>
+        <nextelem refid="996"/>
+    </tunnel>
+    <tunnel id="998">
+        <nextelem refid="999"/>
+        <nextelem refid="997"/>
+    </tunnel>
+    <tunnel id="999">
+        <nextelem refid="14"/>
+        <nextelem refid="998"/>
+    </tunnel>
+    
+    <route start="27" end="14">
+        <nextelem refid="992"/>
+        <nextelem refid="993"/>
+        <nextelem refid="994"/>
+        <nextelem refid="995"/>
+        <nextelem refid="996"/>
+        <nextelem refid="997"/>
+        <nextelem refid="998"/>
+        <nextelem refid="999"/>
+    </route>
+    <route start="14" end="27">
+        <nextelem refid="999"/>
+        <nextelem refid="998"/>
+        <nextelem refid="997"/>
+        <nextelem refid="996"/>
+        <nextelem refid="995"/>
+        <nextelem refid="994"/>
+        <nextelem refid="993"/>
+        <nextelem refid="992"/>
+    </route>
+    <route start="44" end="27">
+        <nextelem refid="991"/>
+        <nextelem refid="992"/>
+    </route>
+    <route start="27" end="44">
+        <nextelem refid="992"/>
+        <nextelem refid="991"/>
+    </route>
+    <route start="44" end="14">
+        <nextelem refid="991"/>
+        <nextelem refid="992"/>
+        <nextelem refid="993"/>
+        <nextelem refid="994"/>
+        <nextelem refid="995"/>
+        <nextelem refid="996"/>
+        <nextelem refid="997"/>
+        <nextelem refid="998"/>
+        <nextelem refid="999"/>
+    </route>
+    <route start="14" end="44">
+        <nextelem refid="999"/>
+        <nextelem refid="998"/>
+        <nextelem refid="997"/>
+        <nextelem refid="996"/>
+        <nextelem refid="995"/>
+        <nextelem refid="994"/>
+        <nextelem refid="993"/>
+        <nextelem refid="992"/>
+        <nextelem refid="991"/>
+    </route>
     
     <train starttick="1" startpos="1" id="1">
         <loco/>
