@@ -8,15 +8,14 @@ import javax.swing.JLabel;
 public class GLocomotive extends GElements {
 
 	Locomotive loco = null;
-	private static ImageIcon imageIcon = new ImageIcon(new ImageIcon("img/thomas.png").getImage()
-			.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
+	private static ImageIcon imageIcon = null;
 	JLabel label = new JLabel();
 	
 	public GLocomotive(Locomotive loco){
 		this.loco = loco;
 		this.label.setIcon(imageIcon);
-		
-
+		imageIcon = imageIcon = new ImageIcon(new ImageIcon("img/thomas.png").getImage()
+				.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
 		this.setOpaque(false);
 		
 		label.setIcon(imageIcon);
@@ -34,6 +33,7 @@ public class GLocomotive extends GElements {
 				this.setBounds(x, y, View.TILE_WIDTH, View.TILE_HEIGHT+5);
 			else
 				this.setBounds(0,0,0,0);
+			this.validate();
 			this.repaint();
 		}	
 	}

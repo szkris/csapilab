@@ -9,7 +9,16 @@ public class GCar extends GElements {
 
 	Car car = null;
 	Color color = null;
-	private static ImageIcon red = new ImageIcon(new ImageIcon("img/car_red.png").getImage()
+	ImageIcon red = null;
+	ImageIcon red_empty = null;
+	ImageIcon blue = null;
+	ImageIcon blue_empty = null;
+	ImageIcon yellow = null;
+	ImageIcon yellow_empty = null;
+	ImageIcon green = null;
+	ImageIcon green_empty = null;
+	
+	/*private static ImageIcon red = new ImageIcon(new ImageIcon("img/car_red.png").getImage()
 			.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
 	private static ImageIcon green = new ImageIcon(new ImageIcon("img/car_green.png").getImage()
 			.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
@@ -25,10 +34,27 @@ public class GCar extends GElements {
 			.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
 	private static ImageIcon yellow_empty = new ImageIcon(new ImageIcon("img/car_yellow_empty.png").getImage()
 			.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
+	*/
 	JLabel label = new JLabel();
 
 	public GCar(Car car) {
-
+		red = new ImageIcon(new ImageIcon("img/car_red.png").getImage()
+				.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
+		green = new ImageIcon(new ImageIcon("img/car_green.png").getImage()
+				.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
+		blue = new ImageIcon(new ImageIcon("img/car_blue.png").getImage()
+				.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
+		yellow = new ImageIcon(new ImageIcon("img/car_yellow.png").getImage()
+				.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
+		red_empty = new ImageIcon(new ImageIcon("img/car_red_empty.png").getImage()
+				.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
+		green_empty = new ImageIcon(new ImageIcon("img/car_green_empty.png").getImage()
+				.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
+		blue_empty = new ImageIcon(new ImageIcon("img/car_blue_empty.png").getImage()
+				.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
+	    yellow_empty = new ImageIcon(new ImageIcon("img/car_yellow_empty.png").getImage()
+				.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
+		
 		this.car = car;
 		switch (car.getColor()) {
 		case RED:

@@ -37,6 +37,10 @@ public class App extends JFrame{
 		super("Terepasztal");
 	}
 	
+	public static JFrame getFrame(){
+		return app;
+	}
+	
 	public static void Initialize(){
 		menu = new Menu();
 		game = new Game();
@@ -56,6 +60,10 @@ public class App extends JFrame{
 		game = new Game();
 		cardLayout.show(app.getContentPane(), "game");
 		game.run();
+	}
+	
+	public static void Menu(){
+		cardLayout.show(app.getContentPane(), "menu");
 	}
 	
 	public static void exit(){

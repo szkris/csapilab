@@ -6,6 +6,7 @@ import java.util.*;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -14,12 +15,14 @@ import javax.swing.JPanel;
 public class Game{
 
 	public static View view = new View();
+	public static boolean running;
 	
 	/**
 	 * Alapértelmezett konstruktor
 	 */
 	public Game() {
 		maps.add("map1.xml");
+		maps.add("map2.xml");
 		view.setTable(table);
 	}
 	
@@ -45,7 +48,7 @@ public class Game{
 	/**
 	 * Játékhoz tartozó idözitö
 	 */
-	private static Timer timer;
+	private static Timer timer = null;
 	
 	/**
 	 * Elindítja a játékot.
@@ -53,6 +56,7 @@ public class Game{
 	 */
 	public void run() {		
 		if(timer!=null) timer.stop();
+		level=0;
 		String map = maps.get(level);
 		loadMap(map);
 		timer = new Timer(this);
@@ -67,24 +71,27 @@ public class Game{
 		table.loadMap(map);
 		view.loadMap(level);
 		level++;
+		running=true;
 	}
 
 	/**
 	 * A játék végekor kerül meghívásra.
 	 */
 	public static void gameOver() {
-		timer.stop();
-		//TODO gameover
-		System.out.println("gameOver");
+		running=false;
+		timer.stop();		
+		JOptionPane.showMessageDialog(App.getFrame(), "Game Over!");
+		App.Menu();
 	}
 
 	/**
 	 * Gyõzelem esetén meghívódó függvény.
 	 */
 	public static void victory() {
+		running=false;
 		timer.stop();
-		//TODO victory
-		System.out.println("victory");
+		JOptionPane.showMessageDialog(App.getFrame(), "Victory!");
+		App.Menu();
 	}
 
 	/**
@@ -92,6 +99,8 @@ public class Game{
 	 */
 	public void move() {
 		tick++;
+		if(!running)
+			return;
 		table.move(tick);
 		view.drawAll();
 	}
@@ -101,10 +110,13 @@ public class Game{
 	 */
 	public static void mapCompleted() {
 		if(table.mapCompleted()){
+			running=false;
 			if(level>=maps.size())
-			 	victory();
-			else
+				victory();				
+			else{
+				JOptionPane.showMessageDialog(App.getFrame(), "Map completed!");
 				loadMap(maps.get(level));
+			}
 		}
 	}
 

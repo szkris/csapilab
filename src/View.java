@@ -30,6 +30,7 @@ public class View extends JPanel {
 	private Table tableCopy;
 	private ArrayList<GElements> gelements;
 	private ArrayList<GElements> trainelements;
+	JLabel background = new JLabel();
 
 	public View() {
 		super();
@@ -56,12 +57,11 @@ public class View extends JPanel {
 			}
 		});
 
-		JLabel background = new JLabel();
+		
 		background.setIcon(new ImageIcon(new ImageIcon("img/grass.png").getImage().getScaledInstance(App.WIDTH,
 				App.HEIGHT, Image.SCALE_DEFAULT)));
 		background.setBounds(0, 0, App.WIDTH, App.HEIGHT);
 		this.setLayout(null);
-		this.add(background, new Integer(0), -1);
 		this.setPreferredSize(new Dimension(App.WIDTH, App.HEIGHT));
 	}
 
@@ -78,6 +78,8 @@ public class View extends JPanel {
 	 * @param id
 	 */
 	public void loadMap(int id) {
+		this.removeAll();
+		this.add(background, new Integer(0), -1);
 		ROW = tableCopy.row;
 		COLUMN = tableCopy.column;
 		if (ROW != 0 && COLUMN != 0) {
@@ -88,7 +90,7 @@ public class View extends JPanel {
 		trainelements = new ArrayList<GElements>();
 		FileReader fr;
 		int x = 0, y = 0;
-
+		
 		ArrayList<TableElement> list = tableCopy.getTableElements();
 		for (TableElement te : list) {
 			String type = te.getType();
@@ -137,7 +139,7 @@ public class View extends JPanel {
 		}
 
 		for (GElements gElements : trainelements) {
-			this.add(gElements, new Integer(3), 1);
+			this.add(gElements, new Integer(4), 0);
 		}
 		this.validate();
 	}

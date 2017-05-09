@@ -8,13 +8,13 @@ import javax.swing.JLabel;
 public class GCoalWagon extends GElements {
 
 	CoalWagon cw = null;
-	private static ImageIcon imageIcon = new ImageIcon(new ImageIcon("img/coalwagon.png").getImage()
-			.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
+	private static ImageIcon imageIcon=null;
 	JLabel label = new JLabel();
 	
 	public GCoalWagon(CoalWagon cw){
 		this.cw = cw;
-		
+		imageIcon = new ImageIcon(new ImageIcon("img/coalwagon.png").getImage()
+				.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
 		this.setOpaque(false);
 		
 		label.setIcon(imageIcon);

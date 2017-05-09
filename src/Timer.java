@@ -29,7 +29,11 @@ public class Timer {
 		TimerTask task = new TimerTask() {
 			@Override
 			public void run() {
-				game.move();
+				try{
+					game.move();					
+				} catch(Exception e){
+					//e.printStackTrace();
+				}
 			}
 		};
 		timer.schedule(task, 0, 1000);
