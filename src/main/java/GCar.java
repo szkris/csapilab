@@ -6,11 +6,23 @@ import java.awt.Point;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-
+/**
+ * Kocsi grafikát megvalósitó osztály
+ */
+@SuppressWarnings("serial")
 public class GCar extends GElements {
 
+	/**
+	 * Az osztályhoz tartozó kocsi
+	 */
 	Car car = null;
+	/**
+	 * A kocsihoz tartozó szín
+	 */
 	Color color = null;
+	/**
+	 * Az osztály által használt képek.
+	 */
 	ImageIcon red = null;
 	ImageIcon red_empty = null;
 	ImageIcon blue = null;
@@ -19,26 +31,12 @@ public class GCar extends GElements {
 	ImageIcon yellow_empty = null;
 	ImageIcon green = null;
 	ImageIcon green_empty = null;
-	
-	/*private static ImageIcon red = new ImageIcon(new ImageIcon("img/car_red.png").getImage()
-			.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
-	private static ImageIcon green = new ImageIcon(new ImageIcon("img/car_green.png").getImage()
-			.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
-	private static ImageIcon blue = new ImageIcon(new ImageIcon("img/car_blue.png").getImage()
-			.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
-	private static ImageIcon yellow = new ImageIcon(new ImageIcon("img/car_yellow.png").getImage()
-			.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
-	private static ImageIcon red_empty = new ImageIcon(new ImageIcon("img/car_red_empty.png").getImage()
-			.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
-	private static ImageIcon green_empty = new ImageIcon(new ImageIcon("img/car_green_empty.png").getImage()
-			.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
-	private static ImageIcon blue_empty = new ImageIcon(new ImageIcon("img/car_blue_empty.png").getImage()
-			.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
-	private static ImageIcon yellow_empty = new ImageIcon(new ImageIcon("img/car_yellow_empty.png").getImage()
-			.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
-	*/
 	JLabel label = new JLabel();
-
+	
+	/**
+	 * Konstruktor mely paraméterként átveszi az ábrázolandó kocsit 
+	 * @param car
+	 */
 	public GCar(Car car) {
 		red = new ImageIcon(new ImageIcon(App.cl.getResource("img/car_red.png")).getImage()
 				.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));

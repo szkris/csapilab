@@ -3,48 +3,64 @@ package main.java;
 
 import java.awt.CardLayout;
 import java.awt.Dimension;
-import java.awt.Image;
-import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.*;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
-import javax.swing.text.View;
 
+import com.sun.glass.ui.Application;
+
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+@SuppressWarnings("serial")
 public class App extends JFrame{
 
-	
+	/**
+	 * Az ablak mérete pixelekben
+	 */
 	public final static int HEIGHT = 600;
 	public final static int WIDTH = 600; 
-	
+	/**
+	 * Közös fájlbetöltö
+	 */
 	public static ClassLoader cl;
-	
-	private static final long serialVersionUID = 1L;
+	/**
+	 * Panelek inicializálása
+	 */
 	private static App app = new App();
 	private static Game game = null;
 	private static Menu menu = null;
 	private static CardLayout cardLayout = new CardLayout();
 	
 	/**
-	 * Default constructor
+	 * Alapértelmezett konstruktor
 	 */
 	public App() {
 		super("Terepasztal");
 	}
 	
+	/**
+	 * Vissatér az applikáció föablakával
+	 * @return Az applikáció föablaka
+	 */
 	public static JFrame getFrame(){
 		return app;
 	}
 	
+	/**
+	 * Inicializálás
+	 */
+	@SuppressWarnings("static-access")
 	public static void Initialize(){
+		JFXPanel panel = new JFXPanel();
 		cl = app.getClass().getClassLoader();
 		menu = new Menu();
 		game = new Game();
+		Media hit = new Media(new File(cl.getResource("music/thomas.mp3").getFile()).toURI().toString());
+		MediaPlayer mediaPlayer = new MediaPlayer(hit);
+		mediaPlayer.play();
 		
 		app.setLayout(cardLayout);
 		app.getContentPane().add(menu, "menu");
@@ -57,27 +73,33 @@ public class App extends JFrame{
 		app.setFocusable(true);
 	}
 	
+	/**
+	 * Új játék kezdése
+	 */
 	public static void newGame(){
 		game = new Game();
 		cardLayout.show(app.getContentPane(), "game");
 		game.run();
 	}
-	
+	/**
+	 * Menübe lépés
+	 */
 	public static void Menu(){
 		cardLayout.show(app.getContentPane(), "menu");
 	}
-	
+	/**
+	 * Kilépés
+	 */
 	public static void exit(){
 		System.exit(0);
 	}
 	
+	/**
+	 * Random felszállás be/ki
+	 */
 	static boolean random = true;
 	
-	/**
-	 * @param String
-	 * @return
-	 * @throws IOException 
-	 */
+	
 	public static void main(String[] args) throws IOException {
 		Initialize();
 	}

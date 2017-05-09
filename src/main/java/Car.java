@@ -1,7 +1,5 @@
 package main.java;
 
-import java.util.*;
-
 /**
  * Utasokat szállító vagont megvalósító osztály
  */

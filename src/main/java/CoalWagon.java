@@ -1,8 +1,5 @@
 package main.java;
 
-
-import java.util.*;
-
 /**
  * Szénszállító kocsit megvalósító osztály
  */
@@ -22,10 +19,5 @@ public class CoalWagon extends TrainElement {
 		super(color, empty, train);
 		type = "coalwagon";
 	}
-
-	/**
-	 * Szeneskocsit tartalmazó vonat.
-	 */
-	private Train train;
 
 }

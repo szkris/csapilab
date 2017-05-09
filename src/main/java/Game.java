@@ -1,21 +1,21 @@
 package main.java;
 
-import java.awt.Image;
 import java.io.IOException;
 import java.util.*;
 
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 /**
  * Játékot megvalósító osztály
  */
 public class Game{
-
+	/**
+	 * Aktuális nézet
+	 */
 	public static View view = new View();
+	/**
+	 * Fut-e éppen valamilyen pálya
+	 */
 	public static boolean running;
 	
 	/**
@@ -63,11 +63,17 @@ public class Game{
 		timer = new Timer(this);
 		timer.start();
 	}
-	
+	/**
+	 * Visszatér az asztallal
+	 * @return Az aktuális asztal
+	 */
 	public Table getTable(){
 		return table;
 	}
-	
+	/**
+	 * Pálya betöltése
+	 * @param map A betöltendö pálya
+	 */
 	public static void loadMap(String map){
 		table.loadMap(map);
 		view.loadMap(level);
