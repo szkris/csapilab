@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game row="3" column="3">
+    <rail refid1="4" refid2="2" id="1"/>
+    <switch refid1="1" refid2="3" refid3="5" id="2"/>
+    <rail refid1="2" refid2="6" id="3"/>
+    
+    <rail refid1="1" refid2="7" id="4"/>
+    <station refid1="2" refid2="8" color="blue" id="5"/>
+    <rail refid1="3" refid2="9" id="6"/>
+    
+    <rail refid1="4" refid2="8" id="7"/>
+    <switch refid1="7" refid2="9" refid3="5" id="8"/>
+    <rail refid1="6" refid2="8" id="9"/>
+    
+    <train starttick="1" startpos="1" id="1">
+        <loco/>
+        <coalwagon/>
+        <car color="blue" empty="false"/>
+    </train>
+</game>
