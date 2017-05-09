@@ -26,8 +26,8 @@ public class App extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
 	private static App app = new App();
-	private static Game game;
-	private static Menu menu;
+	private static Game game = null;
+	private static Menu menu = null;
 	private static CardLayout cardLayout = new CardLayout();
 	
 	/**
@@ -42,9 +42,9 @@ public class App extends JFrame{
 	}
 	
 	public static void Initialize(){
+		cl = app.getClass().getClassLoader();
 		menu = new Menu();
 		game = new Game();
-		cl = app.getClass().getClassLoader();
 		
 		app.setLayout(cardLayout);
 		app.getContentPane().add(menu, "menu");

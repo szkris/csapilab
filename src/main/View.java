@@ -59,7 +59,6 @@ public class View extends JPanel {
 			}
 		});
 
-		
 		background.setIcon(new ImageIcon(new ImageIcon("img/grass.png").getImage().getScaledInstance(App.WIDTH,
 				App.HEIGHT, Image.SCALE_DEFAULT)));
 		background.setBounds(0, 0, App.WIDTH, App.HEIGHT);
