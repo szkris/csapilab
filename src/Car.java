@@ -25,7 +25,6 @@ public class Car extends TrainElement {
 		if (isEmpty() || this.getColor() != color)
 			return;
 		train.hopOff(color, this);
-		changeEmpty();
 	}
 
 	@Override

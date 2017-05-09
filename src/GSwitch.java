@@ -35,6 +35,9 @@ public class GSwitch extends GElements {
 		//   |
 		// --X--
 		// 
+		if(id==62){
+			System.out.println("");
+		}
 		if (inactive.y < point.y
 				&& ((fix.x > point.x && active.x < point.x) || (fix.x < point.x && active.x > point.x))) {
 			imageIcon = new ImageIcon(new ImageIcon("img/switch_horizontal_up.png").getImage()

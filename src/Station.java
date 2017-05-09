@@ -46,7 +46,7 @@ public class Station extends Rail {
 	@Override
 	public void stepOn(TrainElement te){
 		if(occupied) Game.gameOver();
-		setOccupied(true);
+		setOccupied(true);		
 		currentElement = te;
 		te.setTableElement(this);
 		te.hopOff(color);

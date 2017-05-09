@@ -130,10 +130,10 @@ public class Train {
 	 */
 	public boolean isEmpty() {
 		for (TrainElement trainElement : elements) {
-			if (trainElement.isEmpty())
-				return true;
+			if (!trainElement.isEmpty())
+				return false;
 		}
-		return false;
+		return true;
 	}
 
 	/**

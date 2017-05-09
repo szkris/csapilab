@@ -55,7 +55,7 @@ public class GCar extends GElements {
 
 	@Override
 	public void draw(Graphics g) {
-		if (car.getcurrentTableElement() != null) {
+		if (car.getcurrentTableElement() != null) {	
 			if (car.isEmpty()) {
 				if (color.equals(Color.RED))
 					this.label.setIcon(red_empty);

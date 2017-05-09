@@ -29,7 +29,7 @@
     
     <rail refid1="17" refid2="26" id = "25"/>
     <rail refid1="25" refid2="34" id = "26"/>
-    <tunnelentrance refid1="19" refid22="992" id="27"/>
+    <tunnelentrance refid1="19" refid2="992" id="27"/>
     <field id="28"/>
     <station refid1="21" refid2="37" color="yellow" id="29"/>
     <switch refid1="38" refid2="31" refid3="22" id="30"/>
@@ -68,7 +68,7 @@
     <station refid1="58" refid2="60" color="red" id="59"/>
     <rail refid1="59" refid2="61" id="60"/>
     <rail refid1="60" refid2="62" id="61"/>
-    <switch refid1="54" refid2="61" refid3="63" id="62"/>
+    <switch refid1="61" refid2="54" refid3="63" id="62"/>
     <rail refid1="62" refid2="64" id="63"/>
     <rail refid1="63" refid2="56" id="64"/>
     
@@ -162,9 +162,17 @@
     </route>
     
     <train starttick="1" startpos="1" id="1">
-        <loco/>
-        <coalwagon/>
-        <car color="red" empty="true"/>
+        <loco/>        
+        <car color="red" empty="false"/>
         <car color="blue" empty="false"/>
+        <coalwagon/>
+        <car color="green" empty="false"/>
+    </train>
+    <train starttick="1" startpos="16" id="2">
+        <loco/>
+        <car color="green" empty="true"/>
+        <car color="green" empty="false"/>
+        <car color="yellow" empty="false"/>
+        <coalwagon/>
     </train>
 </game>
