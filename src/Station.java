@@ -75,4 +75,18 @@ public class Station extends Rail {
 	public void hopOn(){
 		if(currentElement!=null) currentElement.hopOn(color);
 	}
+	
+	@Override
+	public ArrayList<Integer> getNeighbours(){
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		if(elem1!=null)
+			list.add(elem1.getId());
+		else 
+			list.add(0);
+		if(elem2!=null)
+			list.add(elem2.getId());
+		else
+			list.add(0);
+		return list;
+	}
 }

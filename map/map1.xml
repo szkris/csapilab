@@ -12,8 +12,8 @@
     <rail refid1="5" refid2="15" id = "10"/>
     <rail refid1="6" refid2="16" id = "11"/>
     <switch refid1="7" refid2="17" refid3="11" id="12"/>
-    <switch refid1="8" refid2="18" refid3="14" id="13"/>
-    <switch refid1="13" refid2="9" refid3="15" id="14"/>
+    <station refid1="11" refid2="14" color="blue" id="13"/>
+    <station refid1="19" refid2="9" color="red" id="14"/>
     <rail refid1="10" refid2="20" id = "15"/>
     <rail refid1="11" refid2="21" id = "16"/>
     <switch refid1="16" refid2="23" refid3="18" id="17"/>
