@@ -1,9 +1,14 @@
 package main.java;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
 import javax.swing.JOptionPane;
+
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 /**
  * Játékot megvalósító osztály
@@ -55,7 +60,11 @@ public class Game{
 	 * Elindítja a játékot.
 	 * @throws IOException 
 	 */
-	public void run() {		
+	public void run() {
+		JFXPanel panel = new JFXPanel();
+		Media hit = new Media(new File(App.cl.getResource("music/thomas.mp3").getFile()).toURI().toString());
+		MediaPlayer mediaPlayer = new MediaPlayer(hit);
+		mediaPlayer.play();
 		if(timer!=null) timer.stop();
 		level=0;
 		String map = maps.get(level);

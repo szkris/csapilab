@@ -54,13 +54,9 @@ public class App extends JFrame{
 	 */
 	@SuppressWarnings("static-access")
 	public static void Initialize(){
-		JFXPanel panel = new JFXPanel();
 		cl = app.getClass().getClassLoader();
 		menu = new Menu();
 		game = new Game();
-		Media hit = new Media(new File(cl.getResource("music/thomas.mp3").getFile()).toURI().toString());
-		MediaPlayer mediaPlayer = new MediaPlayer(hit);
-		mediaPlayer.play();
 		
 		app.setLayout(cardLayout);
 		app.getContentPane().add(menu, "menu");
