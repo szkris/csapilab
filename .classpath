@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="img/|map/|resources/img/|resources/map/|resources/" kind="src" path="src"/>
-	<classpathentry excluding="img/|map/" kind="src" path="src/resources"/>
+	<classpathentry excluding="img/|map/|resources/img/|resources/map/|resources/|main/resources/img/|main/resources/map/|main/resources/" kind="src" path="src"/>
+	<classpathentry kind="src" path="src/main/resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
