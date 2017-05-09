@@ -105,9 +105,9 @@ public class View extends JPanel {
 			case "station":
 			    gelements.add(new GStation((Station) te));
 			    break;
-			// case "tunnelentrance":
-			// gelements.add(new GTunnelEntrance((TunnelEntrance) te));
-			// break;
+			case "tunnelentrance":
+			    gelements.add(new GTunnelEntrance((TunnelEntrance) te));
+			    break;
 			default:
 				break;
 			}

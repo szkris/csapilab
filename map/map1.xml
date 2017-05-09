@@ -6,8 +6,8 @@
     <rail refid1="3" refid2="5" id = "4"/>
     <rail refid1="4" refid2="10" id = "5"/>
     <rail refid1="1" refid2="11" id = "6"/>
-    <crossing refid1 ="6" refid2="2" refid3="8" refid4="12" id = "7"/>
-    <switch refid1="7" refid2="9" refid3="3" id="8"/>
+    <tunnelentrance refid1 ="6" refid2="2" open="false" id = "7"/>
+    <tunnelentrance refid1="7" refid2="9" open="false" id="8"/>
     <switch refid1="8" refid2="10" refid3="14" id="9"/>
     <rail refid1="5" refid2="15" id = "10"/>
     <rail refid1="6" refid2="16" id = "11"/>
@@ -18,7 +18,7 @@
     <rail refid1="11" refid2="21" id = "16"/>
     <switch refid1="16" refid2="23" refid3="18" id="17"/>
     <switch refid1="19" refid2="13" refid3="17" id="18"/>
-    <switch refid1="20" refid2="24" refid3="18" id="19"/>
+    <tunnelentrance refid1="20" refid2="24" open="false" id="19"/>
     <rail refid1="15" refid2="25" id = "20"/>
     <rail refid1="16" refid2="22" id = "21"/>
     <rail refid1="21" refid2="23" id = "22"/>

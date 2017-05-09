@@ -9,6 +9,8 @@ public class TunnelEntrance extends Rail {
 	 * Itt tárolódik, hogy a bejárat aktív-e.
 	 */
 	private boolean open;
+	
+	Rail rail = null;
 
 	/**
 	 * Tárolja az alagútbejárathoz tartozó Table-t, hogy kommunikálhasson az
@@ -21,7 +23,7 @@ public class TunnelEntrance extends Rail {
 	 */
 	public TunnelEntrance(int id, Table table) {
 		super(id);
-		type = "tunnelEntrance";
+		type = "tunnelentrance";
 		this.table = table;
 	}
 
@@ -38,7 +40,7 @@ public class TunnelEntrance extends Rail {
 	public void changeStatus() {
 		open = !open;
 	}
-
+	
 	@Override
 	public void click() {
 		if(open){
@@ -57,5 +59,14 @@ public class TunnelEntrance extends Rail {
 		te.changeVisibility();
 		te.setTunnelEntrance(this);
 		te.setTableElement(this);
+	}
+	@Override
+	public ArrayList<Integer> getNeighbours(){
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		if(elem1.getType()!="tunnel")
+			list.add(elem1.getId());
+		if(elem2.getType()!="tunnel")
+			list.add(elem2.getId());
+		return list;
 	}
 }
