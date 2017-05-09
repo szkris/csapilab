@@ -19,10 +19,8 @@ public class App extends JFrame{
 	
 	public final static int HEIGHT = 600;
 	public final static int WIDTH = 600; 
-	/**
-	 * 
-	 */
 	
+	public static ClassLoader cl;
 	
 	private static final long serialVersionUID = 1L;
 	private static App app = new App();
@@ -44,6 +42,7 @@ public class App extends JFrame{
 	public static void Initialize(){
 		menu = new Menu();
 		game = new Game();
+		cl = app.getClass().getClassLoader();
 		
 		app.setLayout(cardLayout);
 		app.getContentPane().add(menu, "menu");
