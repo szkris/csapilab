@@ -22,6 +22,8 @@ public class App extends JFrame{
 	/**
 	 * 
 	 */
+	
+	
 	private static final long serialVersionUID = 1L;
 	private static App app = new App();
 	private static Game game;

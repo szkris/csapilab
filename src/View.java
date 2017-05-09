@@ -29,36 +29,29 @@ public class View extends JPanel {
 
 	private Table tableCopy;
 	private ArrayList<GElements> gelements;
+	private ArrayList<GElements> trainelements;
 
 	public View() {
 		super();
 		this.addMouseListener(new MouseListener() {
 			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-			}
+			public void mouseReleased(MouseEvent e) {}
 
 			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-			}
+			public void mousePressed(MouseEvent e) {}
 
 			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-			}
+			public void mouseExited(MouseEvent e) {}
 
 			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-			}
+			public void mouseEntered(MouseEvent e) {}
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				click(e.getX(), e.getY());
 			}
 		});
-
+		
 		JLabel background = new JLabel();
 		background.setIcon(new ImageIcon(new ImageIcon("img/grass.png").getImage().getScaledInstance(App.WIDTH,
 				App.HEIGHT, Image.SCALE_DEFAULT)));
@@ -67,7 +60,6 @@ public class View extends JPanel {
 		this.add(background, new Integer(0), -1);
 		this.setPreferredSize(new Dimension(App.WIDTH, App.HEIGHT));
 	}
-
 	/**
 	 * 
 	 * @param table
@@ -88,6 +80,7 @@ public class View extends JPanel {
 			TILE_WIDTH = App.WIDTH/COLUMN;
 		}
 		gelements = new ArrayList<GElements>();
+		trainelements = new ArrayList<GElements>();
 		FileReader fr;
 		int x = 0, y = 0;
 
@@ -121,6 +114,19 @@ public class View extends JPanel {
 		for (GElements ge : gelements) {
 			this.add(ge, new Integer(2), 0);
 		}
+		
+		for (Train train : tableCopy.getTrains()) {
+			for (TrainElement traine : train.getElements()) {
+				if(traine.getType()=="locomotive"){
+					trainelements.add(new GLocomotive((Locomotive)traine));	
+				}
+			}
+		}
+		
+		for (GElements gElements : trainelements) {
+			this.add(gElements, new Integer(3), 1);
+		}
+		
 		this.validate();
 	}
 
@@ -140,11 +146,10 @@ public class View extends JPanel {
 	}
 
 	public void drawAll() {
+		for (GElements ge : trainelements) {
+			ge.draw(this.getGraphics());
+		}
 		this.repaint();
-	}
-
-	public void addTrain(Train t) {
-
 	}
 
 	public void click(int x, int y) {
