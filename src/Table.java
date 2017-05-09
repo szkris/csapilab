@@ -21,6 +21,9 @@ public class Table {
 	public Table() {
 	}
 
+	public static int row = 0;
+	public static int column = 0;
+	
 	/**
 	 * Alagútbejáratok között vezetö utatkat tároló lista
 	 */
@@ -60,6 +63,11 @@ public class Table {
 			Document doc = dBuilder.parse(fXmlFile);
 			doc.getDocumentElement().normalize();
 
+
+			Element game = (Element)doc.getElementsByTagName("game").item(0);
+			row = Integer.parseInt(game.getAttribute("row"));
+			column = Integer.parseInt(game.getAttribute("column"));
+			
 			NodeList _rail = doc.getElementsByTagName("rail");
 			for (int i = 0; i < _rail.getLength(); i++) {
 

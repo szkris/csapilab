@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<game>
+<game row="5" column="5">
     <rail refid1="6" refid2="2" id = "1"/>
     <rail refid1="1" refid2="3" id = "2"/>
     <rail refid1="2" refid2="4" id = "3"/>

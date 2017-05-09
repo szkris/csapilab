@@ -22,10 +22,10 @@ import javax.swing.JPanel;
 
 public class View extends JPanel {
 
-	public static int COLUMN = 5;
-	public static int ROW = 5;
-	public static int TILE_HEIGHT = App.HEIGHT / ROW;
-	public static int TILE_WIDTH = App.WIDTH / COLUMN;
+	public static int COLUMN = 0;
+	public static int ROW = 0;
+	public static int TILE_HEIGHT = 0;
+	public static int TILE_WIDTH = 0;
 
 	private Table tableCopy;
 	private ArrayList<GElements> gelements;
@@ -81,6 +81,12 @@ public class View extends JPanel {
 	 * @param id
 	 */
 	public void loadMap(int id) {
+		ROW = tableCopy.row;
+		COLUMN = tableCopy.column;
+		if(ROW!=0 && COLUMN!=0){
+			TILE_HEIGHT = App.HEIGHT/ROW;	
+			TILE_WIDTH = App.WIDTH/COLUMN;
+		}
 		gelements = new ArrayList<GElements>();
 		FileReader fr;
 		int x = 0, y = 0;
