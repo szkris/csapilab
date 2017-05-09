@@ -1,32 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<game row="5" column="5">
-    <rail refid1="6" refid2="2" id = "1"/>
+<game row="8" column="8">
+    <rail refid1="9" refid2="2" id = "1"/>
     <rail refid1="1" refid2="3" id = "2"/>
-    <rail refid1="2" refid2="4" id = "3"/>
-    <rail refid1="3" refid2="5" id = "4"/>
-    <rail refid1="4" refid2="10" id = "5"/>
-    <rail refid1="1" refid2="11" id = "6"/>
-    <tunnelentrance refid1 ="6" refid2="2" open="false" id = "7"/>
-    <tunnelentrance refid1="7" refid2="9" open="false" id="8"/>
-    <switch refid1="8" refid2="10" refid3="14" id="9"/>
-    <rail refid1="5" refid2="15" id = "10"/>
-    <rail refid1="6" refid2="16" id = "11"/>
-    <switch refid1="7" refid2="17" refid3="11" id="12"/>
-    <station refid1="11" refid2="14" color="blue" id="13"/>
-    <station refid1="19" refid2="9" color="red" id="14"/>
-    <rail refid1="10" refid2="20" id = "15"/>
-    <rail refid1="11" refid2="21" id = "16"/>
-    <switch refid1="16" refid2="23" refid3="18" id="17"/>
-    <switch refid1="19" refid2="13" refid3="17" id="18"/>
-    <tunnelentrance refid1="20" refid2="24" open="false" id="19"/>
-    <rail refid1="15" refid2="25" id = "20"/>
-    <rail refid1="16" refid2="22" id = "21"/>
-    <rail refid1="21" refid2="23" id = "22"/>
-    <rail refid1="22" refid2="24" id = "23"/>
-    <rail refid1="23" refid2="25" id = "24"/>
-    <rail refid1="20" refid2="24" id = "25"/>
+    <switch refid1="4" refid2="2" refid3="11" id="3"/>
+    <station refid1="3" refid2="5" color="blue" id = "4"/>
+    <switch refid1="4" refid2="6" refid3="13" id = "5"/>
+    <rail refid1="5" refid2="8" id = "6"/>
+    <rail refid1 ="6" refid2="8" id = "7"/>
+    
+    <rail refid1="7" refid2="16" id = "8"/>
+    <rail refid1="1" refid2="17" id="9"/>
+    <field id = "10"/>
+    <rail refid1="3" refid2="19" id = "11"/>
+    <field id = "12"/>
+    <rail refid1="5" refid2="21" id = "13"/>
+    <tunnelentrance refid1="22" id = "14"/>
+    <field id = "15"/>
+    <rail refid1="8" refid2="24" id = "16"/>
+    
+    <switch refid1="9" refid2="25" refid3="18" id = "17"/>
+    <rail refid1="17" refid2="19" id = "18"/>
+    <crossing refid1="11" refid2="18" refid3="27" refid4="20" id="19"/>
+    <rail refid1="19" refid2="21" id = "20"/>
+    <switch refid1="29" refid2="20" refid3="13" id = "21"/>
+    <rail refid1="14" refid2="30" id="22"/>
+    <field id="23"/>
+    <rail refid1="16" refid2="32" id = "24"/>
+    
+    <rail refid1="17" refid2="26" id = "25"/>
+    <rail refid1="25" refid2="34" id = "26"/>
+    <tunnelentrance refid1="19" id="27"/>
+    <field id="28"/>
+    <station refid1="21" refid2="37" color="yellow" id="29"/>
+    <switch refid1="38" refid2="31" refid3="22" id="30"/>
+    <rail refid1="30" refid2="32" id="31"/>
+    <switch refid1="24" refid2="31" refid3="40" id="32"/>
+    
+    <rail refid1="34" refid2="41" id="33"/>
+    <switch refid1="26" refid2="33" refid3="35" id="34"/>
+    <switch refid1="34" refid2="36" refid3="43" id="35"/>
+    <rail refid1="35" refid2="37" id="36"/>
+    <switch refid1="29" refid2="35" refid3="45" id="37"/>
+    <rail refid1 = "30" refid2="46" id="38"/>
+    <field id="39"/>
+    <rail refid1="32" refid2="48" id="40"/>
+    
+    <rail refid1="33" refid2="49" id="41"/>
+    <rail refid1="50" refid2="43" id="42"/>
+    <rail refid1="42" refid2="35" id="43"/>
+    <tunnelentrance refid1="45" id="44"/>
+    <switch refid1="37" refid2="53" refid3="44" id="45"/>
+    <station refid1="38" refid2="54" color="green" id="46"/>
+    <field id="47"/>
+    <rail refid1="40" refid2="56" id="48"/>
+    
+    <rail refid1="41" refid2="57" id="49"/>
+    <rail refid1="42" refid2="58" id="50"/>
+    <field id="51"/>
+    <field id="52"/>
+    <rail refid1="45" refid2="54" id="53"/>
+    <switch refid1="46" refid2="53" refid3="62" id="54"/>
+    <field id="55"/>
+    <rail refid1="48" refid2="64" id="56"/>
+    
+    <rail refid1="49" refid2="58" id="57"/>
+    <switch refid1="59" refid2="57" refid3="50" id="58"/>
+    <station refid1="58" refid2="60" color="red" id="59"/>
+    <rail refid1="59" refid2="61" id="60"/>
+    <rail refid1="60" refid2="62" id="61"/>
+    <switch refid1="54" refid2="61" refid3="63" id="62"/>
+    <rail refid1="62" refid2="64" id="63"/>
+    <rail refid1="63" refid2="56" id="64"/>
+    
     <train starttick="1" startpos="1" id="1">
         <loco/>
+        <coalwagon/>
         <car color="red" empty="true"/>
+        <car color="blue" empty="false"/>
     </train>
 </game>

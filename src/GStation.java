@@ -35,6 +35,10 @@ public class GStation extends GElements {
 			else if (station.getColor().equals(Color.BLUE))
 				imageIcon = new ImageIcon(new ImageIcon("img/bluestation.png").getImage()
 						.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
+			else 
+				imageIcon = new ImageIcon(new ImageIcon("img/yellowstation.png").getImage()
+						.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
+				
 		} else {
 			if (station.getColor().equals(Color.GREEN))
 				imageIcon = new ImageIcon(new ImageIcon("img/greenstation_vertical.png").getImage()
@@ -44,6 +48,9 @@ public class GStation extends GElements {
 						.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
 			else if (station.getColor().equals(Color.BLUE))
 				imageIcon = new ImageIcon(new ImageIcon("img/bluestation_vertical.png").getImage()
+						.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
+			else 
+				imageIcon = new ImageIcon(new ImageIcon("img/yellowstation_vertical.png").getImage()
 						.getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
 		}
 

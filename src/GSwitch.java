@@ -173,11 +173,13 @@ public class GSwitch extends GElements {
 	@Override
 	public void click() {
 		sw.click();
+		if(!sw.occupied){
 		ImageIcon temp = imageIcon;
 		imageIcon = nextIcon;
 		nextIcon = temp;
 		label.setIcon(imageIcon);
 		this.repaint();
+		}
 	}
 
 }

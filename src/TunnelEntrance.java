@@ -63,10 +63,7 @@ public class TunnelEntrance extends Rail {
 	@Override
 	public ArrayList<Integer> getNeighbours(){
 		ArrayList<Integer> list = new ArrayList<Integer>();
-		if(elem1.getType()!="tunnel")
-			list.add(elem1.getId());
-		if(elem2.getType()!="tunnel")
-			list.add(elem2.getId());
+		list.add(elem1.getId());
 		return list;
 	}
 }
