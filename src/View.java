@@ -4,6 +4,7 @@ import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -16,14 +17,13 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
-
 public class View extends JPanel {
 
-	public final static int TILE_HEIGHT = 100;
-	public final static int TILE_WIDTH = 100;
-	public static int COLUMN = 3;
-	public static int ROW = 1;
-
+	public static int COLUMN = 5;
+	public static int ROW = 5;
+	public static int TILE_HEIGHT = App.HEIGHT/ROW;
+	public static int TILE_WIDTH = App.WIDTH/COLUMN;
+	
 	private Table tableCopy;
 	private ArrayList<GElements> gelements;
 	
@@ -32,26 +32,11 @@ public class View extends JPanel {
 		
 		JLabel background = new JLabel();
 		background.setIcon(new ImageIcon(
-				new ImageIcon("img/background.png").getImage().getScaledInstance(App.WIDTH, App.HEIGHT, Image.SCALE_DEFAULT)));
+				new ImageIcon("img/grass.png").getImage().getScaledInstance(App.WIDTH, App.HEIGHT, Image.SCALE_DEFAULT)));
 		background.setBounds(0, 0, App.WIDTH, App.HEIGHT);
 		this.setLayout(null);
-		this.add(background, new Integer(0));
+		this.add(background, new Integer(0), -1);
 		this.setPreferredSize(new Dimension(App.WIDTH, App.HEIGHT));
-
-		/*JPanel top = new JPanel();
-	    top.setBackground(Color.white);
-	    top.setBounds(20, 20, 50, 50);
-	    JButton middle = new JButton();
-	    middle.setBackground(Color.gray);
-	    middle.setBounds(40, 40, 50, 50);
-	    JButton bottom = new JButton();
-	    bottom.setBackground(Color.black);
-	    bottom.setBounds(60, 60, 50, 50);
-	    this.add(middle, new Integer(2));
-	    this.add(top, new Integer(3));
-	    this.add(bottom, new Integer(1));
-		 */
-
 	}
 
 	/**
@@ -101,11 +86,25 @@ public class View extends JPanel {
 		}
 		for (GElements ge : gelements) {
 
-			this.add(ge, new Integer(2));
+			this.add(ge, new Integer(2), 0);
 		}
 		this.validate();
 	}
-
+	
+	/**
+	 * Megadja, hogy az adott index milyen oszlopban és sorban szerepel
+	 * @param index
+	 * @return
+	 */
+	public static Point getPosition(int index){
+		Point point = new Point();
+		int row = (int)((index-1)/COLUMN);
+		int column = index-1-row*COLUMN;
+		
+		point.setLocation(column, row);
+		return point;
+	}
+	
 	public void drawAll() {
 		this.repaint();
 	}

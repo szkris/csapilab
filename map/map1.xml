@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <game>
-    <rail refid1="null" refid2="2" id = "1"/>
+    <rail refid1="6" refid2="2" id = "1"/>
     <rail refid1="1" refid2="3" id = "2"/>
-    <rail refid1="2" refid2="null" id = "3"/>
+    <rail refid1="2" refid2="4" id = "3"/>
+    <rail refid1="3" refid2="5" id = "4"/>
+    <rail refid1="4" refid2="10" id = "5"/>
+    <rail refid1="1" refid2="11" id = "6"/>
+    <field id = "7"/>
+    <field id = "8"/>
+    <field id = "9"/>
+    <rail refid1="5" refid2="15" id = "10"/>
+    <rail refid1="6" refid2="16" id = "11"/>
+    <field id = "12"/>
+    <field id = "13"/>
+    <field id = "14"/>
+    <rail refid1="10" refid2="20" id = "15"/>
+    <rail refid1="11" refid2="21" id = "16"/>
+    <field id = "17"/>
+    <field id = "18"/>
+    <field id = "19"/>
+    <rail refid1="15" refid2="25" id = "20"/>
+    <rail refid1="16" refid2="22" id = "21"/>
+    <rail refid1="21" refid2="23" id = "22"/>
+    <rail refid1="22" refid2="24" id = "23"/>
+    <rail refid1="23" refid2="25" id = "24"/>
+    <rail refid1="20" refid2="24" id = "25"/>
     <train starttick="1" startpos="1" id="1">
         <loco/>
         <car color="red" empty="true"/>

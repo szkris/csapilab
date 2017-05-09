@@ -34,6 +34,8 @@ public abstract class TableElement implements ITableElement {
 		occupied = te;
 	}
 	
+	public ArrayList<Integer> getNeighbours(){return null;}
+	
 	@Override
 	public void stepOff() {
 		setOccupied(false);

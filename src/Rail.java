@@ -46,5 +46,19 @@ public class Rail extends TableElement {
 		this.elem1 = list.get(0);
 		this.elem2 = list.get(1);
 	}
+	
+	@Override
+	public ArrayList<Integer> getNeighbours(){
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		if(elem1!=null)
+			list.add(elem1.getId());
+		else 
+			list.add(0);
+		if(elem2!=null)
+			list.add(elem2.getId());
+		else
+			list.add(0);
+		return list;
+	}
 
 }
