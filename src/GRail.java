@@ -18,19 +18,12 @@ public class GRail extends GElements {
 	
 	public GRail(Rail rail){
 		int id = rail.getId();
-		
-		//int row = (int)((id-1)/View.COLUMN);
-		//int column = id-1-row*View.COLUMN;		
-		//x=column*View.TILE_WIDTH;
-		//y=row*View.TILE_HEIGHT;
-		
+		this.rail = rail;
+
 		Point point = View.getPosition(id);
 		x = point.x*View.TILE_WIDTH;
 		y = point.y*View.TILE_HEIGHT;
-		
-		this.rail = rail;
-		this.setBounds(x, y, View.TILE_WIDTH, View.TILE_HEIGHT);
-		
+		this.setBounds(x, y, View.TILE_WIDTH, View.TILE_HEIGHT+5);
 		this.setOpaque(false);
 		
 		
@@ -75,8 +68,6 @@ public class GRail extends GElements {
 		else if(neighbour1.x<point.x && neighbour2.y<point.y || (neighbour2.x<point.x && neighbour1.y<point.y)){
 			imageIcon = new ImageIcon(new ImageIcon("img/rail_leftup.png").getImage().getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
 		}
-		
-	    //imageIcon = new ImageIcon(new ImageIcon("img/rail_horizontal.png").getImage().getScaledInstance(View.TILE_WIDTH, View.TILE_HEIGHT, Image.SCALE_DEFAULT));
 		label.setIcon(imageIcon);
 		
 		

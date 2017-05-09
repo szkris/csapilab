@@ -42,7 +42,6 @@ public class App extends JFrame{
 		app.setLayout(cardLayout);
 		app.getContentPane().add(menu, "menu");
 		app.getContentPane().add(game.view, "game");
-		
 		app.getContentPane().setPreferredSize(new Dimension(WIDTH, HEIGHT));
 		app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		app.setResizable(false);

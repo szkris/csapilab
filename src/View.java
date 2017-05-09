@@ -67,25 +67,23 @@ public class View extends JPanel {
 			case "field":
 				gelements.add(new GField((Field) te));
 				break;
-			/*case "switch":
-				gelements.add(new GSwitch((Switch) te));
-				break;
+			//case "switch":
+			//	gelements.add(new GSwitch((Switch) te));
+			//	break;
 			case "crossing":
 				gelements.add(new GCrossing((Crossing) te));
 				break;
-			case "station":
-				gelements.add(new GStation((Station) te));
-				break;
-			case "tunnelentrance":
-				gelements.add(new GTunnelEntrance((TunnelEntrance) te));
-				break;
-			*/
+			//case "station":
+			//	gelements.add(new GStation((Station) te));
+			//	break;
+			//case "tunnelentrance":
+			//	gelements.add(new GTunnelEntrance((TunnelEntrance) te));
+			//	break;
 			default:
 				break;
 			}
 		}
 		for (GElements ge : gelements) {
-
 			this.add(ge, new Integer(2), 0);
 		}
 		this.validate();

@@ -6,7 +6,7 @@
     <rail refid1="3" refid2="5" id = "4"/>
     <rail refid1="4" refid2="10" id = "5"/>
     <rail refid1="1" refid2="11" id = "6"/>
-    <field id = "7"/>
+    <crossing refid1 ="6" refid2="2" refid3="8" refid4="12" id = "7"/>
     <field id = "8"/>
     <field id = "9"/>
     <rail refid1="5" refid2="15" id = "10"/>
